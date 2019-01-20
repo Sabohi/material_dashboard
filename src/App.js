@@ -182,7 +182,7 @@ class App extends React.Component {
                 // Person Name	Lead Status	Agent Remarks	Created On
                 ['L20190120148750','Noumya Kumari','Support','Call','Dialer','Blank Call','Blank Call','pankag saharai','CLOSED','closed','2019-01-20 16:14:12'],
                 ['L20190120148749','Jaipreet','Helpdesk','Call','Ticketing','Others','Others','Vikky Kaushal','INPROGRESS','customer need info','2019-01-20 16:10:14'],
-                ['L20190120148748','Sabohi Zaidi','Sales','Email','IVR','Cold','Cold','Chintu Barma','CLOSED','cust want the product','2019-01-20 16:10:09']
+                ['L20190120148748','Sabohi Zaidi','Sales','Email','IVR','Cold','Cold','Chintu Barma','CLOSED','cust want the product','2019-01-20 16:10:09'],
                 ['L20190120148747','Vikas Kapoor','Sales','Call','LMS','Loan','Sakshi','OPEN-EMAIL','retaging','2019-01-20 15:58:08'],
                 ['L20190120148746','Kamlesh Tiwari','Sales','Email','Ticketing','Others','Others','Ridhima','CLOSED','closed','2019-01-20 15:40:21'],
               ],
@@ -649,7 +649,7 @@ class App extends React.Component {
   
   render() {
     let dashboadCards = this.state.CardData.map(formElement => (
-      <Grid key={formElement.header} item xs={6} sm={3} md={3} lg={3}>
+      <Grid key={formElement.prePrimaryHeader} item xs={6} sm={3} md={3} lg={3}>
       <CustomizedCard
       {...formElement}
       />
