@@ -1,0 +1,20 @@
+Steps to build dashboard:-
+
+1). create-react-app my-app
+
+2). install materail ui
+npm install @material-ui/core
+npm install @material-ui/icons
+
+For table
+npm install react-virtualized --save
+
+3). Try Recharts
+npm install recharts
+
+Do backend work 
+
+4).
+In order to do that go back to the main directory of our project and type the following:
+npm init -y
+npm i -S concurrently
