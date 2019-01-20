@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import { AutoSizer, Column, SortDirection, Table } from 'react-virtualized';
-import CustomizedMenu from './Menu';
+// import CustomizedMenu from './Menu';
 
 const styles = theme => ({
   table: {
@@ -196,13 +196,14 @@ function ReactVirtualizedTable(prop) {
     />
   );
   return (
-    <div style={{ height: 600, width: '100%' }}>
-      <Typography variant="h6" gutterBottom component="h2">
+   
+    <div style={{ height: 500, width: '100%' }}>
+      {/* <Typography variant="h6" gutterBottom component="h2">
         {prop.tableHeading}
           <span style={{float: 'right'}}>
             <CustomizedMenu {...prop.MenuData}/>
           </span>
-      </Typography>
+      </Typography> */}
        {table}
     </div>
   );

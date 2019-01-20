@@ -5,7 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CustomizedCard from './CustomizedCard';
 import CustomizedPieChart from './CustomizedPieChart';
-import ReactVirtualizedTable from './SimpleTable';
+// import ReactVirtualizedTable from './SimpleTable';
+import SimpleTableCard from './SimpleTableCard';
 import SimpleLineChart from './SimpleLineChart';
 import CustomizedList from './CustomizedList';
 import CustomShapeBarChart from './CustomShapeBarChart';
@@ -219,7 +220,7 @@ class App extends React.Component {
                 }
               ],
               data:[
-                
+
                 ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
                 ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
                 ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
@@ -429,19 +430,19 @@ class App extends React.Component {
                 }
               ],
               data:[
-                ['ÁCTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
-                ['ÁCTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
-                ['ÁCTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
-                ['ÁCTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
-                ['ÁCTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
-                ['ÁCTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
-                ['ÁCTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
-                ['ÁCTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
-                ['ÁCTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
-                ['ÁCTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
-                ['ÁCTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
-                ['ÁCTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
-                ['ÁCTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
+                ['ACTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
+                ['ACTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
+                ['ACTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
+                ['ACTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
+                ['ACTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
+                ['ACTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
+                ['ACTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
+                ['ACTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
+                ['ACTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
+                ['ACTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
+                ['ACTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
+                ['ACTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
+                ['ACTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
               ],
               MenuData:{
                 options: [
@@ -833,7 +834,8 @@ class App extends React.Component {
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
-            <ReactVirtualizedTable {...this.state.tableData.loginData}/>
+              <SimpleTableCard {...this.state.tableData.loginData}/>
+            {/* <ReactVirtualizedTable {...this.state.tableData.loginData}/> */}
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Grid container spacing={24}>
@@ -841,7 +843,8 @@ class App extends React.Component {
               </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <ReactVirtualizedTable {...this.state.tableData.productData}/>
+              <SimpleTableCard {...this.state.tableData.productData}/>
+              {/* <ReactVirtualizedTable {...this.state.tableData.productData}/> */}
             </Grid>
           </Grid>
         </Grid>
