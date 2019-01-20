@@ -62,7 +62,8 @@ function FullScreenDialog(props) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <ReactVirtualizedTable {...props.tableData}/>
+        <div><ReactVirtualizedTable {...props.tableData}/></div>
+        
       </Dialog>
     </div>
   );

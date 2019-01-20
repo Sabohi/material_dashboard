@@ -219,6 +219,7 @@ class App extends React.Component {
                 }
               ],
               data:[
+                
                 ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
                 ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
                 ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
@@ -781,7 +782,7 @@ class App extends React.Component {
   
   render() {
     let dashboadCards = this.state.CardData.map(formElement => (
-      <Grid key={formElement.header} item xs={6} sm={3} md={3} lg={3}>
+      <Grid key={formElement.prePrimaryHeader} item xs={6} sm={3} md={3} lg={3}>
       <CustomizedCard
       {...formElement}
       />

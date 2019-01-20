@@ -59,7 +59,7 @@ const styles = theme => ({
     backgroundColor: '#A8AAC4',
   },
   secondaryClass1: {
-    backgroundColor: '#0712B3',
+    background: "linear-gradient(60deg, #ffa726, #fb8c00)",
   },
   primaryClass2: {
     backgroundColor: '#E9F4EC',
@@ -91,10 +91,11 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     
     return (
-      <Card>
-        <CardHeader 
+      
+      <Card style={{marginTop:"20px"}}>
+        <CardHeader style={{padding:"10px",textAlign:"right"}}
           avatar={
-            <Avatar aria-label="Recipe" className={classes[this.props.linearBarColorPrimary]}>
+            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
              {this.props.prePrimaryHeader.toString().charAt(0)}
             </Avatar>
           }
