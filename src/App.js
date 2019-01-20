@@ -816,15 +816,16 @@ class App extends React.Component {
 
     return (
       <div>
-      <AppBar position="static" color="primary">
+      <AppBar position="fixed" color="primary">
         <Toolbar>
           <Typography variant="h6" color="inherit">
             Admin Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
-      <br/>
-      <Grid container spacing={24} justify="space-between">
+     <div style={{margin:"10px"}}>
+     <br />
+       <Grid container spacing={24} justify="space-between" style={{marginTop:"50px"}}>
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}>
             {dashboadCards}
@@ -870,6 +871,7 @@ class App extends React.Component {
             </Grid>
           </Grid>
         </Grid>
+      </div>
       </div>
     );
   }

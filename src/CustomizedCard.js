@@ -13,7 +13,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {
-    padding: "0.75rem 1.25rem",
+    padding: "0.2rem 0.5rem",
     marginBottom: "0",
     borderBottom: "none",
     background: "transparent",
@@ -59,25 +59,25 @@ const styles = theme => ({
     backgroundColor: '#A8AAC4',
   },
   secondaryClass1: {
-    background: "linear-gradient(60deg, #ffa726, #fb8c00)",
+    background: "linear-gradient(60deg, #f7a630, #ec8502)",
   },
   primaryClass2: {
     backgroundColor: '#E9F4EC',
   },
   secondaryClass2: {
-    backgroundColor: '#006600',
+    background: "linear-gradient(60deg, #66bb6a, #43a047)",
   },
   primaryClass3: {
     backgroundColor: '#F5E8F0',
   },
   secondaryClass3: {
-    backgroundColor: '#cc0066',
+    background: "linear-gradient(60deg, #f36aaf, #cc0066)",
   },
   primaryClass4: {
     backgroundColor: '#B7AFAF',
   },
   secondaryClass4: {
-    backgroundColor: '#993300',
+    background: "linear-gradient(60deg, #da8053, #b74005)",
   }
 });
 
@@ -93,7 +93,7 @@ class RecipeReviewCard extends React.Component {
     return (
       
       <Card style={{marginTop:"20px"}}>
-        <CardHeader style={{padding:"10px",textAlign:"right"}}
+        <CardHeader style={{padding:"6px",textAlign:"right"}}
           avatar={
             <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
              {this.props.prePrimaryHeader.toString().charAt(0)}
@@ -104,7 +104,7 @@ class RecipeReviewCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />
-        <CardContent className={classes.cardHeader}>
+        <CardContent className={classes.cardHeader} style={{paddingBottom:"8px"}}>
           <Typography component="h2">
             {this.props.primaryHeader}
             <span style={{float: 'right',fontWeight:600,fontSize:'1.2em'}}>
@@ -120,7 +120,7 @@ class RecipeReviewCard extends React.Component {
           variant="determinate" 
           value={this.props.progressBarValue}
           />
-          <Typography color="textSecondary">
+          <Typography color="textSecondary" style={{marginTop:"2px"}}>
           {this.props.progressBarHeader} 
           <span style={{float: 'right',fontWeight:600,fontSize:'1.2em'}}>
           {this.props.progressBarValue}%
