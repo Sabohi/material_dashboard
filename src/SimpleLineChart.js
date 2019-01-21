@@ -6,7 +6,8 @@ import { XAxis, YAxis, CartesianGrid, Tooltip, Area, AreaChart } from 'recharts'
 class SimpleLineChart extends React.Component{
 	render () {
   	return (
-      <AreaChart width={400} height={200} data={this.props.data} syncId="anyId"
+      <Typography variant="caption" gutterBottom align="center">
+      <AreaChart width={400} height={200} data={this.props.data}  syncId="anyId"
             margin={{top: 0, right: 60, left: 0, bottom: 60}}>
         <CartesianGrid strokeDasharray="3 3"/>
         <XAxis dataKey="name"/>
@@ -14,6 +15,7 @@ class SimpleLineChart extends React.Component{
         <Tooltip/>
         <Area type='monotone' dataKey={this.props.dataKey} stroke={this.props.strokeColor} fill={this.props.fillColor} />
       </AreaChart>
+      </Typography>
     );
   }
 }
