@@ -15,13 +15,16 @@ const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
   },
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: "none",
+    color:"grey",
+    fontWeight: "600",
+    fontSize: "0.8em"
   },
   flexContainer: {
     display: 'flex',
     alignItems: 'center',
     boxSizing: 'border-box',
+    
   },
   tableRow: {
     cursor: 'pointer',
@@ -83,16 +86,19 @@ class MuiVirtualizedTable extends React.PureComponent {
       );
 
     return (
+      
       <TableCell
         component="div"
         className={classNames(classes.tableCell, classes.flexContainer, classes.noClick, classes.head)}
         variant="head"
-        style={{ height: headerHeight }}
+        style={{ height: headerHeight}}
         align={columns[columnIndex].numeric || false ? 'right' : 'left'}
       >
         {inner}
       </TableCell>
+      
     );
+    
   };
 
   render() {
@@ -182,7 +188,7 @@ function createData(columnData,propdata) {
 
 function ReactVirtualizedTable(prop) {
   const rows = [];
-
+  
   for (let i = 0; i < prop.data.length; i++) {
     rows.push(createData(prop.columnData,prop.data[i]));
   }

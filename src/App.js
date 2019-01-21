@@ -12,7 +12,8 @@ import CustomizedList from './CustomizedList';
 import CustomShapeBarChart from './CustomShapeBarChart';
 // import FullScreenDialog from './FullScreenDialog';
 // import SimpleDialogDemo from './FullScreenDialog';
-
+import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 //import FontAwesome from './MyIcons.js';
 
 class App extends React.Component {
@@ -621,6 +622,7 @@ class App extends React.Component {
       tableData:{
         loginData:{
           tableHeading: "Logged In Users",
+          headerBackground: 'secondaryClass1',
           columnData:[
             {
               width: 150,
@@ -668,6 +670,7 @@ class App extends React.Component {
         },
         productData:{
           tableHeading: "Top Products",
+          headerBackground: 'secondaryClass2',
           columnData:[
             {
               width: 150,
@@ -835,7 +838,7 @@ class App extends React.Component {
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}>
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <SimpleTableCard {...this.state.tableData.loginData}/>
+              <SimpleTableCard icon={<PeopleOutlinedIcon fontSize="large"/>} {...this.state.tableData.loginData}/>
             {/* <ReactVirtualizedTable {...this.state.tableData.loginData}/> */}
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -844,7 +847,7 @@ class App extends React.Component {
               </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <SimpleTableCard {...this.state.tableData.productData}/>
+              <SimpleTableCard icon={<ShoppingCartIcon fontSize="large"/>} {...this.state.tableData.productData}/>
               {/* <ReactVirtualizedTable {...this.state.tableData.productData}/> */}
             </Grid>
           </Grid>

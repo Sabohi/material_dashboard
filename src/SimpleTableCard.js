@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import './SimpleTable.css';
+import CustomizedMenu from './Menu';
 // import Typography from '@material-ui/core/Typography';
 // import FullScreenDialog from './FullScreenDialog';
 import ReactVirtualizedTable from './SimpleTable';
@@ -58,28 +58,28 @@ const styles = theme => ({
     }
   },
   primaryClass1: {
-    backgroundColor: '#A8AAC4',
+    color: '#ec8502',
   },
   secondaryClass1: {
-    background: "linear-gradient(60deg, #ffa726, #fb8c00)",
+    background: "linear-gradient(60deg, #f7a630, #ec8502)",
   },
   primaryClass2: {
-    backgroundColor: '#E9F4EC',
+    color: '#43a047',
   },
   secondaryClass2: {
-    backgroundColor: '#006600',
+    background: "linear-gradient(60deg, #66bb6a, #43a047)",
   },
   primaryClass3: {
-    backgroundColor: '#F5E8F0',
+    color: '#cc0066',
   },
   secondaryClass3: {
-    backgroundColor: '#cc0066',
+    background: "linear-gradient(60deg, #f36aaf, #cc0066)",
   },
   primaryClass4: {
-    backgroundColor: '#B7AFAF',
+    color: '#b74005',
   },
   secondaryClass4: {
-    backgroundColor: '#993300',
+    background: "linear-gradient(60deg, #da8053, #b74005)",
   }
 });
 
@@ -95,18 +95,19 @@ class SimpleTableCard extends React.Component {
     return (
       
       <Card style={{marginTop:"20px"}}>
-        {/* <CardHeader style={{padding:"10px",textAlign:"right"}}
+        <CardHeader style={{padding:"10px",marginTop:"10px",textAlign:"right"}}
           avatar={
-            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
-             {this.props.tableHeading}
+            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-95px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.headerBackground]}>
+             {this.props.icon}
             </Avatar>
           }
           action={
-            <FullScreenDialog {...this.props.dialogData}/>
+           <CustomizedMenu {...this.props.MenuData}/>
           }
-          title={this.props.prePrimaryHeader}
-        />  */}
-        <CardHeader cardHeaderStats title={this.props.tableHeading} subheader={<p>New employees on 15th September, 2016</p>} color="warning" style={{padding:"10px",textAlign:"left"}}/>
+          title={this.props.tableHeading} 
+          subheader={<p>New employees on 15th September, 2016</p>} 
+        /> 
+  
        
         <CardContent className={classes.cardHeader}>
          <ReactVirtualizedTable {...this.props}/>

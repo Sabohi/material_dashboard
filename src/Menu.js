@@ -27,14 +27,19 @@ function CustomizedMenu(props) {
         onClick={handleClick}
       >
         <MoreVertIcon />
+        
       </IconButton>
       <Menu
         id="long-menu"
-        
-        // anchorOrigin={{
-        //     vertical: "bottom",
-        //     horizontal: "right"
-        // }}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+       
         anchorEl={anchorEl}
         // anchorReference=
         // {{  
@@ -47,6 +52,7 @@ function CustomizedMenu(props) {
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
             width: 200,
+            marginTop: "52px"
           },
         }}
       >
