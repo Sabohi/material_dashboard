@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import {PieChart, Pie, Sector,Cell} from 'recharts';
-import CustomizedMenu from './Menu';
+// import CustomizedMenu from './Menu';
 
 const renderActiveShape = (props) => {
     console.log("subuhi");
@@ -21,7 +21,10 @@ const renderActiveShape = (props) => {
 
     return (
         <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+        <text x={cx} y={cy-10} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+        <text x={cx} y={cy+12} dy={8} textAnchor="middle" fill={fill}>
+            {`(${(percent * 100).toFixed(2)}%)`}
+        </text>
         <Sector
             cx={cx}
             cy={cy}
@@ -42,10 +45,7 @@ const renderActiveShape = (props) => {
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill}>{`Value ${value}`}</text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill={fill}>
-            {`(Percent ${(percent * 100).toFixed(2)}%)`}
-        </text>
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill}>{`${value}`}</text>
         </g>
     );
 };
@@ -65,31 +65,23 @@ class CustomizedPieChart extends React.Component{
 	render () {
         const {data, color, chartHeading} = this.props;
         return (
-            <div>
-                <Typography variant="h6" gutterBottom component="h2">
-                {chartHeading}
-                <span style={{float: 'right'}}>
-                    <CustomizedMenu {...this.props.MenuData}/>
-                </span>
-                </Typography>
-                <PieChart width={600} height={300}>
-                <Pie 
-                    activeIndex={this.state.activeIndex}
-                    activeShape={renderActiveShape} 
-                    data={data} 
-                    cx={240} 
-                    cy={130} 
-                    innerRadius={70}
-                    outerRadius={90} 
-                    fill="#fff"
-                    onMouseEnter={this.onOuterPieEnter}
-                >
-                {
-                    data.map((entry, index) => <Cell fill={color[index % color.length]}/>)
-                }
-                </Pie>
-               </PieChart>
-            </div>
+            <PieChart width={600} height={200}>
+            <Pie 
+                activeIndex={this.state.activeIndex}
+                activeShape={renderActiveShape} 
+                data={data} 
+                cx={170} 
+                cy={90} 
+                innerRadius={60}
+                outerRadius={75} 
+                fill="#fff"
+                onMouseEnter={this.onOuterPieEnter}
+            >
+            {
+                data.map((entry, index) => <Cell fill={color[index % color.length]}/>)
+            }
+            </Pie>
+            </PieChart>
         );
     }
 }

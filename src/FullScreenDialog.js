@@ -62,7 +62,9 @@ function FullScreenDialog(props) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <div><ReactVirtualizedTable {...props.tableData}/></div>
+        <div style={{marginTop: "5px"}}>
+          <ReactVirtualizedTable {...props.tableData}/>
+        </div>
         
       </Dialog>
     </div>

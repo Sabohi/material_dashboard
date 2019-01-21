@@ -4,11 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
-import CustomizedMenu from './Menu';
+// import Avatar from '@material-ui/core/Avatar';
+import './SimpleTable.css';
 // import Typography from '@material-ui/core/Typography';
 // import FullScreenDialog from './FullScreenDialog';
-import ReactVirtualizedTable from './SimpleTable';
+import CustomShapeBarChart from './CustomShapeBarChart';
+
+//For progress bar
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {
@@ -55,32 +58,32 @@ const styles = theme => ({
     }
   },
   primaryClass1: {
-    color: '#ec8502',
+    backgroundColor: '#A8AAC4',
   },
   secondaryClass1: {
-    background: "linear-gradient(60deg, #f7a630, #ec8502)",
+    background: "linear-gradient(60deg, #ffa726, #fb8c00)",
   },
   primaryClass2: {
-    color: '#43a047',
+    backgroundColor: '#E9F4EC',
   },
   secondaryClass2: {
-    background: "linear-gradient(60deg, #66bb6a, #43a047)",
+    backgroundColor: '#006600',
   },
   primaryClass3: {
-    color: '#cc0066',
+    backgroundColor: '#F5E8F0',
   },
   secondaryClass3: {
-    background: "linear-gradient(60deg, #f36aaf, #cc0066)",
+    backgroundColor: '#cc0066',
   },
   primaryClass4: {
-    color: '#b74005',
+    backgroundColor: '#B7AFAF',
   },
   secondaryClass4: {
-    background: "linear-gradient(60deg, #da8053, #b74005)",
+    backgroundColor: '#993300',
   }
 });
 
-class SimpleTableCard extends React.Component {
+class CustomShapeBarChartCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -88,34 +91,36 @@ class SimpleTableCard extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    
     return (
-      
-      <Card style={{marginTop:"40px",height: "575px"}}>
-      <CardHeader style={{padding:"10px",marginTop:"10px",textAlign:"right"}}
+      <Card style={{marginTop:"20px",height: "380px"}}>
+        {/* <CardHeader style={{padding:"10px",textAlign:"right"}}
           avatar={
-            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-95px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.headerBackground]}>
-             {this.props.icon}
+            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
+             {this.props.tableHeading}
             </Avatar>
           }
           action={
-           <CustomizedMenu {...this.props.MenuData}/>
+            <FullScreenDialog {...this.props.dialogData}/>
           }
-
-        title={this.props.tableHeading} 
+          title={this.props.prePrimaryHeader}
+        />  */}
+        <CardHeader 
+        cardHeaderStats 
+        title={this.props.chartHeading} 
         subheader={<p>Today's data</p>} 
-        /> 
-
+        color="warning" 
+        style={{padding:"10px",textAlign:"left"}}
+        />
         <CardContent className={classes.cardHeader}>
-         <ReactVirtualizedTable {...this.props}/>
+         <CustomShapeBarChart {...this.props}/>
         </CardContent>
       </Card>
     );
   }
 }
 
-SimpleTableCard.propTypes = {
+CustomShapeBarChartCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleTableCard);
+export default withStyles(styles)(CustomShapeBarChartCard);

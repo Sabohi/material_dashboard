@@ -4,12 +4,16 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CustomizedCard from './CustomizedCard';
-import CustomizedPieChart from './CustomizedPieChart';
+// import CustomizedPieChart from './CustomizedPieChart';
+import CustomizedPieChartCard from './CustomizedPieChartCard';
 // import ReactVirtualizedTable from './SimpleTable';
 import SimpleTableCard from './SimpleTableCard';
-import SimpleLineChart from './SimpleLineChart';
-import CustomizedList from './CustomizedList';
-import CustomShapeBarChart from './CustomShapeBarChart';
+//import SimpleLineChart from './SimpleLineChart';
+import SimpleLineChartCard from './SimpleLineChartCard';
+//import CustomizedList from './CustomizedList';
+import CustomizedListCard from './CustomizedListCard';
+//import CustomShapeBarChart from './CustomShapeBarChart';
+import CustomShapeBarChartCard from './CustomShapeBarChartCard';
 // import FullScreenDialog from './FullScreenDialog';
 // import SimpleDialogDemo from './FullScreenDialog';
 import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined'
@@ -127,7 +131,6 @@ class App extends React.Component {
                 options: [
                   'Today',
                   'Yesterday',
-                  'Callisto',
                   'Last 7 days',
                   'Last 30 days',
                   'This Month',
@@ -243,7 +246,6 @@ class App extends React.Component {
                 options: [
                   'Today',
                   'Yesterday',
-                  'Callisto',
                   'Last 7 days',
                   'Last 30 days',
                   'This Month',
@@ -355,7 +357,6 @@ class App extends React.Component {
                 options: [
                   'Today',
                   'Yesterday',
-                  'Callisto',
                   'Last 7 days',
                   'Last 30 days',
                   'This Month',
@@ -449,7 +450,6 @@ class App extends React.Component {
                 options: [
                   'Today',
                   'Yesterday',
-                  'Callisto',
                   'Last 7 days',
                   'Last 30 days',
                   'This Month',
@@ -496,7 +496,6 @@ class App extends React.Component {
             options: [
               'Today',
               'Yesterday',
-              'Callisto',
               'Last 7 days',
               'Last 30 days',
               'This Month',
@@ -539,7 +538,6 @@ class App extends React.Component {
             options: [
               'Today',
               'Yesterday',
-              'Callisto',
               'Last 7 days',
               'Last 30 days',
               'This Month',
@@ -551,7 +549,7 @@ class App extends React.Component {
       pieChartData:
       [
         {
-          chartHeading: "Status wise Tickets",
+          chartHeading: "Status Wise Tickets",
           color: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300'],
           data: 
           [
@@ -580,7 +578,6 @@ class App extends React.Component {
             options: [
               'Today',
               'Yesterday',
-              'Callisto',
               'Last 7 days',
               'Last 30 days',
               'This Month',
@@ -610,7 +607,35 @@ class App extends React.Component {
             options: [
               'Today',
               'Yesterday',
-              'Callisto',
+              'Last 7 days',
+              'Last 30 days',
+              'This Month',
+              'Last Month',
+            ]
+          }  
+        },
+        {
+          chartHeading: "Disposition Wise Tickets",
+          color: ['#5B05A3','#0B8AB6','#B60B4E'],
+          data: 
+          [
+            {
+                name: 'Critical',
+                value: 677
+            }, 
+            {
+                name: 'Semi-Critical',
+                value: 988
+            },
+            {
+                name: 'Non-Critical',
+                value: 988
+            }
+          ],
+          MenuData:{
+            options: [
+              'Today',
+              'Yesterday',
               'Last 7 days',
               'Last 30 days',
               'This Month',
@@ -746,6 +771,7 @@ class App extends React.Component {
       }
       ],  //list data end
       CustomShapeBarChartData:{
+        chartHeading: "Future Trends",
         colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"],
         data: [
           {name: '1 PM', tickets: 4000, leads: 2400},
@@ -795,15 +821,15 @@ class App extends React.Component {
 
     let dashboardLineCharts = this.state.lineChartData.map(formElement => (
       <Grid key={formElement.dataKey} item xs={12} sm={12} md={12} lg={12}>
-        <SimpleLineChart
+        <SimpleLineChartCard
         {...formElement}
         />              
       </Grid>
     ));
 
     let dashboadPieCharts = this.state.pieChartData.map(formElement => (
-      <Grid key={formElement.chartHeading} item xs={12} sm={12} md={6} lg={6}>
-        <CustomizedPieChart
+      <Grid key={formElement.chartHeading} item xs={12} sm={12} md={4} lg={4}>
+        <CustomizedPieChartCard
         {...formElement}
         />
       </Grid>
@@ -829,7 +855,7 @@ class App extends React.Component {
       </AppBar>
      <div style={{margin:"10px"}}>
      <br />
-       <Grid container spacing={24} justify="space-between" style={{marginTop:"50px"}}>
+       <Grid container spacing={8} justify="space-between" style={{marginTop:"50px"}}>
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}>
             {dashboadCards}
@@ -842,7 +868,7 @@ class App extends React.Component {
             {/* <ReactVirtualizedTable {...this.state.tableData.loginData}/> */}
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <Grid container spacing={24}>
+              <Grid container spacing={8}>
                 {dashboardLineCharts}
               </Grid>
             </Grid>
@@ -860,17 +886,17 @@ class App extends React.Component {
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}> 
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <CustomizedList
+              <CustomizedListCard
                 {...this.state.listData[0]}
               />
               </Grid>
               <Grid item xs={12} sm={12} md={4} lg={4}>
-                <CustomShapeBarChart
+                <CustomShapeBarChartCard
                 {...this.state.CustomShapeBarChartData}
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={4} lg={4}>
-                <CustomizedList
+                <CustomizedListCard
                   {...this.state.listData[1]}
                 />
               </Grid>
