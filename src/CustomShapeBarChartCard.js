@@ -8,7 +8,10 @@ import CardContent from '@material-ui/core/CardContent';
 import './SimpleTable.css';
 // import Typography from '@material-ui/core/Typography';
 // import FullScreenDialog from './FullScreenDialog';
-import ReactVirtualizedTable from './SimpleTable';
+import CustomShapeBarChart from './CustomShapeBarChart';
+
+//For progress bar
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {
@@ -80,7 +83,7 @@ const styles = theme => ({
   }
 });
 
-class SimpleTableCard extends React.Component {
+class CustomShapeBarChartCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -88,10 +91,8 @@ class SimpleTableCard extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    
     return (
-      
-      <Card style={{marginTop:"20px",height: "575px"}}>
+      <Card style={{marginTop:"20px",height: "380px"}}>
         {/* <CardHeader style={{padding:"10px",textAlign:"right"}}
           avatar={
             <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
@@ -105,22 +106,21 @@ class SimpleTableCard extends React.Component {
         />  */}
         <CardHeader 
         cardHeaderStats 
-        title={this.props.tableHeading} 
+        title={this.props.chartHeading} 
         subheader={<p>Today's data</p>} 
         color="warning" 
         style={{padding:"10px",textAlign:"left"}}
         />
-       
         <CardContent className={classes.cardHeader}>
-         <ReactVirtualizedTable {...this.props}/>
+         <CustomShapeBarChart {...this.props}/>
         </CardContent>
       </Card>
     );
   }
 }
 
-SimpleTableCard.propTypes = {
+CustomShapeBarChartCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleTableCard);
+export default withStyles(styles)(CustomShapeBarChartCard);

@@ -5,8 +5,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
+// import Avatar from '@material-ui/core/Avatar';
+// import ImageIcon from '@material-ui/icons/Image';
 import red from '@material-ui/core/colors/red';
 import Icon from '@material-ui/core/Icon';
 
@@ -30,7 +30,7 @@ const styles = theme => ({
 class CustomizedList extends React.Component{
   
     render(){
-        const { classes, listItemsData, listHeading} = this.props;
+        const { classes, listItemsData} = this.props;
        
         let listItems = listItemsData.map(FormElement => (
             <ListItem>
@@ -44,7 +44,7 @@ class CustomizedList extends React.Component{
             <List 
                 className={classes.root}
                 component="nav"
-                subheader={<ListSubheader component="div">{listHeading}</ListSubheader>}
+                // subheader={<ListSubheader component="div">{listHeading}</ListSubheader>}
             >
             {listItems}
             </List>
