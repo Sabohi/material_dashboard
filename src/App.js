@@ -472,7 +472,6 @@ class App extends React.Component {
           headerBackground: 'secondaryClass3',
           strokeColor: "#123316",
           fillColor: "#367C3D",
-          headerBackground: 'secondaryClass3',
           data: 
           [
             {name: '12AM', Tickets: 4000},
@@ -516,7 +515,6 @@ class App extends React.Component {
           headerBackground: 'secondaryClass4',
           strokeColor: "#574B01",
           fillColor: "#C1AB1F",
-          headerBackground: 'secondaryClass4',
           data: 
           [
             {name: '12AM', Leads: 4000},
