@@ -472,7 +472,6 @@ class App extends React.Component {
           headerBackground: 'secondaryClass3',
           strokeColor: "#123316",
           fillColor: "#367C3D",
-          headerBackground: 'secondaryClass3',
           data: 
           [
             {name: '12AM', Tickets: 4000},
@@ -516,7 +515,6 @@ class App extends React.Component {
           headerBackground: 'secondaryClass4',
           strokeColor: "#574B01",
           fillColor: "#C1AB1F",
-          headerBackground: 'secondaryClass4',
           data: 
           [
             {name: '12AM', Leads: 4000},
@@ -797,18 +795,7 @@ class App extends React.Component {
           {name: '5 PM', tickets: 1890, leads: 4800},
           {name: '6 PM', tickets: 2390, leads: 3800},
           {name: '7 PM', tickets: 3490, leads: 4300},
-        ],
-        MenuData:{
-          options: [
-            'Today',
-            'Yesterday',
-            'Callisto',
-            'Last 7 days',
-            'Last 30 days',
-            'This Month',
-            'Last Month',
-          ]
-        }
+        ]
       } // CustomShapeBarChart data end 
     };// state end
 
@@ -894,19 +881,15 @@ class App extends React.Component {
               <SimpleTableCard icon={<PeopleOutlinedIcon fontSize="large"/>} {...this.state.tableData.loginData}/>
             {/* <ReactVirtualizedTable {...this.state.tableData.loginData}/> */}
             </Grid>
-
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <Grid container spacing={24}>
                 {dashboardLineCharts}
               </Grid>
             </Grid>
-            
             <Grid item xs={12} sm={12} md={4} lg={4}>
               <SimpleTableCard icon={<ShoppingCartIcon fontSize="large"/>} {...this.state.tableData.productData}/>
               {/* <ReactVirtualizedTable {...this.state.tableData.productData}/> */}
             </Grid>
-           
-            
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12}>

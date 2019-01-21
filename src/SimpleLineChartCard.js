@@ -5,13 +5,18 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
+<<<<<<< HEAD
 import Typography from '@material-ui/core/Typography';
+=======
+import './SimpleTable.css';
+// import Typography from '@material-ui/core/Typography';
+>>>>>>> b9d5087d75bc8867ff85f237cf65ef0070156e76
 // import FullScreenDialog from './FullScreenDialog';
 import SimpleLineChart from './SimpleLineChart';
 import CustomizedMenu from './Menu';
 
 //For progress bar
-import LinearProgress from '@material-ui/core/LinearProgress';
+// import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {
@@ -106,6 +111,7 @@ class SimpleLineChartCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />  */}
+<<<<<<< HEAD
         <CardHeader 
           cardHeaderStats 
           avatar={
@@ -118,10 +124,24 @@ class SimpleLineChartCard extends React.Component {
           </Typography>} 
           subheader={<p>Today's data</p>} 
           style={{padding:"20px",textAlign:"right"}}
-          action={
-            <CustomizedMenu {...this.props.MenuData}/>
+=======
+        <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+          avatar={
+            <Avatar 
+            aria-label="Recipe" 
+            style={{position:"absolute",marginTop:"-95px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
+            className={classes[this.props.headerBackground]}
+            >
+             {this.props.icon}
+            </Avatar>
           }
-        />
+>>>>>>> b9d5087d75bc8867ff85f237cf65ef0070156e76
+          action={
+           <CustomizedMenu {...this.props.MenuData}/>
+          }
+          title={this.props.dataKey} 
+          subheader={<p>Today's data</p>} 
+        /> 
         <CardContent className={classes.cardHeader}>
          <SimpleLineChart {...this.props}/>
         </CardContent>

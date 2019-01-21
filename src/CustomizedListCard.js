@@ -61,25 +61,25 @@ const styles = theme => ({
     backgroundColor: '#A8AAC4',
   },
   secondaryClass1: {
-    background: "linear-gradient(60deg, #ffa726, #fb8c00)",
+    background: "linear-gradient(60deg, #f7a630, #ec8502)",
   },
   primaryClass2: {
     backgroundColor: '#E9F4EC',
   },
   secondaryClass2: {
-    backgroundColor: '#006600',
+    background: "linear-gradient(60deg, #66bb6a, #43a047)",
   },
   primaryClass3: {
     backgroundColor: '#F5E8F0',
   },
   secondaryClass3: {
-    backgroundColor: '#cc0066',
+    background: "linear-gradient(60deg, #f36aaf, #cc0066)",
   },
   primaryClass4: {
     backgroundColor: '#B7AFAF',
   },
   secondaryClass4: {
-    backgroundColor: '#993300',
+    background: "linear-gradient(60deg, #da8053, #b74005)",
   }
 });
 
@@ -94,7 +94,7 @@ class CustomizedListCard extends React.Component {
     
     return (
       
-      <Card style={{marginTop:"20px",height: "380px"}}>
+      <Card style={{marginTop:"40px",height: "380px"}}>
         {/* <CardHeader style={{padding:"10px",textAlign:"right"}}
           avatar={
             <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
@@ -106,14 +106,22 @@ class CustomizedListCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />  */}
-        <CardHeader 
-        cardHeaderStats 
-        title={this.props.listHeading} 
-        // subheader={<p>Today's data</p>} 
-        color="warning" 
-        style={{padding:"10px",textAlign:"left"}}
-        />
-       
+        <CardHeader style={{padding:"40px",marginTop:"10px",textAlign:"right"}}
+          avatar={
+            <Avatar 
+            aria-label="Recipe" 
+            style={{position:"absolute",marginTop:"-95px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
+            className={classes[this.props.headerBackground]}
+            >
+             {this.props.icon}
+            </Avatar>
+          }
+          // action={
+          //  <CustomizedMenu {...this.props.MenuData}/>
+          // }
+          title={this.props.listHeading} 
+          // subheader={<p>Today's data</p>} 
+        /> 
         <CardContent className={classes.cardHeader}>
          <CustomizedList {...this.props}/>
         </CardContent>

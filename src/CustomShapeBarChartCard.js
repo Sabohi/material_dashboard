@@ -92,7 +92,7 @@ class CustomShapeBarChartCard extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <Card style={{marginTop:"20px",height: "380px"}}>
+      <Card style={{marginTop:"40px",height: "380px"}}>
         {/* <CardHeader style={{padding:"10px",textAlign:"right"}}
           avatar={
             <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
@@ -108,8 +108,8 @@ class CustomShapeBarChartCard extends React.Component {
 
         avatar={
           <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.headerBackground]}>
-          F
-          </Avatar>
+           {this.props.icon}
+            </Avatar>
         }
         title={<Typography variant="subheading" gutterBottom>
           {this.props.chartHeading} 
