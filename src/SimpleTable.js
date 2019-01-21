@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   head: {
     backgroundColor: "none",
-    color:"grey",
+    color:"#657af1",
     fontWeight: "600",
     fontSize: "0.8em"
   },
@@ -36,6 +36,11 @@ const styles = theme => ({
   },
   tableCell: {
     flex: 1,
+    
+  },
+  tableData:
+  {
+    color:"grey"
   },
   noClick: {
     cursor: 'initial',
@@ -57,11 +62,11 @@ class MuiVirtualizedTable extends React.PureComponent {
     return (
       <TableCell
         component="div"
-        className={classNames(classes.tableCell, classes.flexContainer, {
+        className={classNames(classes.tableCell,classes.tableData, classes.flexContainer, {
           [classes.noClick]: onRowClick == null,
         })}
         variant="body"
-        style={{ height: rowHeight }}
+        style={{ height: rowHeight}}
         align={(columnIndex != null && columns[columnIndex].numeric) || false ? 'right' : 'left'}
       >
         {cellData}
@@ -134,6 +139,7 @@ class MuiVirtualizedTable extends React.PureComponent {
                       columnIndex: index,
                     })
                   }
+                  
                   className={classNames(classes.flexContainer, className)}
                   cellRenderer={renderer}
                   dataKey={dataKey}

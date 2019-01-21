@@ -11,7 +11,7 @@ import './SimpleTable.css';
 import CustomizedList from './CustomizedList';
 
 //For progress bar
-import LinearProgress from '@material-ui/core/LinearProgress';
+// import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {
@@ -106,15 +106,12 @@ class CustomizedListCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />  */}
-        <CardHeader style={{padding:"40px",marginTop:"10px",textAlign:"right"}}
+        <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+
           avatar={
-            <Avatar 
-            aria-label="Recipe" 
-            style={{position:"absolute",marginTop:"-95px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
-            className={classes[this.props.headerBackground]}
-            >
-             {this.props.icon}
-            </Avatar>
+            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-80px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.headerBackground]}>
+            {this.props.icon}
+              </Avatar>
           }
           // action={
           //  <CustomizedMenu {...this.props.MenuData}/>

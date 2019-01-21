@@ -5,8 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import './SimpleTable.css';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 // import FullScreenDialog from './FullScreenDialog';
 import SimpleLineChart from './SimpleLineChart';
 import CustomizedMenu from './Menu';
@@ -59,25 +58,25 @@ const styles = theme => ({
     }
   },
   primaryClass1: {
-    backgroundColor: '#A8AAC4',
+    color: '#ec8502',
   },
   secondaryClass1: {
     background: "linear-gradient(60deg, #f7a630, #ec8502)",
   },
   primaryClass2: {
-    backgroundColor: '#E9F4EC',
+    color: '#43a047',
   },
   secondaryClass2: {
     background: "linear-gradient(60deg, #66bb6a, #43a047)",
   },
   primaryClass3: {
-    backgroundColor: '#F5E8F0',
+    color: '#cc0066',
   },
   secondaryClass3: {
     background: "linear-gradient(60deg, #f36aaf, #cc0066)",
   },
   primaryClass4: {
-    backgroundColor: '#B7AFAF',
+    color: '#b74005',
   },
   secondaryClass4: {
     background: "linear-gradient(60deg, #da8053, #b74005)",
@@ -107,7 +106,9 @@ class SimpleLineChartCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />  */}
-        <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+
+        <CardHeader 
+          cardHeaderStats 
           avatar={
             <Avatar 
             aria-label="Recipe" 
@@ -117,11 +118,17 @@ class SimpleLineChartCard extends React.Component {
              {this.props.icon}
             </Avatar>
           }
+          title={<Typography variant="body2" gutterBottom>
+          {this.props.dataKey}
+          </Typography>} 
+
+          subheader={<p>Today's data</p>} 
+
+          style={{padding:"20px",textAlign:"right"}}
+
           action={
            <CustomizedMenu {...this.props.MenuData}/>
           }
-          title={this.props.dataKey} 
-          subheader={<p>Today's data</p>} 
         /> 
         <CardContent className={classes.cardHeader}>
          <SimpleLineChart {...this.props}/>

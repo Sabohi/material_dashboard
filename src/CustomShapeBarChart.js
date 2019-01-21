@@ -1,5 +1,5 @@
 import React from 'react';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell } from 'recharts';
 
 const getPath = (x, y, width, height) => {
@@ -18,6 +18,7 @@ const TriangleBar = (props) => {
 class CustomShapeBarChart extends React.Component{
 	render () {
   	return (
+        <Typography  variant="caption" gutterBottom align="center">
         <BarChart width={400} height={250} data={this.props.data}
             margin={{top: 0, right: 60, left: 0, bottom: 0}}>
         <XAxis dataKey="name"/>
@@ -32,6 +33,7 @@ class CustomShapeBarChart extends React.Component{
             }
         </Bar>
         </BarChart>
+        </Typography>
     );
   }
 }

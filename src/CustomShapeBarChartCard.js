@@ -5,10 +5,13 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import './SimpleTable.css';
-// import Typography from '@material-ui/core/Typography';
 // import FullScreenDialog from './FullScreenDialog';
+import CustomizedMenu from './Menu';
 import CustomShapeBarChart from './CustomShapeBarChart';
+
+//For progress bar
+// import LinearProgress from '@material-ui/core/LinearProgress';
+import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   cardHeader: {
@@ -55,25 +58,25 @@ const styles = theme => ({
     }
   },
   primaryClass1: {
-    backgroundColor: '#A8AAC4',
+    color: '#ec8502',
   },
   secondaryClass1: {
     background: "linear-gradient(60deg, #f7a630, #ec8502)",
   },
   primaryClass2: {
-    backgroundColor: '#E9F4EC',
+    color: '#43a047',
   },
   secondaryClass2: {
     background: "linear-gradient(60deg, #66bb6a, #43a047)",
   },
   primaryClass3: {
-    backgroundColor: '#F5E8F0',
+    color: '#cc0066',
   },
   secondaryClass3: {
     background: "linear-gradient(60deg, #f36aaf, #cc0066)",
   },
   primaryClass4: {
-    backgroundColor: '#B7AFAF',
+    color: '#b74005',
   },
   secondaryClass4: {
     background: "linear-gradient(60deg, #da8053, #b74005)",
@@ -101,22 +104,27 @@ class CustomShapeBarChartCard extends React.Component {
           }
           title={this.props.prePrimaryHeader}
         />  */}
-         <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+        <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+
           avatar={
-            <Avatar 
-            aria-label="Recipe" 
-            style={{position:"absolute",marginTop:"-72px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
-            className={classes[this.props.headerBackground]}
-            >
-             {this.props.icon}
+          <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-80px",borderRadius:"3px",padding:"23px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.headerBackground]}>
+           {this.props.icon}
             </Avatar>
-          }
-          // action={
-          //  <CustomizedMenu {...this.props.MenuData}/>
-          // }
-          title={this.props.chartHeading} 
-          // subheader={<p>Today's data</p>} 
-        /> 
+            }
+           title={<Typography variant="subheading" gutterBottom>
+          {this.props.chartHeading} 
+              </Typography>
+            }
+        subheader={<Typography variant="caption" gutterBottom>
+          Today's data
+          </Typography>} 
+        color="warning" 
+
+        action={
+          <CustomizedMenu {...this.props.MenuData}/>
+        }
+
+        />
         <CardContent className={classes.cardHeader}>
          <CustomShapeBarChart {...this.props}/>
         </CardContent>

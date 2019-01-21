@@ -63,8 +63,9 @@ class CustomizedPieChart extends React.Component{
         this.setState({activeIndex: index});
     }
 	render () {
-        const {data, color, chartHeading} = this.props;
+        const {data, color} = this.props;
         return (
+            <Typography  variant="caption" gutterBottom align="center">
             <PieChart width={600} height={200}>
             <Pie 
                 activeIndex={this.state.activeIndex}
@@ -82,6 +83,7 @@ class CustomizedPieChart extends React.Component{
             }
             </Pie>
             </PieChart>
+            </Typography>
         );
     }
 }
