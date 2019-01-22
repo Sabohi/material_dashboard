@@ -1,4 +1,4 @@
-module.exports = {
+const stateData = {
     cardData:[
     {
         componentData: "CustomizedCard",
@@ -791,3 +791,4 @@ module.exports = {
     } // CustomShapeBarChart data end 
 }
 
+export default stateData;

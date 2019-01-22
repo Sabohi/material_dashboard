@@ -16,20 +16,15 @@ import DonutLargeOutlinedIcon from '@material-ui/icons/DonutLargeOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
-import * as dashboardData from './data';
-//import FontAwesome from './MyIcons.js';
+import stateData from './data';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardData: dashboardData.cardData,
-      lineChartData: dashboardData.lineChartData,
-      pieChartData: dashboardData.pieChartData,
-      tableData: dashboardData.tableData,
-      listData: dashboardData.listData,
-      CustomShapeBarChartData: dashboardData.CustomShapeBarChartData,
+      stateData
     };// state end
+    
   }// constructor close here
   
   render() {
