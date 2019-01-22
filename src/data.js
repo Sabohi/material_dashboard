@@ -1,4 +1,4 @@
-module.exports = {
+const stateData = {
     //Keep all data in external files
     cardData:[
     {
@@ -780,3 +780,4 @@ module.exports = {
 }
 
 
+export default stateData;
