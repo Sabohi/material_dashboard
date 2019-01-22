@@ -1,7 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import {PieChart, Pie, Sector,Cell} from 'recharts';
-// import CustomizedMenu from './Menu';
 
 const renderActiveShape = (props) => {
     console.log("subuhi");

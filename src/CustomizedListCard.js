@@ -5,13 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-import './SimpleTable.css';
-// import Typography from '@material-ui/core/Typography';
-// import FullScreenDialog from './FullScreenDialog';
 import CustomizedList from './CustomizedList';
-
-//For progress bar
-// import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   cardHeader: {

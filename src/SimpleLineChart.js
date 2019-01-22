@@ -1,7 +1,6 @@
 import React  from 'react';
 import Typography from '@material-ui/core/Typography';
 import { XAxis, YAxis, CartesianGrid, Tooltip, Area, AreaChart } from 'recharts';
-// import CustomizedMenu from './Menu';
 
 class SimpleLineChart extends React.Component{
 	render () {

@@ -6,9 +6,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-// import Typography from '@material-ui/core/Typography';
 import { AutoSizer, Column, SortDirection, Table } from 'react-virtualized';
-// import CustomizedMenu from './Menu';
 
 const styles = theme => ({
   table: {
