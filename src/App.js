@@ -21,10 +21,7 @@ import stateData from './data';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      stateData
-    };// state end
-    
+    this.state = stateData;
   }// constructor close here
   
   render() {
