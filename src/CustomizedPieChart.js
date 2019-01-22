@@ -4,8 +4,7 @@ import {PieChart, Pie, Sector,Cell} from 'recharts';
 // import CustomizedMenu from './Menu';
 
 const renderActiveShape = (props) => {
-    console.log("subuhi");
-    console.log(props);
+   
     const RADIAN = Math.PI / 180;
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
         fill, payload, percent, value } = props;
@@ -45,9 +44,9 @@ const renderActiveShape = (props) => {
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill}>{`${value}`}</text>
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill}>{value}</text>
         </g>
-    );
+    ); 
 };
   
 class CustomizedPieChart extends React.Component{

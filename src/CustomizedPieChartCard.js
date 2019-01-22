@@ -97,7 +97,7 @@ class CustomizedPieChartCard extends React.Component {
     return (
       
       <Card style={{marginTop:"40px",height: "350px"}}>
-          <CardHeader style={{padding:"20px",marginTop:"10px",textAlign:"right"}}
+          <CardHeader style={{padding:"20px",textAlign:"right"}}
           avatar={
             <Avatar 
             aria-label="Recipe" 

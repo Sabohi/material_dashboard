@@ -602,15 +602,15 @@ class App extends React.Component {
           [
             {
                 name: 'Critical',
-                value: 677
+                value: 680
             }, 
             {
                 name: 'Semi-Critical',
-                value: 988
+                value: 768
             },
             {
                 name: 'Non-Critical',
-                value: 988
+                value: 456
             }
           ],
           MenuData:{
@@ -632,7 +632,7 @@ class App extends React.Component {
           [
             {
                 name: 'Complaint',
-                value: 564
+                value: 565
             }, 
             {
                 name: 'Query',
