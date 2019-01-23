@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import FullScreenDialog from './FullScreenDialog';
 
 //For progress bar
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -81,7 +76,7 @@ const styles = theme => ({
   }
 });
 
-class CustomizedCard extends React.Component {
+class CustomizedCardContent extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -91,20 +86,7 @@ class CustomizedCard extends React.Component {
     const { classes } = this.props;
     
     return (
-      
-      <Card style={{marginTop:"20px"}}>
-        <CardHeader style={{padding:"6px",textAlign:"right"}}
-          avatar={
-            <Avatar aria-label="Recipe" style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} className={classes[this.props.linearBarColorPrimary]}>
-             {this.props.prePrimaryHeader.toString().charAt(0)}
-            </Avatar>
-          }
-          action={
-            <FullScreenDialog {...this.props.dialogData}/>
-          }
-          title={this.props.prePrimaryHeader}
-        />
-        <CardContent className={classes.cardHeader} style={{paddingBottom:"8px"}}>
+        <div className={classes.cardHeader} style={{paddingBottom:"8px"}}>
           <Typography component="h2">
             {this.props.primaryHeader}
             <span style={{float: 'right',fontWeight:600,fontSize:'1.2em'}}>
@@ -133,14 +115,13 @@ class CustomizedCard extends React.Component {
              {this.props.secondaryHeaderValus}
             </span>
           </Typography>
-        </CardContent>
-      </Card>
+        </div>
     );
   }
 }
 
-CustomizedCard.propTypes = {
+CustomizedCardContent.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CustomizedCard);
+export default withStyles(styles)(CustomizedCardContent);

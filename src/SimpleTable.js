@@ -190,7 +190,7 @@ function createData(columnData,propdata) {
 }
 
 
-function ReactVirtualizedTable(prop) {
+function SimpleTable(prop) {
   const rows = [];
   
   for (let i = 0; i < prop.data.length; i++) {
@@ -208,15 +208,9 @@ function ReactVirtualizedTable(prop) {
   return (
    
     <div style={{ height: 500, width: '100%' }}>
-      {/* <Typography variant="h6" gutterBottom component="h2">
-        {prop.tableHeading}
-          <span style={{float: 'right'}}>
-            <CustomizedMenu {...prop.MenuData}/>
-          </span>
-      </Typography> */}
        {table}
     </div>
   );
 }
 
-export default ReactVirtualizedTable;
+export default SimpleTable;

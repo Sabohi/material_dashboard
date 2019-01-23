@@ -13,7 +13,8 @@
     "react-scripts": "latest",
     "react-scrollbar": "latest",
     "react-virtualized": "latest",
-    "recharts": "latest"
+    "recharts": "latest",
+    "jss": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
