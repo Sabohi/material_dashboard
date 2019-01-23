@@ -23,9 +23,7 @@ import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 // for options
 import FullScreenDialog from './FullScreenDialog';
 import CustomizedMenu from './Menu';
-
 import dashboardData from './data';
-
 import RenderLayout from './RenderLayout';
 
 class App extends React.Component {
