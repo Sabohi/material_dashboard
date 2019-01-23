@@ -1,13 +1,13 @@
 import React from 'react';
 
-import CustomizedCardContainer from './CustomizedCardContainer';
+import CustomizedCardContainer from '../Components/CustomizedCardContainer';
 //Components supported in dashboard
-import SimpleTable from './SimpleTable';
-import SimpleLineChart from './SimpleLineChart';
-import CustomizedList from './CustomizedList';
-import CustomizedCardContent from './CustomizedCardContent';
-import CustomizedPieChart from './CustomizedPieChart';
-import CustomShapeBarChart from './CustomShapeBarChart';
+import SimpleTable from '../Components/SimpleTable';
+import SimpleLineChart from '../Components/SimpleLineChart';
+import CustomizedList from '../Components/CustomizedList';
+import CustomizedCardContent from '../Components/CustomizedCardContent';
+import CustomizedPieChart from '../Components/CustomizedPieChart';
+import CustomShapeBarChart from '../Components/CustomShapeBarChart';
 
 const RenderComponent = props => {
     // const { classes } = props; 

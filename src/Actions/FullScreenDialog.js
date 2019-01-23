@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ReactVirtualizedTable from './SimpleTable';
+import SimpleTable from '../Components/SimpleTable';
 
 const useStyles = makeStyles({
   appBar: {
@@ -57,9 +57,8 @@ function FullScreenDialog(props) {
           </Toolbar>
         </AppBar>
         <div style={{marginTop: "5px"}}>
-          <ReactVirtualizedTable {...props.tableData}/>
+          <SimpleTable {...props.tableData}/>
         </div>
-        
       </Dialog>
     </div>
   );

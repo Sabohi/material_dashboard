@@ -21,12 +21,12 @@ import ShowChartOutlinedIcon from '@material-ui/icons/ShowChartOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 
 // for options
-import FullScreenDialog from './FullScreenDialog';
-import CustomizedMenu from './Menu';
+import FullScreenDialog from './Actions/FullScreenDialog';
+import CustomizedMenu from './Actions/Menu';
 
-import dashboardData from './data';
+import dashboardData from './Data/data';
 
-import RenderLayout from './RenderLayout';
+import RenderLayout from './Render/RenderLayout';
 
 class App extends React.Component {
   constructor(props) {
