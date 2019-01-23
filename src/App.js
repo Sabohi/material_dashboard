@@ -4,8 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-//All icons available
+//All icons availableConfirmationNumber
 import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined';
+import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
 import DonutLargeOutlinedIcon from '@material-ui/icons/DonutLargeOutlined';
@@ -45,7 +46,7 @@ class App extends React.Component {
               key = {this.state.ticketStats.id}
               columns = "4"
               headerBackground= "secondaryClass3"
-              icon={<AspectRatioOutlinedIcon fontSize="large"/>}
+              icon={<ConfirmationNumberIcon fontSize="large"/>}
               action={<FullScreenDialog {...this.state.ticketStats.componentData.dialogData}/>}
               {...this.state.ticketStats.componentData}
               />
