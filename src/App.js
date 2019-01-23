@@ -20,12 +20,12 @@ import InsertEmoticonOutlinedIcon from '@material-ui/icons/InsertEmoticonOutline
 import ShowChartOutlinedIcon from '@material-ui/icons/ShowChartOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 
-// for options
+//Actions
 import FullScreenDialog from './Actions/FullScreenDialog';
 import CustomizedMenu from './Actions/Menu';
-
+//Data
 import dashboardData from './Data/data';
-
+//Rendering
 import RenderLayout from './Render/RenderLayout';
 
 class App extends React.Component {
