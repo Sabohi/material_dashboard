@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
+import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   cardHeader: {
@@ -86,7 +87,6 @@ class CustomizedCardContainer extends React.Component {
     const { classes } = this.props;
     
     return (
-      
       <Card style={{marginTop:"20px"}}>
         <CardHeader className={classes.cardHeader} style={{padding:"6px",textAlign:"right"}}
           avatar={
@@ -99,7 +99,11 @@ class CustomizedCardContainer extends React.Component {
             </Avatar>
           }
           action={this.props.action}
-          title={this.props.header}
+          title={
+            <Typography gutterBottom style={{fontSize: "1.15em"}}>
+            {this.props.header}
+            </Typography>
+          }
         />
         <CardContent className={this.props.cardHeader} style={{paddingBottom:"8px"}}>
         {this.props.body}

@@ -56,7 +56,7 @@ function FullScreenDialog(props) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <div style={{marginTop: "5px"}}>
+        <div style={{marginTop: "60px"}}>
           <SimpleTable {...props.tableData}/>
         </div>
       </Dialog>

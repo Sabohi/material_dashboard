@@ -3,11 +3,12 @@ import React from 'react';
 import CustomizedCardContainer from '../Components/CustomizedCardContainer';
 //Components supported in dashboard
 import SimpleTable from '../Components/SimpleTable';
-import SimpleLineChart from '../Components/SimpleLineChart';
+import ComposedAreaLineChart from '../Components/ComposedAreaLineChart';
 import CustomizedList from '../Components/CustomizedList';
 import CustomizedCardContent from '../Components/CustomizedCardContent';
 import CustomizedPieChart from '../Components/CustomizedPieChart';
 import CustomShapeBarChart from '../Components/CustomShapeBarChart';
+import VerticalBarChart from '../Components/VerticalBarChart';
 
 const RenderComponent = props => {
     // const { classes } = props; 
@@ -20,9 +21,9 @@ const RenderComponent = props => {
                 <SimpleTable {...props}/>
             );
         break;
-        case 'lineChart':
+        case 'areaLineChart':
             dashboardComponent = (
-                <SimpleLineChart {...props}/>
+                <ComposedAreaLineChart {...props}/>
             );
         break;
         case 'list':
@@ -35,10 +36,15 @@ const RenderComponent = props => {
                 <CustomizedPieChart {...props}/>
             );
         break;
-        case 'BarChart':
+        case 'customBarChart':
             dashboardComponent = (
                 <CustomShapeBarChart {...props}/>
             );
+        break;
+        case 'verticalBarChart':
+        dashboardComponent = (
+            <VerticalBarChart {...props}/>
+        );
         break;
         case 'data':
         dashboardComponent = (

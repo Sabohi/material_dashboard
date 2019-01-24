@@ -61,10 +61,10 @@ class CustomizedPieChart extends React.Component{
         this.setState({activeIndex: index});
     }
 	render () {
-        const {data, color} = this.props;
+        const {data, colors} = this.props;
         return (
             <Typography  variant="caption" gutterBottom align="center">
-            <PieChart width={600} height={200}>
+            <PieChart width={600} height={265}>
             <Pie 
                 activeIndex={this.state.activeIndex}
                 activeShape={renderActiveShape} 
@@ -77,7 +77,7 @@ class CustomizedPieChart extends React.Component{
                 onMouseEnter={this.onOuterPieEnter}
             >
             {
-                data.map((entry, index) => <Cell fill={color[index % color.length]}/>)
+                data.map((entry, index) => <Cell fill={colors[index % colors.length]}/>)
             }
             </Pie>
             </PieChart>

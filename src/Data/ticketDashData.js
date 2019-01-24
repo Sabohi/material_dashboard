@@ -1,4 +1,4 @@
-const dashboardData = {
+const ticketDashData = {
     "ticketStats":{
         id: "ticketStats",
         componentData:{
@@ -32,7 +32,7 @@ const dashboardData = {
                     },
                     {
                         width: 130,
-                        label: 'Departments',
+                        label: 'Department',
                         dataKey: 'assign_to_dept',
                         numeric: false,
                     },
@@ -117,11 +117,11 @@ const dashboardData = {
             }
         }
     },
-    "leadStats":{
-            id: "leadStats",
+    "escalationStats":{
+            id: "escalationStats",
             componentData:{
                 componentType: "data",
-                header: 'Leads',
+                header: 'Escalation',
                 primaryHeader: 'Total Leads Created',
                 primaryHeaderValus: 2005,
                 progressBarHeader: 'Converted',
@@ -132,7 +132,7 @@ const dashboardData = {
                 secondaryHeader: 'Total Tasks Created',
                 secondaryHeaderValus: 4009,
                 dialogData: {
-                dialogHeader: 'Lead Details',
+                dialogHeader: 'Escalation Details',
                 tableData:{
                     tableHeading: "",
                     columnData:[
@@ -156,7 +156,7 @@ const dashboardData = {
                         },
                         {
                             width: 120,
-                            label: 'Departments',
+                            label: 'Department',
                             dataKey: 'assign_to_dept_id',
                             numeric: true,
                         },
@@ -362,7 +362,7 @@ const dashboardData = {
                 linearColorPrimary: 'primaryClass4',
                 linearBarColorPrimary: 'secondaryClass4',
                 preSecondaryHeader: 'Active Users',
-                secondaryHeader: 'All Active Users',
+                secondaryHeader: 'All Loggedin Users',
                 secondaryHeaderValus: 250,
                 dialogData: {
                 dialogHeader: 'User Details',
@@ -383,7 +383,7 @@ const dashboardData = {
                         },
                         {
                             width: 200,
-                            label: 'Department Name',
+                            label: 'Department',
                             dataKey: 'department_name',
                             numeric: false,
                         },
@@ -450,37 +450,41 @@ const dashboardData = {
     "tickets":{
         id: "tickets",
         componentData:{
-            componentType: "lineChart",
-            header: "Tickets",
+            componentType: "areaLineChart",
+            header: "Ticket Created v/s Closed",
             headerBackground: 'secondaryClass3',
-            strokeColor: "#123316",
-            fillColor: "#367C3D",
+            areaStrokeColor: "#123316",
+            areaFillColor: "#367C3D",
+            lineStrokeColor: "#b50346",
+            lineFillColor: "#f973a5",
+            key1: "Tickets",
+            key2: "Closed",
             data: 
             [
-                {name: '12AM', Tickets: 4000},
-                {name: '1AM', Tickets: 5000},
-                {name: '2AM', Tickets: 4500},
-                {name: '3AM', Tickets: 3590},
-                {name: '4AM', Tickets: 8700},
-                {name: '5AM', Tickets: 6700},
-                {name: '6AM', Tickets: 4900},
-                {name: '7AM', Tickets: 5000},
-                {name: '8AM', Tickets: 4500},
-                {name: '9AM', Tickets: 3800},
-                {name: '10AM', Tickets: 6700},
-                {name: '11AM', Tickets: 4000},
-                {name: '12PM', Tickets: 5000},
-                {name: '1PM', Tickets: 4500},
-                {name: '2PM', Tickets: 3800},
-                {name: '3PM', Tickets: 8700},
-                {name: '4PM', Tickets: 8000},
-                {name: '5PM', Tickets: 6000},
-                {name: '6PM', Tickets: 7600},
-                {name: '7PM', Tickets: 4500},
-                {name: '8PM', Tickets: 6700},
-                {name: '9PM', Tickets: 4000},
-                {name: '10PM', Tickets: 5000},
-                {name: '11PM', Tickets: 4500},
+                {name: '12AM', Tickets: 4000, Closed: 2000},
+                {name: '1AM', Tickets: 5000, Closed: 1500},
+                {name: '2AM', Tickets: 4500, Closed: 3200},
+                {name: '3AM', Tickets: 3590, Closed: 1100},
+                {name: '4AM', Tickets: 8700, Closed: 2000},
+                {name: '5AM', Tickets: 6700, Closed: 2800},
+                {name: '6AM', Tickets: 4900, Closed: 4200},
+                {name: '7AM', Tickets: 5000, Closed: 4900},
+                {name: '8AM', Tickets: 4500, Closed: 3200},
+                {name: '9AM', Tickets: 3800, Closed: 2400},
+                {name: '10AM', Tickets: 6700, Closed: 5400},
+                {name: '11AM', Tickets: 4000, Closed: 3000},
+                {name: '12PM', Tickets: 5000, Closed: 4500},
+                {name: '1PM', Tickets: 4500, Closed: 3800},
+                {name: '2PM', Tickets: 3800, Closed: 3200},
+                {name: '3PM', Tickets: 8700, Closed: 7800},
+                {name: '4PM', Tickets: 8000, Closed: 6700},
+                {name: '5PM', Tickets: 6000, Closed: 5200},
+                {name: '6PM', Tickets: 7600, Closed: 6600},
+                {name: '7PM', Tickets: 4500, Closed: 3600},
+                {name: '8PM', Tickets: 6700, Closed: 6200},
+                {name: '9PM', Tickets: 4000, Closed: 3700},
+                {name: '10PM', Tickets: 5000, Closed: 3900},
+                {name: '11PM', Tickets: 4500, Closed: 4400},
             ],
             MenuData:{
                 options: [
@@ -494,91 +498,32 @@ const dashboardData = {
             }  
         }
     },
-    "leads":{
-        id: "leads",
-        componentData:{
-            componentType: "lineChart",
-            header: "Leads",
-            strokeColor: "#574B01",
-            fillColor: "#C1AB1F",
-            data: 
-            [
-                {name: '12AM', Leads: 4000},
-                {name: '1AM', Leads: 8000},
-                {name: '2AM', Leads: 8500},
-                {name: '3AM', Leads: 6500},
-                {name: '4AM', Leads: 7700},
-                {name: '5AM', Leads: 6600},
-                {name: '6AM', Leads: 4800},
-                {name: '7AM', Leads: 5000},
-                {name: '8AM', Leads: 4800},
-                {name: '9AM', Leads: 4800},
-                {name: '10AM', Leads: 2700},
-                {name: '11AM', Leads: 9000},
-                {name: '12PM', Leads: 8900},
-                {name: '1PM', Leads: 6500},
-                {name: '2PM', Leads: 7800},
-                {name: '3PM', Leads: 6300},
-                {name: '4PM', Leads: 9200},
-                {name: '5PM', Leads: 7800},
-                {name: '6PM', Leads: 4400},
-                {name: '7PM', Leads: 9900},
-                {name: '8PM', Leads: 4500},
-                {name: '9PM', Leads: 7300},
-                {name: '10PM', Leads: 5000},
-                {name: '11PM', Leads: 4800},
-            ],
-            MenuData:{
-                options: [
+    "ticketForecastData":{
+            id: "ticketForecastData",
+            componentData:{
+                componentType: "customBarChart",
+                dataKey: "tickets",
+                header: "Future Trends",
+                colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300',"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
+                data: [
+                    {name: '1 PM', tickets: 4000},
+                    {name: '2 PM', tickets: 3000},
+                    {name: '3 PM', tickets: 9800},
+                    {name: '4 PM', tickets: 2780},
+                    {name: '5 PM', tickets: 1890},
+                    {name: '6 PM', tickets: 2390},
+                    {name: '7 PM', tickets: 3490}
+                ],
+                MenuData:{
+                    options: [
                     'Today',
                     'Yesterday',
                     'Last 7 days',
                     'Last 30 days',
                     'This Month',
                     'Last Month',
-                ]
-            }
-        }
-    },
-    "statusWiseTickets":{
-            id: "statusWiseTickets",
-            componentData:{
-                componentType: "pieChart",
-                header: "Status Wise Tickets",
-                color: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300'],
-                data: 
-                [
-                    {
-                        name: 'NEW',
-                        value: 4700
-                    }, 
-                    {
-                        name: 'INPROGRESS',
-                        value: 7300
-                    },
-                    {
-                        name: 'CLOSED',
-                        value: 6300
-                    },
-                    {
-                        name: 'REOPEN',
-                        value: 900
-                    },
-                    {
-                        name: 'RESOLVED',
-                        value: 450
-                    },
-                ],
-                MenuData:{
-                    options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
                     ]
-                }  
+                }
             }
     },
     "priorityWiseTickets":{
@@ -586,7 +531,7 @@ const dashboardData = {
             componentData:{
                 componentType: "pieChart",
                 header: "Priority Wise Tickets",
-                color: ['#5B05A3','#0B8AB6','#B60B4E'],
+                colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300',"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
                 data: 
                 [
                     {
@@ -614,12 +559,37 @@ const dashboardData = {
                 }  
             }
     },
+    "statusWiseTickets":{
+        id: "statusWiseTickets",
+        componentData:{
+            componentType: "verticalBarChart",
+            header: "Status Wise Tickets",
+            colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300'],
+            data: [
+                {name: 'New', value: 590},
+                {name: 'Inprogress', value: 868},
+                {name: 'Closed', value: 1397},
+                {name: 'Reopen', value: 1480},
+                {name: 'Resolved', value: 1520}
+            ],
+            MenuData:{
+                options: [
+                    'Today',
+                    'Yesterday',
+                    'Last 7 days',
+                    'Last 30 days',
+                    'This Month',
+                    'Last Month',
+                ]
+            }  
+        }
+    },
     "tickeTypeWiseTickets":{
             id: "tickeTypeWiseTickets",
             componentData:{
                 componentType: "pieChart",
                 header: "Ticket Type Wise Tickets",
-                color: ['#006600','#7C8AEE','#cc0066'],
+                colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300',"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
                 data: 
                 [
                     {
@@ -698,47 +668,99 @@ const dashboardData = {
                 }  
             }
     },
-    "productData":{
-            id: "productData",
-            componentData:{
-                componentType: "table",
-                header: "Top Products",
-                columnData:[
-                    {
-                        width: 150,
-                        flexGrow: 1.0,
-                        label: 'Product Name',
-                        dataKey: 'param1',
-                    },
-                    {
-                        width: 100,
-                        label: 'Description',
-                        dataKey: 'param2',
-                        numeric: false,
-                    },
-                    {
-                        width: 130,
-                        label: 'Sales Amount',
-                        dataKey: 'param3',
-                        numeric: true,
-                    }
-                ],
-                data:[
-                    ['Product 1','Product 1 Description','2000'],
-                    ['Product 2','Product 2 Description','800'],
-                    ['Product 3','Product 3 Description','300']
-                ],
-                MenuData:{
-                    options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
-                    ]
-                }  
-            }
+    "issuesData":{
+        id: "issuesData",
+        componentData:{
+            componentType: "table",
+            header: "Top Issues",
+            columnData:[
+                {
+                    width: 150,
+                    flexGrow: 1.0,
+                    label: 'Docket no.',
+                    dataKey: 'docket_no',
+                },
+                {
+                    width: 120,
+                    label: 'Assign To',
+                    dataKey: 'assign_to',
+                    numeric: false,
+                },
+                {
+                    width: 100,
+                    label: 'Department',
+                    dataKey: 'assign_to_dept_name',
+                    numeric: false,
+                }
+            ],
+            data:[
+                ['T20190120148774','Vikas Kapoor','L1'],
+                ['T20190120148765','Nidhi Ranjan','L4'],
+                ['T20190120148754','Noumya Kumari','L3'],
+                ['T20190120148745','Jaipreet Kaur','L5'],
+                ['T20190120148745','Sabohi Zaidi','L2'],
+                ['T20190120148745','Sapna Kumari','L1'],
+                ['T20190120148745','Naveen Sharma','L5'],
+                ['T20190120148745','Kamlesh Tiwari','L3']
+            ],
+            MenuData:{
+                options: [
+                    'Today',
+                    'Yesterday',
+                    'Last 7 days',
+                    'Last 30 days',
+                    'This Month',
+                    'Last Month',
+                ]
+            }  
+        }
+    },
+    "issueClosersData":{
+        id: "issueClosersData",
+        componentData:{
+            componentType: "table",
+            header: "Top Issue Closers",
+            columnData:[
+                {
+                    width: 150,
+                    flexGrow: 1.0,
+                    label: 'Agent Name',
+                    dataKey: 'agent_name',
+                },
+                {
+                    width: 100,
+                    label: 'Department',
+                    dataKey: 'department',
+                    numeric: false,
+                },
+                {
+                    width: 80,
+                    label: 'Issues Closed',
+                    dataKey: 'issues_closed',
+                    numeric: true,
+                }
+            ],
+            data:[
+                ['Vikas Kapoor','L1',7],
+                ['Nidhi Ranjan','L4',6],
+                ['Noumya Kumari','L3',5],
+                ['Jaipreet Kaur','L5',4],
+                ['Sabohi Zaidi','L2',3],
+                ['Sapna Kumari','L1',3],
+                ['Naveen Sharma','L5',2],
+                ['Kamlesh Tiwari','L3',1]
+            ],
+            MenuData:{
+                options: [
+                    'Today',
+                    'Yesterday',
+                    'Last 7 days',
+                    'Last 30 days',
+                    'This Month',
+                    'Last Month',
+                ]
+            }  
+        }
     },
     "recentActivitiesTicket":{
             id: "recentActivitiesTicket",
@@ -782,33 +804,27 @@ const dashboardData = {
                 ]
             }
     },
-    "ticketForecastData":{
-            id: "ticketForecastData",
+    "toDo":{
+            id: "toDo",
             componentData:{
-                componentType: "BarChart",
-                header: "Future Trends",
-                colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"],
-                data: [
-                    {name: '1 PM', tickets: 4000, leads: 2400},
-                    {name: '2 PM', tickets: 3000, leads: 1398},
-                    {name: '3 PM', tickets: 9800, leads: 2000},
-                    {name: '4 PM', tickets: 2780, leads: 3908},
-                    {name: '5 PM', tickets: 1890, leads: 4800},
-                    {name: '6 PM', tickets: 2390, leads: 3800},
-                    {name: '7 PM', tickets: 3490, leads: 4300},
-                ],
-                MenuData:{
-                    options: [
-                    'Today',
-                    'Yesterday',
-                    'Last 7 days',
-                    'Last 30 days',
-                    'This Month',
-                    'Last Month',
-                    ]
-                }
+                componentType: "list",
+                header: "To-do List",
+                listItemsData:[
+                    {
+                        step: "Task 1",
+                        // date: "Jan 11, 2019"
+                    },
+                    {
+                        step: "Task 2",
+                        // date: "Jan 11, 2019"
+                    },
+                    {
+                        step: "Task 3",
+                        // date: "Jan 10, 2019"
+                    }
+                ]
             }
     }
 };
 
-export default dashboardData;
+export default ticketDashData;

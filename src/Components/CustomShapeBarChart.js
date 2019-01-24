@@ -20,15 +20,15 @@ class CustomShapeBarChart extends React.Component{
   	return (
         <Typography  variant="caption" gutterBottom align="center">
         <BarChart width={400} height={265} data={this.props.data}
-            margin={{top: 0, right: 60, left: 0, bottom: 0}}>
+            margin={{top: 10, right: 60, left: 0, bottom: 0}}>
         <XAxis dataKey="name"/>
         <YAxis/>
         <CartesianGrid strokeDasharray="3 3"/>
         <Tooltip/>
-        <Bar dataKey="tickets" fill="#8884d8" shape={<TriangleBar/>} label={{ position: 'top' }}>
+        <Bar dataKey={this.props.dataKey} fill="#8884d8" shape={<TriangleBar/>} label={{ position: 'top' }}>
             {
                 this.props.data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={this.props.colors[index % 20]}/>
+                <Cell key={`cell-${index}`} fill={this.props.colors[index % 10]}/>
                 ))
             }
         </Bar>

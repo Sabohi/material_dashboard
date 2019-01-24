@@ -206,8 +206,7 @@ function SimpleTable(prop) {
     />
   );
   return (
-   
-    <div style={{ height: 500, width: '100%' }}>
+    <div style={{ height: 660, width: '100%' }}>
        {table}
     </div>
   );
