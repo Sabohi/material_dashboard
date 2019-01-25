@@ -13,6 +13,7 @@
     "react-dom": "next",
     "react-page-progress": "latest",
     "react-scripts": "latest",
+    "react-scroll-up-button": "latest",
     "react-scrollbar": "latest",
     "react-virtualized": "latest",
     "recharts": "latest"
