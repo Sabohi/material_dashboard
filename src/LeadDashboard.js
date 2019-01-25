@@ -6,22 +6,16 @@ import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
-import DonutLargeOutlinedIcon from '@material-ui/icons/DonutLargeOutlined';
 import DonutSmallOutlinedIcon from '@material-ui/icons/DonutSmallOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
-// import AspectRatioOutlinedIcon from '@material-ui/icons/AspectRatioOutlined';
 import TimerOutlinedIcon from '@material-ui/icons/TimerOutlined';
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
-import InsertEmoticonOutlinedIcon from '@material-ui/icons/InsertEmoticonOutlined';
-// import ShowChartOutlinedIcon from '@material-ui/icons/ShowChartOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
 import ViewHeadlineOutlinedIcon from '@material-ui/icons/ViewHeadlineOutlined';
-
-import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
-import SentimentDissatisfiedOutlinedIcon from '@material-ui/icons/SentimentDissatisfiedOutlined';
+import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
 
 //Actions
 import FullScreenDialog from './Actions/FullScreenDialog';
@@ -82,7 +76,7 @@ class LeadDashboard extends React.Component {
                 key = {this.state.topLeads.id}
                 columns = "3"
                 headerBackground= "secondaryClass4"
-                icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
+                icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
                 action=""
                 {...this.state.topLeads.componentData}
               />
@@ -110,7 +104,7 @@ class LeadDashboard extends React.Component {
                 key = {this.state.topProductData.id}
                 columns = "3"
                 headerBackground= "secondaryClass1"
-                icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
+                icon={<ShoppingCartIcon fontSize="large"/>}
                 action=""
                 {...this.state.topProductData.componentData}
               />

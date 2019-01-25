@@ -122,14 +122,14 @@ const ticketDashData = {
             componentData:{
                 componentType: "data",
                 header: 'Escalation',
-                primaryHeader: 'Total Leads Created',
+                primaryHeader: 'Total Tickets Escalated',
                 primaryHeaderValus: 2005,
-                progressBarHeader: 'Converted',
+                progressBarHeader: 'Escalation Rate',
                 progressBarValue: 54,
                 linearColorPrimary: 'primaryClass2',
                 linearBarColorPrimary: 'secondaryClass2',
                 preSecondaryHeader: 'Tasks',
-                secondaryHeader: 'Total Tasks Created',
+                secondaryHeader: 'Total Tasks Escalated',
                 secondaryHeaderValus: 4009,
                 dialogData: {
                 dialogHeader: 'Escalation Details',
@@ -672,7 +672,7 @@ const ticketDashData = {
         id: "issuesData",
         componentData:{
             componentType: "table",
-            header: "Top Issues",
+            header: "SLA Breached Issues",
             columnData:[
                 {
                     width: 150,

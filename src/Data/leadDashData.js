@@ -122,14 +122,14 @@ const leadDashData = {
         componentData:{
             componentType: "data",
             header: 'Escalation',
-            primaryHeader: 'Total Leads Created',
+            primaryHeader: 'Total Leads Escalated',
             primaryHeaderValus: 2005,
-            progressBarHeader: 'Converted',
+            progressBarHeader: 'Escalation rate',
             progressBarValue: 54,
             linearColorPrimary: 'primaryClass2',
             linearBarColorPrimary: 'secondaryClass2',
             preSecondaryHeader: 'Tasks',
-            secondaryHeader: 'Total Tasks Created',
+            secondaryHeader: 'Total Tasks Escalated',
             secondaryHeaderValus: 4009,
             dialogData: {
             dialogHeader: 'Escalation Details',
@@ -362,7 +362,7 @@ const leadDashData = {
                 linearColorPrimary: 'primaryClass4',
                 linearBarColorPrimary: 'secondaryClass4',
                 preSecondaryHeader: 'Active Users',
-                secondaryHeader: 'All Active Users',
+                secondaryHeader: 'All Loggedin Users',
                 secondaryHeaderValus: 250,
                 dialogData: {
                 dialogHeader: 'User Details',
@@ -451,7 +451,7 @@ const leadDashData = {
         id: "leads",
         componentData:{
             componentType: "areaLineChart",
-            header: "Leads",
+            header: "Leads Created v/s Converted",
             areaStrokeColor: "#574B01",
             areaFillColor: "#C1AB1F",
             lineStrokeColor: "#b50346",
@@ -678,33 +678,39 @@ const leadDashData = {
             header: "Top Leads",
             columnData:[
                 {
-                    width: 150,
+                    width: 155,
                     flexGrow: 1.0,
                     label: 'Lead no.',
                     dataKey: 'lead_no',
                 },
                 {
-                    width: 120,
-                    label: 'Assign To',
-                    dataKey: 'assign_to',
+                    width: 100,
+                    label: 'Agent Name',
+                    dataKey: 'agent_name',
                     numeric: false,
                 },
                 {
                     width: 100,
-                    label: 'Department',
-                    dataKey: 'assign_to_dept_name',
+                    label: 'Client',
+                    dataKey: 'client',
+                    numeric: false,
+                },
+                {
+                    width: 90,
+                    label: 'Sales Amount',
+                    dataKey: 'sales_amount',
                     numeric: false,
                 }
             ],
             data:[
-                ['L20190120148745','Jaipreet Kaur','L5'],
-                ['L20190120148745','Sabohi Zaidi','L2'],
-                ['L20190120148745','Kamlesh Tiwari','L3'],
-                ['L20190120148745','Sapna Kumari','L1'],
-                ['L20190120148745','Naveen Sharma','L5'],
-                ['L20190120148774','Vikas Kapoor','L1'],
-                ['L20190120148765','Nidhi Ranjan','L4'],
-                ['L20190120148754','Noumya Kumari','L3']
+                ['L20190120148745','Vikas Kapoor','Magus','800000'],
+                ['L20190120148745','Sabohi Zaidi','Limeraod','730000'],
+                ['L20190120148745','Kamlesh Tiwari','OYO','710000'],
+                ['L20190120148745','Sapna Kumari','TVS','650000'],
+                ['L20190120148745','Naveen Sharma','Sundarm','530000'],
+                ['L20190120148774','Vikas Kapoor','Mafil','440000'],
+                ['L20190120148765','Nidhi Ranjan','GST','360000'],
+                ['L20190120148754','Noumya Kumari','Infozen','250000']
             ],
             MenuData:{
                 options: [
@@ -744,9 +750,9 @@ const leadDashData = {
                     }
                 ],
                 data:[
-                    ['Product 1','Vikas Kapoor','2000'],
-                    ['Product 2','Narmada Khurana','800'],
-                    ['Product 3','Sabohi Zaidi','300']
+                    ['CRM','Vikas Kapoor','2000000'],
+                    ['Dialer','Narmada Khurana','1800000'],
+                    ['IVR','Sabohi Zaidi','1300000']
                 ],
                 MenuData:{
                     options: [

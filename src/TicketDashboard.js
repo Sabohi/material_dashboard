@@ -4,18 +4,13 @@ import Grid from '@material-ui/core/Grid';
 //All icons availableConfirmationNumber
 import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
-import DonutLargeOutlinedIcon from '@material-ui/icons/DonutLargeOutlined';
 import DonutSmallOutlinedIcon from '@material-ui/icons/DonutSmallOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
-// import AspectRatioOutlinedIcon from '@material-ui/icons/AspectRatioOutlined';
 import TimerOutlinedIcon from '@material-ui/icons/TimerOutlined';
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
-import InsertEmoticonOutlinedIcon from '@material-ui/icons/InsertEmoticonOutlined';
-// import ShowChartOutlinedIcon from '@material-ui/icons/ShowChartOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
 import ViewHeadlineOutlinedIcon from '@material-ui/icons/ViewHeadlineOutlined';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell} from 'recharts';
 
 // const VerticalBarchart = React.createClass({ See why error in this
 class VerticalBarChart extends React.Component{
