@@ -7,14 +7,15 @@
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
     "axios": "latest",
+    "jss": "latest",
     "prop-types": "latest",
     "react": "next",
     "react-dom": "next",
+    "react-page-progress": "latest",
     "react-scripts": "latest",
     "react-scrollbar": "latest",
     "react-virtualized": "latest",
-    "recharts": "latest",
-    "jss": "latest"
+    "recharts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

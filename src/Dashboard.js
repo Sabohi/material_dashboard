@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import TicketDashboard from './TicketDashboard';
 import LeadDashboard from './LeadDashboard';
-
+import PageProgress from 'react-page-progress';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +30,7 @@ function Dashboard() {
 
   return (
     <div className={classes.root}>
+      <PageProgress color={'red'} height={69} />
       <AppBar position="fixed" >
           <Toolbar>
             <Typography variant="h6" color="inherit" style={{float: 'left'}}>
