@@ -29,8 +29,8 @@ class CustomizedList extends React.Component{
     render(){
         const { classes, listItemsData} = this.props;
        
-        let listItems = listItemsData.map(FormElement => (
-            <ListItem>
+        let listItems = listItemsData.map((FormElement,index) => (
+            <ListItem key={index}>
                 <Icon className={classes.iconHover} color="error" style={{ fontSize: 30 }}>
                     +
                 </Icon>
