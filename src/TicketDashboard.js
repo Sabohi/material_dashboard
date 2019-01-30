@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 
 //Data
 import ticketDashData from './Data/ticketDashData';
@@ -15,9 +14,7 @@ class TicketDashboard extends React.Component {
 
   render() {
     return (
-      <Grid container style={{marginTop:"7px"}}> 
-        <TicketGridList {...this.state} />
-      </Grid>
+      <TicketGridList {...this.state} />
     );
   }
 }

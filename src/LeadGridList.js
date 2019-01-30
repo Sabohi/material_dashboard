@@ -26,7 +26,8 @@ import RenderLayout from './Render/RenderLayout';
 
 const LeadGridList = props => {
     return(
-        <Grid container spacing={24} justify="space-between">
+        <Grid container style={{marginTop:"7px"}}> 
+            <Grid container spacing={24} justify="space-between">
             <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={24}>
                     <RenderLayout
@@ -159,6 +160,7 @@ const LeadGridList = props => {
                     />
                     </Grid>
             </Grid>
+        </Grid>
         </Grid>
     );
 }
