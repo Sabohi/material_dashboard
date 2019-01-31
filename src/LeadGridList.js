@@ -33,23 +33,23 @@ const LeadGridList = props => {
                     <RenderLayout
                     key = {props.leadStats.id}
                     columns = "4"
-                    headerBackground= "secondaryClass3"
+                    headerBackground= "color6"
                     icon={<ConfirmationNumberIcon fontSize="large"/>}
                     action={<FullScreenDialog {...props.leadStats.componentData.dialogData}/>}
                     {...props.leadStats.componentData}
                     />
                     <RenderLayout
-                    key = {props.escalationStats.id}
+                    key = {props.taskStats.id}
                     columns = "4"
-                    headerBackground= "secondaryClass2"
+                    headerBackground= "color4"
                     icon={<TimerOutlinedIcon fontSize="large"/>}
-                    action={<FullScreenDialog {...props.escalationStats.componentData.dialogData}/>}
-                    {...props.escalationStats.componentData}
+                    action={<FullScreenDialog {...props.taskStats.componentData.dialogData}/>}
+                    {...props.taskStats.componentData}
                     />
                     <RenderLayout
                         key = {props.mailStats.id}
                         columns = "4"
-                        headerBackground= "secondaryClass3"
+                        headerBackground= "color6"
                         icon={<MailOutlinedIcon fontSize="large"/>}
                         action={<FullScreenDialog {...props.mailStats.componentData.dialogData}/>}
                         {...props.mailStats.componentData}
@@ -57,19 +57,19 @@ const LeadGridList = props => {
                     <RenderLayout
                         key = {props.userStats.id}
                         columns = "4"
-                        headerBackground= "secondaryClass4"
+                        headerBackground= "color8"
                         icon={<PeopleOutlinedIcon fontSize="large"/>}
                         action={<FullScreenDialog {...props.userStats.componentData.dialogData}/>}
                         {...props.userStats.componentData}
                     />
                 </Grid>
-                </Grid>
+            </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
             <Grid container spacing={24}>
                 <RenderLayout
                 key = {props.topLeads.id}
                 columns = "3"
-                headerBackground= "secondaryClass4"
+                headerBackground= "color8"
                 icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
                 action=""
                 {...props.topLeads.componentData}
@@ -79,7 +79,7 @@ const LeadGridList = props => {
                     <RenderLayout
                     key = {props.leads.id}
                     columns = "1"
-                    headerBackground= "secondaryClass3"
+                    headerBackground= "color6"
                     icon={<TimelineOutlinedIcon fontSize="large"/>}
                     action={<CustomizedMenu {...props.leads.componentData.MenuData}/>}
                     {...props.leads.componentData}
@@ -87,7 +87,7 @@ const LeadGridList = props => {
                     <RenderLayout
                     key = {props.leadForecastData.id}
                     columns = "1"
-                    headerBackground= "secondaryClass2"
+                    headerBackground= "color4"
                     icon={<BarChartOutlinedIcon fontSize="large"/>}
                     action=""
                     {...props.leadForecastData.componentData}
@@ -97,7 +97,7 @@ const LeadGridList = props => {
                 <RenderLayout
                 key = {props.topProductData.id}
                 columns = "3"
-                headerBackground= "secondaryClass1"
+                headerBackground= "color2"
                 icon={<ShoppingCartIcon fontSize="large"/>}
                 action=""
                 {...props.topProductData.componentData}
@@ -109,7 +109,7 @@ const LeadGridList = props => {
                 <RenderLayout
                     key = {props.stateWiseLeads.id}
                     columns = "3"
-                    headerBackground= "secondaryClass1"
+                    headerBackground= "color2"
                     icon={<DonutSmallOutlinedIcon fontSize="large"/>}
                     action={<CustomizedMenu {...props.stateWiseLeads.componentData.MenuData}/>}
                     {...props.stateWiseLeads.componentData}
@@ -117,7 +117,7 @@ const LeadGridList = props => {
                 <RenderLayout
                     key = {props.statusWiseLeads.id}
                     columns = "3"
-                    headerBackground= "secondaryClass4"
+                    headerBackground= "color8"
                     icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
                     action={<CustomizedMenu {...props.statusWiseLeads.componentData.MenuData}/>}
                     {...props.statusWiseLeads.componentData}
@@ -125,7 +125,7 @@ const LeadGridList = props => {
                 <RenderLayout
                     key = {props.dispositionWiseLeads.id}
                     columns = "3"
-                    headerBackground= "secondaryClass3"
+                    headerBackground= "color6"
                     icon={<AllOutOutlinedIcon fontSize="large"/>}
                     action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.MenuData}/>}
                     {...props.dispositionWiseLeads.componentData}

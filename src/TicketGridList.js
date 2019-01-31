@@ -40,12 +40,12 @@ const TicketGridList = (props,index) => {
             {...props.ticketStats.componentData}
             />
             <RenderLayout
-              key = {props.escalationStats.id}
+              key = {props.taskStats.id}
               columns = "4"
               headerBackground= "color4"
               icon={<TimerOutlinedIcon fontSize="large"/>}
-              action={<FullScreenDialog {...props.escalationStats.componentData.dialogData}/>}
-              {...props.escalationStats.componentData}
+              action={<FullScreenDialog {...props.taskStats.componentData.dialogData}/>}
+              {...props.taskStats.componentData}
             />
             <RenderLayout
                 key = {props.mailStats.id}

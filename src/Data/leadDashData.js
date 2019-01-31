@@ -6,13 +6,18 @@ const leadDashData = {
                 header: 'Leads',
                 primaryHeader: 'Total Leads Created',
                 primaryHeaderValus: 2005,
-                progressBarHeader: 'Converted',
-                progressBarValue: 54,
-                linearColorPrimary: 'primaryClass2',
-                linearBarColorPrimary: 'secondaryClass2',
-                preSecondaryHeader: 'Tasks',
-                secondaryHeader: 'Total Tasks Created',
-                secondaryHeaderValus: 4009,
+                primaryProgressBarHeader: 'Converted',
+                primaryProgressBarValue: 1010,
+                primaryProgressBarValueRate: 54,
+                primaryLinearColorPrimary: 'color1',
+                primaryLinearBarColorPrimary: 'color2',
+                secondaryHeader: 'Total Leads Escalated',
+                secondaryHeaderValues: 6999,
+                secondaryProgressBarHeader: 'Escalation Rate',
+                secondaryProgressBarValue: 6023,
+                secondaryProgressBarValueRate: 85,
+                secondaryLinearColorPrimary: 'color9',
+                secondaryLinearBarColorPrimary: 'color10',
                 dialogData: {
                 dialogHeader: 'Lead Details',
                 tableData:{
@@ -117,20 +122,25 @@ const leadDashData = {
                 }
             }
     },
-    "escalationStats":{
-        id: "escalationStats",
+    "taskStats":{
+        id: "taskStats",
         componentData:{
             componentType: "data",
-            header: 'Escalation',
-            primaryHeader: 'Total Leads Escalated',
+            header: 'Tasks',
+            primaryHeader: 'Total Tasks Cretead',
             primaryHeaderValus: 2005,
-            progressBarHeader: 'Escalation rate',
-            progressBarValue: 54,
-            linearColorPrimary: 'primaryClass2',
-            linearBarColorPrimary: 'secondaryClass2',
-            preSecondaryHeader: 'Tasks',
+            primaryProgressBarHeader: 'Closed',
+            primaryProgressBarValue: 999,
+            primaryProgressBarValueRate: 54,
+            primaryLinearColorPrimary: 'color3',
+            primaryLinearBarColorPrimary: 'color4',
             secondaryHeader: 'Total Tasks Escalated',
-            secondaryHeaderValus: 4009,
+            secondaryHeaderValues: 4009,
+            secondaryProgressBarHeader: 'Escalation Rate',
+            secondaryProgressBarValue: 2044,
+            secondaryProgressBarValueRate: 48,
+            secondaryLinearColorPrimary: 'color11',
+            secondaryLinearBarColorPrimary: 'color12',
             dialogData: {
             dialogHeader: 'Escalation Details',
             tableData:{
@@ -234,7 +244,7 @@ const leadDashData = {
             },// table data
             }
         }
-    },  
+}, 
     "mailStats":{
         id: "mailStats",
             componentData:{
@@ -242,13 +252,19 @@ const leadDashData = {
                 header: 'Mails',
                 primaryHeader: 'Total Mails Received',
                 primaryHeaderValus: 5010,
-                progressBarHeader: 'Mails Replied',
-                progressBarValue: 69,
-                linearColorPrimary: 'primaryClass3',
-                linearBarColorPrimary: 'secondaryClass3',
+                primaryProgressBarHeader: 'Mails Replied',
+                primaryProgressBarValue: 3098,
+                primaryProgressBarValueRate: 69,
+                primaryLinearColorPrimary: 'color5',
+                primaryLinearBarColorPrimary: 'color6',
                 preSecondaryHeader: 'Fresh Mails',
                 secondaryHeader: 'Total Fresh Mails Received',
-                secondaryHeaderValus: 1099,
+                secondaryHeaderValues: 1099,
+                secondaryProgressBarHeader: 'Fresh Mails Replied',
+                secondaryProgressBarValue: 987,
+                secondaryProgressBarValueRate: 66,
+                secondaryLinearColorPrimary: 'color13',
+                secondaryLinearBarColorPrimary: 'color14',
                 dialogData: {
                     dialogHeader: 'Mail Details',
                     tableData:{
@@ -351,101 +367,105 @@ const leadDashData = {
             }
     },
     "userStats":{
-            id: "userStats",
-            componentData:{
-                componentType: "data",
-                header: 'Users',
-                primaryHeader: 'All Users',
-                primaryHeaderValus: 276,
-                progressBarHeader: 'Active Users',
-                progressBarValue: 90,
-                linearColorPrimary: 'primaryClass4',
-                linearBarColorPrimary: 'secondaryClass4',
-                preSecondaryHeader: 'Active Users',
-                secondaryHeader: 'All Loggedin Users',
-                secondaryHeaderValus: 250,
-                dialogData: {
-                dialogHeader: 'User Details',
-                tableData:{
-                    tableHeading: "",
-                    columnData:[
-                        {
-                            width: 100,
-                            flexGrow: 0.2,
-                            label: 'Status',
-                            dataKey: 'status',
-                        },
-                        {
-                            width: 100,
-                            label: 'User Name',
-                            dataKey: 'user_name',
-                            numeric: false,
-                        },
-                        {
-                            width: 200,
-                            label: 'Department Name',
-                            dataKey: 'department_name',
-                            numeric: false,
-                        },
-                        {
-                            width: 170,
-                            label: 'First Name',
-                            dataKey: 'first_name',
-                            numeric: false,
-                        },
-                        {
-                            width: 170,
-                            label: 'Last Name',
-                            dataKey: 'last_name',
-                            numeric: true,
-                        },
-                        {
-                            width: 200,
-                            label: 'Mobile Number',
-                            dataKey: 'mobile_no',
-                            numeric: false,
-                        },
-                        {
-                            width: 200,
-                            label: 'Email',
-                            dataKey: 'email',
-                            numeric: false,
-                        },
-                        {
-                            width: 170,
-                            label: 'Role Name',
-                            dataKey: 'role_name',
-                            numeric: true,
-                        }
-                    ],
-                    data:[
-                        ['ACTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
-                        ['ACTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
-                        ['ACTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
-                        ['ACTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
-                        ['ACTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
-                        ['ACTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
-                        ['ACTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
-                        ['ACTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
-                        ['ACTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
-                        ['ACTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
-                        ['ACTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
-                        ['ACTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
-                        ['ACTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
-                    ],
-                    MenuData:{
-                        options: [
-                            'Today',
-                            'Yesterday',
-                            'Last 7 days',
-                            'Last 30 days',
-                            'This Month',
-                            'Last Month',
-                        ]
-                    } 
-                },// table data
-                }
+        id: "userStats",
+        componentData:{
+            componentType: "data",
+            header: 'Users',
+            primaryHeader: 'All Users',
+            primaryHeaderValus: 276,
+            primaryProgressBarHeader: 'Active Users',
+            primaryProgressBarValue: 90,
+            primaryLinearColorPrimary: 'color7',
+            primaryLinearBarColorPrimary: 'color8',
+            secondaryHeader: 'All Loggedin Users',
+            secondaryHeaderValues: 250,
+            secondaryProgressBarHeader: 'Blocked Users',
+            secondaryProgressBarValue: 27,
+            secondaryProgressBarValueRate: 10,
+            secondaryLinearColorPrimary: 'color15',
+            secondaryLinearBarColorPrimary: 'color16',
+            dialogData: {
+            dialogHeader: 'User Details',
+            tableData:{
+                tableHeading: "",
+                columnData:[
+                    {
+                        width: 100,
+                        flexGrow: 0.2,
+                        label: 'Status',
+                        dataKey: 'status',
+                    },
+                    {
+                        width: 100,
+                        label: 'User Name',
+                        dataKey: 'user_name',
+                        numeric: false,
+                    },
+                    {
+                        width: 200,
+                        label: 'Department',
+                        dataKey: 'department_name',
+                        numeric: false,
+                    },
+                    {
+                        width: 170,
+                        label: 'First Name',
+                        dataKey: 'first_name',
+                        numeric: false,
+                    },
+                    {
+                        width: 170,
+                        label: 'Last Name',
+                        dataKey: 'last_name',
+                        numeric: true,
+                    },
+                    {
+                        width: 200,
+                        label: 'Mobile Number',
+                        dataKey: 'mobile_no',
+                        numeric: false,
+                    },
+                    {
+                        width: 200,
+                        label: 'Email',
+                        dataKey: 'email',
+                        numeric: false,
+                    },
+                    {
+                        width: 170,
+                        label: 'Role Name',
+                        dataKey: 'role_name',
+                        numeric: true,
+                    }
+                ],
+                data:[
+                    ['ACTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
+                    ['ACTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
+                    ['ACTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
+                    ['ACTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
+                    ['ACTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
+                    ['ACTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
+                    ['ACTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
+                    ['ACTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
+                    ['ACTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
+                    ['ACTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
+                    ['ACTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
+                    ['ACTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
+                    ['ACTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
+                ],
+                MenuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
+            },// table data
             }
+        }
     },
     "leads":{
         id: "leads",

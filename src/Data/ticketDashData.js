@@ -5,16 +5,16 @@ const ticketDashData = {
             componentType: "data",
             header: 'Tickets',
             primaryHeader: 'Total Tickets Created',
-            primaryHeaderValus: 3099,
+            primaryHeaderValus: 6099,
             primaryProgressBarHeader: 'Closed',
             primaryProgressBarValue: 3045,
             primaryProgressBarValueRate: 78,
             primaryLinearColorPrimary: 'color1',
             primaryLinearBarColorPrimary: 'color2',
             secondaryHeader: 'Total Tickets Escalated',
-            secondaryHeaderValues: 6999,
+            secondaryHeaderValues: 2999,
             secondaryProgressBarHeader: 'Escalation Rate',
-            secondaryProgressBarValue: 6023,
+            secondaryProgressBarValue: 2999,
             secondaryProgressBarValueRate: 85,
             secondaryLinearColorPrimary: 'color9',
             secondaryLinearBarColorPrimary: 'color10',
@@ -122,12 +122,12 @@ const ticketDashData = {
             }
         }
     },
-    "escalationStats":{
-            id: "escalationStats",
+    "taskStats":{
+            id: "taskStats",
             componentData:{
                 componentType: "data",
                 header: 'Tasks',
-                primaryHeader: 'Total Tasks Creted',
+                primaryHeader: 'Total Tasks Created',
                 primaryHeaderValus: 2005,
                 primaryProgressBarHeader: 'Closed',
                 primaryProgressBarValue: 999,
