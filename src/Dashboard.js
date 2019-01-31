@@ -1,6 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-
 // import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -19,6 +17,26 @@ const useStyles = makeStyles(theme => ({
     // backgroundColor: theme.palette.background.paper,  //Check why it is giving error 
     // backgroundColor: "green", 
   },
+  grow: {
+    flexGrow: 1,
+  },
+  tabs: {
+    color: 'white',
+    marginBottom: '-15px',
+  },
+  tabRoot: {
+    fontWeight:'800 !important',
+  },
+  tabContent: {
+    padding: '10px',
+    marginTop: '70px',
+  },
+  tabsIndicator: {
+    backgroundColor: '#f5f5f5 !important',
+  },
+  tabsRoot: {
+    borderBottom: '1px solid #e8e8e8',
+  },
 }));
 
 function Dashboard() {
@@ -35,24 +53,25 @@ function Dashboard() {
         EasingType="easeInOutCubic"
         AnimationDuration={70}
       />
-      <PageProgress color={'red'} height={69} />
+      <PageProgress color={'red'} height={68} />
       <AppBar position="fixed" >
           <Toolbar>
-            <Typography variant="h6" color="inherit" style={{float: 'left'}}>
+            <Typography variant="h6" color="inherit" className={classes.grow} >
               ADMIN DASHBOARD
             </Typography>
-          </Toolbar>
+            <Typography variant="h6">
+            <Tabs  classes={{indicator: classes.tabsIndicator}} value={value} className={classes.tabs} onChange={handleChange}>
+            <Tab className={classes.tabRoot} disableRipple label="Ticket Dashboard" />
+            <Tab className={classes.tabRoot} disableRipple label="Lead Dashboard" />
+            </Tabs>
+            </Typography>
+          </Toolbar>         
       </AppBar>
-      <Grid container style={{marginTop:"70px", justifyContent: "flex-end"}}>
-        <Tabs value={value} onChange={handleChange} style={{color: "#657af1"}}>
-          <Tab label="Ticket Dashboard" />
-          <Tab label="Lead Dashboard" />
-        </Tabs>
-        <div>
+        <div className={classes.tabContent}>
           {value === 0 && <TicketDashboard/>}
           {value === 1 && <LeadDashboard/>}
         </div>
-      </Grid>
+  
     </div>
   );
 }
