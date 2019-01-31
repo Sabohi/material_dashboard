@@ -17,7 +17,7 @@ class CustomizedCardContent extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    console.log('subuhi',classes[this.props.primaryLinearColorPrimary]);
+    // console.log('subuhi',classes[this.props.primaryLinearColorPrimary]);
     return (
         <div className={classes.cardHeader} style={{paddingBottom:"8px"}}>
           <Typography component="h2">

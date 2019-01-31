@@ -33,6 +33,7 @@ const TicketGridList = (props,index) => {
           <Grid container spacing={24}>
             <RenderLayout
             key = {props.ticketStats.id}
+            dataKey = {props.ticketStats.id}
             columns = "4"
             headerBackground= "color2"
             icon={<ConfirmationNumberIcon fontSize="large"/>}
@@ -41,6 +42,7 @@ const TicketGridList = (props,index) => {
             />
             <RenderLayout
               key = {props.taskStats.id}
+              dataKey = {props.taskStats.id}
               columns = "4"
               headerBackground= "color4"
               icon={<TimerOutlinedIcon fontSize="large"/>}
@@ -49,6 +51,7 @@ const TicketGridList = (props,index) => {
             />
             <RenderLayout
                 key = {props.mailStats.id}
+                dataKey = {props.mailStats.id}
                 columns = "4"
                 headerBackground= "color6"
                 icon={<MailOutlinedIcon fontSize="large"/>}
@@ -57,6 +60,7 @@ const TicketGridList = (props,index) => {
               />
               <RenderLayout
                 key = {props.userStats.id}
+                dataKey = {props.userStats.id}
                 columns = "4"
                 headerBackground= "color8"
                 icon={<PeopleOutlinedIcon fontSize="large"/>}
@@ -69,6 +73,7 @@ const TicketGridList = (props,index) => {
           <Grid container spacing={24}>
             <RenderLayout
               key = {props.issuesData.id}
+              dataKey = {props.issuesData.id}
               columns = "3"
               headerBackground= "color8"
               icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
@@ -79,6 +84,7 @@ const TicketGridList = (props,index) => {
               <Grid container spacing={24}>
                 <RenderLayout
                   key = {props.tickets.id}
+                  dataKey = {props.tickets.id}
                   columns = "1"
                   headerBackground= "color6"
                   icon={<TimelineOutlinedIcon fontSize="large"/>}
@@ -87,6 +93,7 @@ const TicketGridList = (props,index) => {
                 />
                 <RenderLayout
                   key = {props.ticketForecastData.id}
+                  dataKey = {props.ticketForecastData.id}
                   columns = "1"
                   headerBackground= "color4"
                   icon={<BarChartOutlinedIcon fontSize="large"/>}
@@ -97,6 +104,7 @@ const TicketGridList = (props,index) => {
             </Grid>
             <RenderLayout
               key = {props.issueClosersData.id}
+              dataKey = {props.issueClosersData.id}
               columns = "3"
               headerBackground= "color2"
               icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
@@ -109,6 +117,7 @@ const TicketGridList = (props,index) => {
           <Grid container spacing={24}> 
               <RenderLayout
                 key = {props.priorityWiseTickets.id}
+                dataKey = {props.priorityWiseTickets.id}
                 columns = "3"
                 headerBackground= "color2"
                 icon={<DonutSmallOutlinedIcon fontSize="large"/>}
@@ -117,6 +126,7 @@ const TicketGridList = (props,index) => {
               />
               <RenderLayout
                 key = {props.statusWiseTickets.id}
+                dataKey = {props.statusWiseTickets.id}
                 columns = "3"
                 headerBackground= "color8"
                 icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
@@ -125,6 +135,7 @@ const TicketGridList = (props,index) => {
               />
               <RenderLayout
                 key = {props.tickeTypeWiseTickets.id}
+                dataKey = {props.tickeTypeWiseTickets.id}
                 columns = "3"
                 headerBackground= "color6"
                 icon={<AllOutOutlinedIcon fontSize="large"/>}
@@ -137,6 +148,7 @@ const TicketGridList = (props,index) => {
           <Grid container spacing={24}> 
               <RenderLayout
                 key = {props.recentActivitiesTicket.id}
+                dataKey = {props.recentActivitiesTicket.id}
                 columns = "3"
                 headerBackground= "secondaryClass3"
                 icon={<FormatShapesOutlinedIcon fontSize="large"/>}
@@ -145,6 +157,7 @@ const TicketGridList = (props,index) => {
               />
               <RenderLayout
                 key = {props.recentNotifications.id}
+                dataKey = {props.recentNotifications.id}
                 columns = "3"
                 headerBackground= "secondaryClass2"
                 icon={<NotificationsOutlinedIcon fontSize="large"/>}
@@ -153,6 +166,7 @@ const TicketGridList = (props,index) => {
               />
               <RenderLayout
                 key = {props.toDo.id}
+                dataKey = {props.toDo.id}
                 columns = "3"
                 headerBackground= "secondaryClass1"
                 icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}

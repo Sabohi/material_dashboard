@@ -9,11 +9,11 @@ import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
 import DonutSmallOutlinedIcon from '@material-ui/icons/DonutSmallOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import TimerOutlinedIcon from '@material-ui/icons/TimerOutlined';
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
+// import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+// import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
-import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
+// import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
 import ViewHeadlineOutlinedIcon from '@material-ui/icons/ViewHeadlineOutlined';
 import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
 
@@ -32,6 +32,7 @@ const LeadGridList = props => {
                 <Grid container spacing={24}>
                     <RenderLayout
                     key = {props.leadStats.id}
+                    dataKey = {props.leadStats.id}
                     columns = "4"
                     headerBackground= "color6"
                     icon={<ConfirmationNumberIcon fontSize="large"/>}
@@ -40,6 +41,7 @@ const LeadGridList = props => {
                     />
                     <RenderLayout
                     key = {props.taskStats.id}
+                    datKey = {props.taskStats.id}
                     columns = "4"
                     headerBackground= "color4"
                     icon={<TimerOutlinedIcon fontSize="large"/>}
@@ -56,6 +58,7 @@ const LeadGridList = props => {
                     />
                     <RenderLayout
                         key = {props.userStats.id}
+                        dataKey = {props.userStats.id}
                         columns = "4"
                         headerBackground= "color8"
                         icon={<PeopleOutlinedIcon fontSize="large"/>}
@@ -68,6 +71,7 @@ const LeadGridList = props => {
             <Grid container spacing={24}>
                 <RenderLayout
                 key = {props.topLeads.id}
+                dataKey = {props.topLeads.id}
                 columns = "3"
                 headerBackground= "color8"
                 icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
@@ -78,6 +82,7 @@ const LeadGridList = props => {
                 <Grid container spacing={24}>
                     <RenderLayout
                     key = {props.leads.id}
+                    dataKey = {props.leads.id}
                     columns = "1"
                     headerBackground= "color6"
                     icon={<TimelineOutlinedIcon fontSize="large"/>}
@@ -86,6 +91,7 @@ const LeadGridList = props => {
                     />
                     <RenderLayout
                     key = {props.leadForecastData.id}
+                    dataKey = {props.leadForecastData.id}
                     columns = "1"
                     headerBackground= "color4"
                     icon={<BarChartOutlinedIcon fontSize="large"/>}
@@ -96,6 +102,7 @@ const LeadGridList = props => {
                 </Grid>
                 <RenderLayout
                 key = {props.topProductData.id}
+                dataKey = {props.topProductData.id}
                 columns = "3"
                 headerBackground= "color2"
                 icon={<ShoppingCartIcon fontSize="large"/>}
@@ -108,6 +115,7 @@ const LeadGridList = props => {
             <Grid container spacing={24}> 
                 <RenderLayout
                     key = {props.stateWiseLeads.id}
+                    dataKey = {props.stateWiseLeads.id}
                     columns = "3"
                     headerBackground= "color2"
                     icon={<DonutSmallOutlinedIcon fontSize="large"/>}
@@ -116,6 +124,7 @@ const LeadGridList = props => {
                 />
                 <RenderLayout
                     key = {props.statusWiseLeads.id}
+                    dataKey = {props.statusWiseLeads.id}
                     columns = "3"
                     headerBackground= "color8"
                     icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
@@ -124,6 +133,7 @@ const LeadGridList = props => {
                 />
                 <RenderLayout
                     key = {props.dispositionWiseLeads.id}
+                    dataKey = {props.dispositionWiseLeads.id}
                     columns = "3"
                     headerBackground= "color6"
                     icon={<AllOutOutlinedIcon fontSize="large"/>}
@@ -136,6 +146,7 @@ const LeadGridList = props => {
                 <Grid container spacing={24}> 
                     <RenderLayout
                         key = {props.recentActivitiesTicket.id}
+                        dataKey = {props.recentActivitiesTicket.id}
                         columns = "3"
                         headerBackground= "secondaryClass3"
                         icon={<FormatShapesOutlinedIcon fontSize="large"/>}
@@ -144,6 +155,7 @@ const LeadGridList = props => {
                     />
                     <RenderLayout
                         key = {props.recentNotifications.id}
+                        dataKey = {props.recentNotifications.id}
                         columns = "3"
                         headerBackground= "secondaryClass2"
                         icon={<NotificationsOutlinedIcon fontSize="large"/>}
@@ -152,6 +164,7 @@ const LeadGridList = props => {
                     />
                     <RenderLayout
                         key = {props.toDo.id}
+                        dataKey = {props.toDo.id}
                         columns = "3"
                         headerBackground= "secondaryClass1"
                         icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}

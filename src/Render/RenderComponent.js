@@ -13,6 +13,7 @@ import VerticalBarChart from '../Components/VerticalBarChart';
 const RenderComponent = props => {
     // const { classes } = props; 
     let dashboardComponent = null;
+    
 
     let element = props.componentType;
     switch(element){
