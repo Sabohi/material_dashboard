@@ -61,13 +61,14 @@ class CustomizedPieChart extends React.Component{
         this.setState({activeIndex: index});
     }
 	render () {
-        const {data, colors} = this.props;
-        
+        const {data, colors, key} = this.props;
+        console.log("======");
+        console.log(key);
         return (
             <Typography  variant="caption" gutterBottom align="center">
             <PieChart width={600} height={265}>
             <Pie 
-                dataKey={this.props.dataKey}
+                dataKey={key}
                 activeIndex={this.state.activeIndex}
                 activeShape={renderActiveShape} 
                 data={data} 

@@ -6,7 +6,7 @@ const RenderLayout = props => {
     let gridItem= null;
 
     let columns = props.columns;
-   
+
     let renderComponent = (
         <RenderComponent
             {...props}

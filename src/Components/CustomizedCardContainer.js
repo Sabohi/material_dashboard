@@ -17,7 +17,7 @@ class CustomizedCardContainer extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    // console.log('zaidi'+classes.cardHeader);
+    console.log('zaidi'+classes.cardHeader);
     return (
       <Card style={{marginTop:"20px"}}>
         <CardHeader className={classes.cardHeader} style={{padding:"6px",textAlign:"right"}}
