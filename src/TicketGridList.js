@@ -8,11 +8,11 @@ import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
 import DonutSmallOutlinedIcon from '@material-ui/icons/DonutSmallOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import TimerOutlinedIcon from '@material-ui/icons/TimerOutlined';
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
+// import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+// import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
-import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
+// import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
 import ViewHeadlineOutlinedIcon from '@material-ui/icons/ViewHeadlineOutlined';
 
 import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
@@ -34,7 +34,7 @@ const TicketGridList = (props,index) => {
             <RenderLayout
             key = {props.ticketStats.id}
             columns = "4"
-            headerBackground= "secondaryClass3"
+            headerBackground= "color2"
             icon={<ConfirmationNumberIcon fontSize="large"/>}
             action={<FullScreenDialog {...props.ticketStats.componentData.dialogData}/>}
             {...props.ticketStats.componentData}
@@ -42,7 +42,7 @@ const TicketGridList = (props,index) => {
             <RenderLayout
               key = {props.escalationStats.id}
               columns = "4"
-              headerBackground= "secondaryClass2"
+              headerBackground= "color4"
               icon={<TimerOutlinedIcon fontSize="large"/>}
               action={<FullScreenDialog {...props.escalationStats.componentData.dialogData}/>}
               {...props.escalationStats.componentData}
@@ -50,7 +50,7 @@ const TicketGridList = (props,index) => {
             <RenderLayout
                 key = {props.mailStats.id}
                 columns = "4"
-                headerBackground= "secondaryClass3"
+                headerBackground= "color6"
                 icon={<MailOutlinedIcon fontSize="large"/>}
                 action={<FullScreenDialog {...props.mailStats.componentData.dialogData}/>}
                 {...props.mailStats.componentData}
@@ -58,7 +58,7 @@ const TicketGridList = (props,index) => {
               <RenderLayout
                 key = {props.userStats.id}
                 columns = "4"
-                headerBackground= "secondaryClass4"
+                headerBackground= "color8"
                 icon={<PeopleOutlinedIcon fontSize="large"/>}
                 action={<FullScreenDialog {...props.userStats.componentData.dialogData}/>}
                 {...props.userStats.componentData}
@@ -70,7 +70,7 @@ const TicketGridList = (props,index) => {
             <RenderLayout
               key = {props.issuesData.id}
               columns = "3"
-              headerBackground= "secondaryClass4"
+              headerBackground= "color8"
               icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
               action=""
               {...props.issuesData.componentData}
@@ -80,7 +80,7 @@ const TicketGridList = (props,index) => {
                 <RenderLayout
                   key = {props.tickets.id}
                   columns = "1"
-                  headerBackground= "secondaryClass3"
+                  headerBackground= "color6"
                   icon={<TimelineOutlinedIcon fontSize="large"/>}
                   action={<CustomizedMenu {...props.tickets.componentData.MenuData}/>}
                   {...props.tickets.componentData}
@@ -88,7 +88,7 @@ const TicketGridList = (props,index) => {
                 <RenderLayout
                   key = {props.ticketForecastData.id}
                   columns = "1"
-                  headerBackground= "secondaryClass2"
+                  headerBackground= "color4"
                   icon={<BarChartOutlinedIcon fontSize="large"/>}
                   action=""
                   {...props.ticketForecastData.componentData}
@@ -98,7 +98,7 @@ const TicketGridList = (props,index) => {
             <RenderLayout
               key = {props.issueClosersData.id}
               columns = "3"
-              headerBackground= "secondaryClass1"
+              headerBackground= "color2"
               icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
               action=""
               {...props.issueClosersData.componentData}
@@ -110,7 +110,7 @@ const TicketGridList = (props,index) => {
               <RenderLayout
                 key = {props.priorityWiseTickets.id}
                 columns = "3"
-                headerBackground= "secondaryClass1"
+                headerBackground= "color2"
                 icon={<DonutSmallOutlinedIcon fontSize="large"/>}
                 action={<CustomizedMenu {...props.priorityWiseTickets.componentData.MenuData}/>}
                 {...props.priorityWiseTickets.componentData}
@@ -118,7 +118,7 @@ const TicketGridList = (props,index) => {
               <RenderLayout
                 key = {props.statusWiseTickets.id}
                 columns = "3"
-                headerBackground= "secondaryClass4"
+                headerBackground= "color8"
                 icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
                 action={<CustomizedMenu {...props.statusWiseTickets.componentData.MenuData}/>}
                 {...props.statusWiseTickets.componentData}
@@ -126,14 +126,14 @@ const TicketGridList = (props,index) => {
               <RenderLayout
                 key = {props.tickeTypeWiseTickets.id}
                 columns = "3"
-                headerBackground= "secondaryClass3"
+                headerBackground= "color6"
                 icon={<AllOutOutlinedIcon fontSize="large"/>}
                 action={<CustomizedMenu {...props.tickeTypeWiseTickets.componentData.MenuData}/>}
                 {...props.tickeTypeWiseTickets.componentData}
               />
             </Grid>
           </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12}>
+        {/* <Grid item xs={12} sm={12} md={12} lg={12}>
           <Grid container spacing={24}> 
               <RenderLayout
                 key = {props.recentActivitiesTicket.id}
@@ -160,7 +160,7 @@ const TicketGridList = (props,index) => {
                 {...props.toDo.componentData}
               />
             </Grid>
-          </Grid>
+          </Grid> */}
       </Grid> 
     </Grid>
   );

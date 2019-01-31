@@ -7,39 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import { Typography } from '@material-ui/core';
 
-const styles = theme => ({
-  cardHeader: {
-    padding: "0.2rem 0.5rem",
-    marginBottom: "0",
-    borderBottom: "none",
-    background: "transparent",
-    zIndex: "3 !important"
-  },
-  primaryClass1: {
-    backgroundColor: '#A8AAC4',
-  },
-  secondaryClass1: {
-    background: "linear-gradient(60deg, #f7a630, #ec8502)",
-  },
-  primaryClass2: {
-    backgroundColor: '#E9F4EC',
-  },
-  secondaryClass2: {
-    background: "linear-gradient(60deg, #66bb6a, #43a047)",
-  },
-  primaryClass3: {
-    backgroundColor: '#F5E8F0',
-  },
-  secondaryClass3: {
-    background: "linear-gradient(60deg, #f36aaf, #cc0066)",
-  },
-  primaryClass4: {
-    backgroundColor: '#B7AFAF',
-  },
-  secondaryClass4: {
-    background: "linear-gradient(60deg, #da8053, #b74005)",
-  }
-});
+import styles from '../assets/css/dashboard.css.js';
 
 class CustomizedCardContainer extends React.Component {
   state = { expanded: false };
@@ -49,7 +17,7 @@ class CustomizedCardContainer extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    
+    console.log('zaidi'+classes.cardHeader);
     return (
       <Card style={{marginTop:"20px"}}>
         <CardHeader className={classes.cardHeader} style={{padding:"6px",textAlign:"right"}}

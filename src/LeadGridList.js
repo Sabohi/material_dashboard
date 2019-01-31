@@ -64,75 +64,75 @@ const LeadGridList = props => {
                     />
                 </Grid>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={24}>
+                <RenderLayout
+                key = {props.topLeads.id}
+                columns = "3"
+                headerBackground= "secondaryClass4"
+                icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
+                action=""
+                {...props.topLeads.componentData}
+                />
+                <Grid item xs={12} sm={12} md={4} lg={4}>
                 <Grid container spacing={24}>
                     <RenderLayout
-                    key = {props.topLeads.id}
-                    columns = "3"
-                    headerBackground= "secondaryClass4"
-                    icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
-                    action=""
-                    {...props.topLeads.componentData}
+                    key = {props.leads.id}
+                    columns = "1"
+                    headerBackground= "secondaryClass3"
+                    icon={<TimelineOutlinedIcon fontSize="large"/>}
+                    action={<CustomizedMenu {...props.leads.componentData.MenuData}/>}
+                    {...props.leads.componentData}
                     />
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                    <Grid container spacing={24}>
-                        <RenderLayout
-                        key = {props.leads.id}
-                        columns = "1"
-                        headerBackground= "secondaryClass3"
-                        icon={<TimelineOutlinedIcon fontSize="large"/>}
-                        action={<CustomizedMenu {...props.leads.componentData.MenuData}/>}
-                        {...props.leads.componentData}
-                        />
-                        <RenderLayout
-                        key = {props.leadForecastData.id}
-                        columns = "1"
-                        headerBackground= "secondaryClass2"
-                        icon={<BarChartOutlinedIcon fontSize="large"/>}
-                        action=""
-                        {...props.leadForecastData.componentData}
-                        />
-                    </Grid>
-                    </Grid>
                     <RenderLayout
-                    key = {props.topProductData.id}
+                    key = {props.leadForecastData.id}
+                    columns = "1"
+                    headerBackground= "secondaryClass2"
+                    icon={<BarChartOutlinedIcon fontSize="large"/>}
+                    action=""
+                    {...props.leadForecastData.componentData}
+                    />
+                </Grid>
+                </Grid>
+                <RenderLayout
+                key = {props.topProductData.id}
+                columns = "3"
+                headerBackground= "secondaryClass1"
+                icon={<ShoppingCartIcon fontSize="large"/>}
+                action=""
+                {...props.topProductData.componentData}
+                />
+            </Grid>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={24}> 
+                <RenderLayout
+                    key = {props.stateWiseLeads.id}
                     columns = "3"
                     headerBackground= "secondaryClass1"
-                    icon={<ShoppingCartIcon fontSize="large"/>}
-                    action=""
-                    {...props.topProductData.componentData}
-                    />
+                    icon={<DonutSmallOutlinedIcon fontSize="large"/>}
+                    action={<CustomizedMenu {...props.stateWiseLeads.componentData.MenuData}/>}
+                    {...props.stateWiseLeads.componentData}
+                />
+                <RenderLayout
+                    key = {props.statusWiseLeads.id}
+                    columns = "3"
+                    headerBackground= "secondaryClass4"
+                    icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
+                    action={<CustomizedMenu {...props.statusWiseLeads.componentData.MenuData}/>}
+                    {...props.statusWiseLeads.componentData}
+                />
+                <RenderLayout
+                    key = {props.dispositionWiseLeads.id}
+                    columns = "3"
+                    headerBackground= "secondaryClass3"
+                    icon={<AllOutOutlinedIcon fontSize="large"/>}
+                    action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.MenuData}/>}
+                    {...props.dispositionWiseLeads.componentData}
+                />
                 </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
-                <Grid container spacing={24}> 
-                    <RenderLayout
-                        key = {props.stateWiseLeads.id}
-                        columns = "3"
-                        headerBackground= "secondaryClass1"
-                        icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                        action={<CustomizedMenu {...props.stateWiseLeads.componentData.MenuData}/>}
-                        {...props.stateWiseLeads.componentData}
-                    />
-                    <RenderLayout
-                        key = {props.statusWiseLeads.id}
-                        columns = "3"
-                        headerBackground= "secondaryClass4"
-                        icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
-                        action={<CustomizedMenu {...props.statusWiseLeads.componentData.MenuData}/>}
-                        {...props.statusWiseLeads.componentData}
-                    />
-                    <RenderLayout
-                        key = {props.dispositionWiseLeads.id}
-                        columns = "3"
-                        headerBackground= "secondaryClass3"
-                        icon={<AllOutOutlinedIcon fontSize="large"/>}
-                        action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.MenuData}/>}
-                        {...props.dispositionWiseLeads.componentData}
-                    />
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
+            </Grid>
+            {/* <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={24}> 
                     <RenderLayout
                         key = {props.recentActivitiesTicket.id}
@@ -158,8 +158,8 @@ const LeadGridList = props => {
                         action=""
                         {...props.toDo.componentData}
                     />
-                    </Grid>
-            </Grid>
+                </Grid>
+            </Grid> */}
         </Grid>
         </Grid>
     );
