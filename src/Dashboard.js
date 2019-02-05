@@ -11,6 +11,10 @@ import LeadDashboard from './LeadDashboard';
 import PageProgress from 'react-page-progress';
 import ScrollUpButton from "react-scroll-up-button";
 
+//Data
+import ticketDashData from './Data/ticketDashData';
+import leadDashData from './Data/leadDashData';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -68,8 +72,8 @@ function Dashboard() {
           </Toolbar>         
       </AppBar>
         <div className={classes.tabContent}>
-          {value === 0 && <TicketDashboard/>}
-          {value === 1 && <LeadDashboard/>}
+          {value === 0 && <TicketDashboard {...ticketDashData}/>}
+          {value === 1 && <LeadDashboard {...leadDashData}/>}
         </div>
   
     </div>

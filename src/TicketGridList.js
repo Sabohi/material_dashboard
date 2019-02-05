@@ -36,7 +36,7 @@ const TicketGridList = (props,index) => {
             columns = "4"
             headerBackground= "color2"
             icon={<ConfirmationNumberIcon fontSize="large"/>}
-            action={<FullScreenDialog {...props.ticketStats.componentData.dialogData}/>}
+            action={<CustomizedMenu {...props.ticketStats.componentData.actionData.menuData}/>}
             {...props.ticketStats.componentData}
             />
             <RenderLayout
@@ -44,7 +44,7 @@ const TicketGridList = (props,index) => {
               columns = "4"
               headerBackground= "color4"
               icon={<TimerOutlinedIcon fontSize="large"/>}
-              action={<FullScreenDialog {...props.taskStats.componentData.dialogData}/>}
+              action={<FullScreenDialog {...props.taskStats.componentData.actionData.dialogData}/>}
               {...props.taskStats.componentData}
             />
             <RenderLayout
@@ -52,7 +52,7 @@ const TicketGridList = (props,index) => {
                 columns = "4"
                 headerBackground= "color6"
                 icon={<MailOutlinedIcon fontSize="large"/>}
-                action={<FullScreenDialog {...props.mailStats.componentData.dialogData}/>}
+                action={<FullScreenDialog {...props.mailStats.componentData.actionData.dialogData}/>}
                 {...props.mailStats.componentData}
               />
               <RenderLayout
@@ -60,7 +60,7 @@ const TicketGridList = (props,index) => {
                 columns = "4"
                 headerBackground= "color8"
                 icon={<PeopleOutlinedIcon fontSize="large"/>}
-                action={<FullScreenDialog {...props.userStats.componentData.dialogData}/>}
+                action={<FullScreenDialog {...props.userStats.componentData.actionData.dialogData}/>}
                 {...props.userStats.componentData}
               />
           </Grid>
@@ -82,7 +82,7 @@ const TicketGridList = (props,index) => {
                   columns = "1"
                   headerBackground= "color6"
                   icon={<TimelineOutlinedIcon fontSize="large"/>}
-                  action={<CustomizedMenu {...props.tickets.componentData.MenuData}/>}
+                  action={<CustomizedMenu {...props.tickets.componentData.actionData.menuData}/>}
                   {...props.tickets.componentData}
                 />
                 <RenderLayout
@@ -112,7 +112,7 @@ const TicketGridList = (props,index) => {
                 columns = "3"
                 headerBackground= "color2"
                 icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.priorityWiseTickets.componentData.MenuData}/>}
+                action={<CustomizedMenu {...props.priorityWiseTickets.componentData.actionData.menuData}/>}
                 {...props.priorityWiseTickets.componentData}
               />
               <RenderLayout
@@ -120,7 +120,7 @@ const TicketGridList = (props,index) => {
                 columns = "3"
                 headerBackground= "color8"
                 icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.statusWiseTickets.componentData.MenuData}/>}
+                action={<CustomizedMenu {...props.statusWiseTickets.componentData.actionData.menuData}/>}
                 {...props.statusWiseTickets.componentData}
               />
               <RenderLayout
@@ -128,7 +128,7 @@ const TicketGridList = (props,index) => {
                 columns = "3"
                 headerBackground= "color6"
                 icon={<AllOutOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.tickeTypeWiseTickets.componentData.MenuData}/>}
+                action={<CustomizedMenu {...props.tickeTypeWiseTickets.componentData.actionData.menuData}/>}
                 {...props.tickeTypeWiseTickets.componentData}
               />
             </Grid>

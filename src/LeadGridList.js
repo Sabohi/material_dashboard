@@ -9,11 +9,11 @@ import AllOutOutlinedIcon from '@material-ui/icons/AllOutOutlined';
 import DonutSmallOutlinedIcon from '@material-ui/icons/DonutSmallOutlined';
 import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import TimerOutlinedIcon from '@material-ui/icons/TimerOutlined';
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
+// import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+// import FormatShapesOutlinedIcon from '@material-ui/icons/FormatShapesOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
-import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
+// import PlaylistAddCheckOutlinedIcon from '@material-ui/icons/PlaylistAddCheckOutlined';
 import ViewHeadlineOutlinedIcon from '@material-ui/icons/ViewHeadlineOutlined';
 import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
 
@@ -35,7 +35,7 @@ const LeadGridList = props => {
                     columns = "4"
                     headerBackground= "color6"
                     icon={<ConfirmationNumberIcon fontSize="large"/>}
-                    action={<FullScreenDialog {...props.leadStats.componentData.dialogData}/>}
+                    action={<FullScreenDialog {...props.leadStats.componentData.actionData.dialogData}/>}
                     {...props.leadStats.componentData}
                     />
                     <RenderLayout
@@ -43,7 +43,7 @@ const LeadGridList = props => {
                     columns = "4"
                     headerBackground= "color4"
                     icon={<TimerOutlinedIcon fontSize="large"/>}
-                    action={<FullScreenDialog {...props.taskStats.componentData.dialogData}/>}
+                    action={<FullScreenDialog {...props.taskStats.componentData.actionData.dialogData}/>}
                     {...props.taskStats.componentData}
                     />
                     <RenderLayout
@@ -51,7 +51,7 @@ const LeadGridList = props => {
                         columns = "4"
                         headerBackground= "color6"
                         icon={<MailOutlinedIcon fontSize="large"/>}
-                        action={<FullScreenDialog {...props.mailStats.componentData.dialogData}/>}
+                        action={<FullScreenDialog {...props.mailStats.componentData.actionData.dialogData}/>}
                         {...props.mailStats.componentData}
                     />
                     <RenderLayout
@@ -59,7 +59,7 @@ const LeadGridList = props => {
                         columns = "4"
                         headerBackground= "color8"
                         icon={<PeopleOutlinedIcon fontSize="large"/>}
-                        action={<FullScreenDialog {...props.userStats.componentData.dialogData}/>}
+                        action={<FullScreenDialog {...props.userStats.componentData.actionData.dialogData}/>}
                         {...props.userStats.componentData}
                     />
                 </Grid>
@@ -81,7 +81,7 @@ const LeadGridList = props => {
                     columns = "1"
                     headerBackground= "color6"
                     icon={<TimelineOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.leads.componentData.MenuData}/>}
+                    action={<CustomizedMenu {...props.leads.componentData.actionData.menuData}/>}
                     {...props.leads.componentData}
                     />
                     <RenderLayout
@@ -111,7 +111,7 @@ const LeadGridList = props => {
                     columns = "3"
                     headerBackground= "color2"
                     icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.stateWiseLeads.componentData.MenuData}/>}
+                    action={<CustomizedMenu {...props.stateWiseLeads.componentData.actionData.menuData}/>}
                     {...props.stateWiseLeads.componentData}
                 />
                 <RenderLayout
@@ -119,7 +119,7 @@ const LeadGridList = props => {
                     columns = "3"
                     headerBackground= "color8"
                     icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.statusWiseLeads.componentData.MenuData}/>}
+                    action={<CustomizedMenu {...props.statusWiseLeads.componentData.actionData.menuData}/>}
                     {...props.statusWiseLeads.componentData}
                 />
                 <RenderLayout
@@ -127,7 +127,7 @@ const LeadGridList = props => {
                     columns = "3"
                     headerBackground= "color6"
                     icon={<AllOutOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.MenuData}/>}
+                    action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.actionData.menuData}/>}
                     {...props.dispositionWiseLeads.componentData}
                 />
                 </Grid>

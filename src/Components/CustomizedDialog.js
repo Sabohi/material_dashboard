@@ -8,6 +8,8 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import { Tooltip } from '@material-ui/core';
+import Zoom from '@material-ui/core/Zoom';
 
 const DialogTitle = withStyles(theme => ({
   root: {
@@ -24,6 +26,7 @@ const DialogTitle = withStyles(theme => ({
 }))(props => {
   const { children, classes, onClose } = props;
   return (
+    //Modal title
     <MuiDialogTitle disableTypography className={classes.root}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
@@ -68,9 +71,11 @@ class CustomizedDialog extends React.Component {
   render() {
     return (
       <div>
-        <Button variant="outlined" color="secondary" onClick={this.handleClickOpen}>
-          Open dialog
-        </Button>
+        <Tooltip title={this.props.name} TransitionComponent={Zoom} interactive>
+          <Typography onClick={this.handleClickOpen} style={{fontWeight:600,fontSize:'1.2em'}}>
+            {this.props.value}
+          </Typography>
+        </Tooltip>
         <Dialog
           onClose={this.handleClose}
           aria-labelledby="customized-dialog-title"

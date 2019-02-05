@@ -8,6 +8,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { Tooltip } from '@material-ui/core';
 import Zoom from '@material-ui/core/Zoom';
 
+import CustomizedDialog from '../Components/CustomizedDialog';
+
+// Styles
 import styles from '../assets/css/dashboard.css.js';
 
 class CustomizedCardContent extends React.Component {
@@ -23,9 +26,9 @@ class CustomizedCardContent extends React.Component {
         <div className={classes.cardHeader} style={{paddingBottom:"8px"}}>
           <Typography component="h2">
             {this.props.primaryHeader}
-            <span style={{float: 'right',fontWeight:600,fontSize:'1.2em'}}>
-             {this.props.primaryHeaderValus}
-            </span>
+            <div style={{float: 'right'}}>
+              <CustomizedDialog name={this.props.primaryHeader} value={this.props.primaryHeaderValues} {...this.props.primaryHeaderValuesData}/>
+            </div>
           </Typography>
           <br/>
           <Tooltip title={this.props.primaryProgressBarValueRate+'%'} TransitionComponent={Zoom} interactive>
@@ -47,9 +50,9 @@ class CustomizedCardContent extends React.Component {
           <br/>
           <Typography component="h2">
             {this.props.secondaryHeader} 
-            <span style={{float: 'right',fontWeight:600,fontSize:'1.2em'}}>
-             {this.props.secondaryHeaderValues}
-            </span>
+            <div style={{float: 'right'}}>
+              <CustomizedDialog name={this.props.secondaryHeader} value={this.props.secondaryHeaderValues} {...this.props.secondaryHeaderValuesData}/>
+            </div>
           </Typography>
           <br/>
           <Tooltip title={this.props.secondaryProgressBarValueRate+'%'} TransitionComponent={Zoom} interactive>

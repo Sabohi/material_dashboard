@@ -22,7 +22,7 @@ export default {
         backgroundColor: "#F5E8F0",
     },
     color6: {
-        background: "linear-gradient(60deg, #f36aaf, #cc0000 )",
+        background: "linear-gradient(60deg, #f36aaf, #ff0000 )",
     },
     color7: {
         backgroundColor: "#B7AFAF",
@@ -34,24 +34,24 @@ export default {
         backgroundColor: "#A8AAC5",
     },
     color10: {
-        background: "linear-gradient(60deg, #ff3300, #ec8502 )",
+        background: "linear-gradient(60deg, #f7a630, #ff3300 )",
     },
     color11: {
         backgroundColor: "#E9F4EC",
     },
     color12: {
-        background: "linear-gradient(60deg, #336600, #43a047 )",
+        background: "linear-gradient(60deg, #66bb6a, #336600 )",
     },
     color13: {
         backgroundColor: "#F5E8F0",
     },
     color14: {
-        background: "linear-gradient(60deg, #ff0066, #cc0066 )",
+        background: "linear-gradient(60deg, #f36aaf, #cc0000 )",
     },
     color15: {
         backgroundColor: "#B7AFAF",
     },
     color16: {
-        background: "linear-gradient(60deg, #993300, #b74005 )",
+        background: "linear-gradient(60deg, #da8053, #993300 )",
     },
 }

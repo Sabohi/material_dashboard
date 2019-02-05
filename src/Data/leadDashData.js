@@ -5,7 +5,7 @@ const leadDashData = {
                 componentType: "data",
                 header: 'Leads',
                 primaryHeader: 'Total Leads Created',
-                primaryHeaderValus: 2005,
+                primaryHeaderValues: 2005,
                 primaryProgressBarHeader: 'Converted',
                 primaryProgressBarValue: 1010,
                 primaryProgressBarValueRate: 54,
@@ -18,107 +18,107 @@ const leadDashData = {
                 secondaryProgressBarValueRate: 85,
                 secondaryLinearColorPrimary: 'color9',
                 secondaryLinearBarColorPrimary: 'color10',
-                dialogData: {
-                dialogHeader: 'Lead Details',
-                tableData:{
-                    tableHeading: "",
-                    columnData:[
-                        {
-                            width: 150,
-                            flexGrow: 1.0,
-                            label: 'Lead No',
-                            dataKey: 'lead_no',
-                        },
-                        {
-                            width: 100,
-                            label: 'Product Type',
-                            dataKey: 'product_type',
-                            numeric: false,
-                        },
-                        {
-                            width: 130,
-                            label: 'Assign To',
-                            dataKey: 'assign_to',
-                            numeric: false,
-                        },
-                        {
-                            width: 120,
-                            label: 'Departments',
-                            dataKey: 'assign_to_dept_id',
-                            numeric: true,
-                        },
-                        {
-                            width: 100,
-                            label: 'Priority',
-                            dataKey: 'priority',
-                            numeric: false,
-                        },
-                        {
-                            width: 130,
-                            label: 'Disposition',
-                            dataKey: 'disposition',
-                            numeric: false,
-                        },
-                        {
-                            width: 120,
-                            label: 'Sub Disposition',
-                            dataKey: 'sub_disposition',
-                            numeric: true,
-                        },
-                        {
-                            width: 100,
-                            label: 'Person Name',
-                            dataKey: 'person_name',
-                            numeric: false,
-                        },
-                        {
-                            width: 130,
-                            label: 'Ticket Status',
-                            dataKey: 'ticket_status',
-                            numeric: false,
-                        },
-                        {
-                            width: 120,
-                            label: 'Agent Remarks',
-                            dataKey: 'agent_remarks',
-                            numeric: true,
-                        },
-                        {
-                            width: 120,
-                            label: 'Created On',
-                            dataKey: 'created_on',
-                            numeric: true,
-                        }
-                    ],
-                    data:[
-                        ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
-                        ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
-                        ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
-                        ['L20190120148771','LMS','Nidhi Verma','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 16:14:12'],
-                        ['L20190120148770','Ticketing CRM','Jahnvi Kapoor','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 16:22:23'],
-                        ['L20190120148769','IVR','Shina Savitri','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 16:22:56'],
-                        ['L20190120148768','Ticketing CRM','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:11:09'],
-                        ['L20190120148767','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:54:23'],
-                        ['L20190120148766','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 15:40:44'],
-                        ['L20190120148765','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 15:34:33'],
-                        ['L20190120148764','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 15:10:05'],
-                        ['L20190120148768','LMS','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:02:08'],
-                        ['L20190120148767','IVR','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Purchased','2019-01-20 14:09:48'],
-                        ['L20190120148766','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 14:01:20'],
-                        ['L20190120148765','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Product purchased','2019-01-20 13:14:28'],
-                        ['L20190120148764','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 13:04:56'],
-                    ],
-                    MenuData:{
+                actionHeader: 'More',
+                actionData: {
+                    menuData:{
                         options: [
-                            'Today',
-                            'Yesterday',
-                            'Last 7 days',
-                            'Last 30 days',
-                            'This Month',
-                            'Last Month',
+                            'Print',
+                            'Details'
                         ]
-                    } 
-                },// table data
+                    },
+                    dialogData: {
+                        dialogHeader: 'Lead Details',
+                        tableData:{
+                            tableHeading: "",
+                            columnData:[
+                                {
+                                    width: 150,
+                                    flexGrow: 1.0,
+                                    label: 'Lead No',
+                                    dataKey: 'lead_no',
+                                },
+                                {
+                                    width: 100,
+                                    label: 'Product Type',
+                                    dataKey: 'product_type',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 130,
+                                    label: 'Assign To',
+                                    dataKey: 'assign_to',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 120,
+                                    label: 'Departments',
+                                    dataKey: 'assign_to_dept_id',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 100,
+                                    label: 'Priority',
+                                    dataKey: 'priority',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 130,
+                                    label: 'Disposition',
+                                    dataKey: 'disposition',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 120,
+                                    label: 'Sub Disposition',
+                                    dataKey: 'sub_disposition',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 100,
+                                    label: 'Person Name',
+                                    dataKey: 'person_name',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 130,
+                                    label: 'Ticket Status',
+                                    dataKey: 'ticket_status',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 120,
+                                    label: 'Agent Remarks',
+                                    dataKey: 'agent_remarks',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 120,
+                                    label: 'Created On',
+                                    dataKey: 'created_on',
+                                    numeric: true,
+                                }
+                            ],
+                            data:[
+                                ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
+                                ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
+                                ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
+                                ['L20190120148771','LMS','Nidhi Verma','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 16:14:12'],
+                                ['L20190120148770','Ticketing CRM','Jahnvi Kapoor','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 16:22:23'],
+                                ['L20190120148769','IVR','Shina Savitri','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 16:22:56'],
+                                ['L20190120148768','Ticketing CRM','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:11:09'],
+                                ['L20190120148767','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:54:23'],
+                                ['L20190120148766','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 15:40:44'],
+                                ['L20190120148765','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 15:34:33'],
+                                ['L20190120148764','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 15:10:05'],
+                                ['L20190120148768','LMS','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:02:08'],
+                                ['L20190120148767','IVR','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Purchased','2019-01-20 14:09:48'],
+                                ['L20190120148766','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 14:01:20'],
+                                ['L20190120148765','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Product purchased','2019-01-20 13:14:28'],
+                                ['L20190120148764','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 13:04:56'],
+                            ],
+                            actionData: ""
+                        },// table data
+                        }
                 }
             }
     },
@@ -128,7 +128,7 @@ const leadDashData = {
             componentType: "data",
             header: 'Tasks',
             primaryHeader: 'Total Tasks Cretead',
-            primaryHeaderValus: 2005,
+            primaryHeaderValues: 2005,
             primaryProgressBarHeader: 'Closed',
             primaryProgressBarValue: 999,
             primaryProgressBarValueRate: 54,
@@ -141,107 +141,107 @@ const leadDashData = {
             secondaryProgressBarValueRate: 48,
             secondaryLinearColorPrimary: 'color11',
             secondaryLinearBarColorPrimary: 'color12',
-            dialogData: {
-            dialogHeader: 'Escalation Details',
-            tableData:{
-                tableHeading: "",
-                columnData:[
-                    {
-                        width: 150,
-                        flexGrow: 1.0,
-                        label: 'Lead No',
-                        dataKey: 'lead_no',
-                    },
-                    {
-                        width: 100,
-                        label: 'Product Type',
-                        dataKey: 'product_type',
-                        numeric: false,
-                    },
-                    {
-                        width: 130,
-                        label: 'Assign To',
-                        dataKey: 'assign_to',
-                        numeric: false,
-                    },
-                    {
-                        width: 120,
-                        label: 'Department',
-                        dataKey: 'assign_to_dept_id',
-                        numeric: true,
-                    },
-                    {
-                        width: 100,
-                        label: 'Priority',
-                        dataKey: 'priority',
-                        numeric: false,
-                    },
-                    {
-                        width: 130,
-                        label: 'Disposition',
-                        dataKey: 'disposition',
-                        numeric: false,
-                    },
-                    {
-                        width: 120,
-                        label: 'Sub Disposition',
-                        dataKey: 'sub_disposition',
-                        numeric: true,
-                    },
-                    {
-                        width: 100,
-                        label: 'Person Name',
-                        dataKey: 'person_name',
-                        numeric: false,
-                    },
-                    {
-                        width: 130,
-                        label: 'Ticket Status',
-                        dataKey: 'ticket_status',
-                        numeric: false,
-                    },
-                    {
-                        width: 120,
-                        label: 'Agent Remarks',
-                        dataKey: 'agent_remarks',
-                        numeric: true,
-                    },
-                    {
-                        width: 120,
-                        label: 'Created On',
-                        dataKey: 'created_on',
-                        numeric: true,
-                    }
-                ],
-                data:[
-                    ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
-                    ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
-                    ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
-                    ['L20190120148771','LMS','Nidhi Verma','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 16:14:12'],
-                    ['L20190120148770','Ticketing CRM','Jahnvi Kapoor','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 16:22:23'],
-                    ['L20190120148769','IVR','Shina Savitri','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 16:22:56'],
-                    ['L20190120148768','Ticketing CRM','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:11:09'],
-                    ['L20190120148767','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:54:23'],
-                    ['L20190120148766','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 15:40:44'],
-                    ['L20190120148765','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 15:34:33'],
-                    ['L20190120148764','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 15:10:05'],
-                    ['L20190120148768','LMS','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:02:08'],
-                    ['L20190120148767','IVR','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Purchased','2019-01-20 14:09:48'],
-                    ['L20190120148766','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 14:01:20'],
-                    ['L20190120148765','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Product purchased','2019-01-20 13:14:28'],
-                    ['L20190120148764','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 13:04:56'],
-                ],
-                MenuData:{
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
                     options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
+                        'Print',
+                        'Details'
                     ]
-                } 
-            },// table data
+                },
+                dialogData: {
+                    dialogHeader: 'Escalation Details',
+                    tableData:{
+                        tableHeading: "",
+                        columnData:[
+                            {
+                                width: 150,
+                                flexGrow: 1.0,
+                                label: 'Lead No',
+                                dataKey: 'lead_no',
+                            },
+                            {
+                                width: 100,
+                                label: 'Product Type',
+                                dataKey: 'product_type',
+                                numeric: false,
+                            },
+                            {
+                                width: 130,
+                                label: 'Assign To',
+                                dataKey: 'assign_to',
+                                numeric: false,
+                            },
+                            {
+                                width: 120,
+                                label: 'Department',
+                                dataKey: 'assign_to_dept_id',
+                                numeric: true,
+                            },
+                            {
+                                width: 100,
+                                label: 'Priority',
+                                dataKey: 'priority',
+                                numeric: false,
+                            },
+                            {
+                                width: 130,
+                                label: 'Disposition',
+                                dataKey: 'disposition',
+                                numeric: false,
+                            },
+                            {
+                                width: 120,
+                                label: 'Sub Disposition',
+                                dataKey: 'sub_disposition',
+                                numeric: true,
+                            },
+                            {
+                                width: 100,
+                                label: 'Person Name',
+                                dataKey: 'person_name',
+                                numeric: false,
+                            },
+                            {
+                                width: 130,
+                                label: 'Ticket Status',
+                                dataKey: 'ticket_status',
+                                numeric: false,
+                            },
+                            {
+                                width: 120,
+                                label: 'Agent Remarks',
+                                dataKey: 'agent_remarks',
+                                numeric: true,
+                            },
+                            {
+                                width: 120,
+                                label: 'Created On',
+                                dataKey: 'created_on',
+                                numeric: true,
+                            }
+                        ],
+                        data:[
+                            ['L20190120148774','Ticketing CRM','Vikas Kapoor','Sales','Critical','Loan','Others','ARTI SURYAWANSHI','OPEN-EMAIL','customer wants to know about product','2019-01-20 16:00:56'],
+                            ['L20190120148773','Dialer','Nidhi Ranjan','Sales','Critical','Others','Others','RADHAMANI','NEW','More features required by client','2019-01-20 16:16:21'],
+                            ['L20190120148772','LMS','Nommya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:14:12'],
+                            ['L20190120148771','LMS','Nidhi Verma','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 16:14:12'],
+                            ['L20190120148770','Ticketing CRM','Jahnvi Kapoor','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 16:22:23'],
+                            ['L20190120148769','IVR','Shina Savitri','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 16:22:56'],
+                            ['L20190120148768','Ticketing CRM','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 16:11:09'],
+                            ['L20190120148767','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:54:23'],
+                            ['L20190120148766','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required by client','2019-01-20 15:40:44'],
+                            ['L20190120148765','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 15:34:33'],
+                            ['L20190120148764','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','More features required','2019-01-20 15:10:05'],
+                            ['L20190120148768','LMS','Nitin Harish','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 15:02:08'],
+                            ['L20190120148767','IVR','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Purchased','2019-01-20 14:09:48'],
+                            ['L20190120148766','Dialer','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','customer wants to know about product','2019-01-20 14:01:20'],
+                            ['L20190120148765','Ticketing CRM','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Product purchased','2019-01-20 13:14:28'],
+                            ['L20190120148764','LMS','Noumya Kumari','Support','Semi-Critical','Blank Call','Blank Call','pankag saharai','CLOSED','Customer wants to buy product','2019-01-20 13:04:56'],
+                        ],
+                        actionData: ""
+                    },// table data
+                }
             }
         }
     }, 
@@ -251,7 +251,7 @@ const leadDashData = {
                 componentType: "data",
                 header: 'Lead Mails',
                 primaryHeader: 'Total Lead Mails Received',
-                primaryHeaderValus: 5010,
+                primaryHeaderValues: 5010,
                 primaryProgressBarHeader: 'Lead Mails Replied',
                 primaryProgressBarValue: 3098,
                 primaryProgressBarValueRate: 69,
@@ -265,104 +265,104 @@ const leadDashData = {
                 secondaryProgressBarValueRate: 66,
                 secondaryLinearColorPrimary: 'color13',
                 secondaryLinearBarColorPrimary: 'color14',
-                dialogData: {
-                    dialogHeader: 'Lead Mail Details',
-                    tableData:{
-                        tableHeading: "",
-                        columnData:[
-                            {
-                                width: 70,
-                                flexGrow: 0.1,
-                                label: 'Flow',
-                                dataKey: 'flow',
-                            },
-                            {
-                                width: 170,
-                                label: 'To',
-                                dataKey: 'to',
-                                numeric: false,
-                            },
-                            {
-                                width: 170,
-                                label: 'From',
-                                dataKey: 'from',
-                                numeric: false,
-                            },
-                            {
-                                width: 150,
-                                label: 'Docket No',
-                                dataKey: 'docket_no',
-                                numeric: true,
-                            },
-                            {
-                                width: 110,
-                                label: 'Subject',
-                                dataKey: 'subject',
-                                numeric: false,
-                            },
-                            {
-                                width: 130,
-                                label: 'Assigned To',
-                                dataKey: 'assigned_to',
-                                numeric: false,
-                            },
-                            {
-                                width: 60,
-                                label: 'Docket Type',
-                                dataKey: 'docket_type',
-                                numeric: true,
-                            },
-                            {
-                                width: 120,
-                                label: 'Ticket Status',
-                                dataKey: 'ticket_status',
-                                numeric: true,
-                            },
-                            {
-                                width: 100,
-                                label: 'Mail date Time',
-                                dataKey: 'mail_date_time',
-                                numeric: false,
-                            },
-                            {
-                                width: 100,
-                                label: 'Download date Time',
-                                dataKey: 'download_date_time',
-                                numeric: false,
-                            },
-                            {
-                                width: 130,
-                                label: 'Reply By',
-                                dataKey: 'reply by',
-                                numeric: false,
-                            }
-                        ],
-                        data:[
-                            ['In','support@c-zentrix.com','deepak11@gmail.com','T20190120148774','Call landing problem','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:00:52','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','seema112@gmail.com','T20190120148773','CRM working slow','Vikas Kapoor','New','Semi-Critical','2019-01-20 16:00:56','2019-01-20 16:00:05','Pankaj Bisht'],
-                            ['Out','deepak11@gmail.com','support@c-zentrix.com','T20190120148774','Call landing problem','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 16:00:09','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','roshan@gmail.com','T20190120148772','Duplicate mails downloading','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:00:07','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','rs124@gmail.com','T20190120148771','Ticket attachment not opening','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:20:07','Pankaj Bisht'],
-                            ['Out','mafil@mafil.com','support@c-zentrix.com','T20190120148773','CRM working slow','Vikas Kapoor','Old','Semi-Critical','2019-01-20 16:00:56','2019-01-20 16:08:06','Pankaj Bisht'],
-                            ['Out','drishti@gmail.com','support@c-zentrix.com','T20190120148772','Duplicate mails downloading','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 16:08:05','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','dhanush1@gmail.com','T20190120148770','IVR not working','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:00:50','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','subuhi@gmail.com','T20190120148769','Voice Issue','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:50:50','Pankaj Bisht'],
-                            ['Out','vihan23@gmail.com','support@c-zentrix.com','T20190120148770','IVR not working','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 15:20:40','Pankaj Bisht'],
-                            ['Out','famin24@gmail.com','support@c-zentrix.com','T20190120148769','Voice Issue','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 15:30:36','Pankaj Bisht'],
-                            ['Out','sanjana@gmail.com','support@c-zentrix.com','T20190120148768','Duplicate tickets creating','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:40:08','Pankaj Bisht'],
-                            ['In','support@c-zentrix.com','roshan@gmail.com','T20190120148767','UI not opening','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:12:566','Pankaj Bisht']
-                        ],
-                        MenuData:{
-                            options: [
-                                'Today',
-                                'Yesterday',
-                                'Last 7 days',
-                                'Last 30 days',
-                                'This Month',
-                                'Last Month',
-                            ]
-                        } 
-                    },// table data
+                actionHeader: 'More',
+                actionData: {
+                    menuData:{
+                        options: [
+                            'Print',
+                            'Details'
+                        ]
+                    },
+                    dialogData: {
+                        dialogHeader: 'Lead Mail Details',
+                        tableData:{
+                            tableHeading: "",
+                            columnData:[
+                                {
+                                    width: 70,
+                                    flexGrow: 0.1,
+                                    label: 'Flow',
+                                    dataKey: 'flow',
+                                },
+                                {
+                                    width: 170,
+                                    label: 'To',
+                                    dataKey: 'to',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 170,
+                                    label: 'From',
+                                    dataKey: 'from',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 150,
+                                    label: 'Docket No',
+                                    dataKey: 'docket_no',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 110,
+                                    label: 'Subject',
+                                    dataKey: 'subject',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 130,
+                                    label: 'Assigned To',
+                                    dataKey: 'assigned_to',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 60,
+                                    label: 'Docket Type',
+                                    dataKey: 'docket_type',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 120,
+                                    label: 'Ticket Status',
+                                    dataKey: 'ticket_status',
+                                    numeric: true,
+                                },
+                                {
+                                    width: 100,
+                                    label: 'Mail date Time',
+                                    dataKey: 'mail_date_time',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 100,
+                                    label: 'Download date Time',
+                                    dataKey: 'download_date_time',
+                                    numeric: false,
+                                },
+                                {
+                                    width: 130,
+                                    label: 'Reply By',
+                                    dataKey: 'reply by',
+                                    numeric: false,
+                                }
+                            ],
+                            data:[
+                                ['In','support@c-zentrix.com','deepak11@gmail.com','T20190120148774','Call landing problem','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:00:52','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','seema112@gmail.com','T20190120148773','CRM working slow','Vikas Kapoor','New','Semi-Critical','2019-01-20 16:00:56','2019-01-20 16:00:05','Pankaj Bisht'],
+                                ['Out','deepak11@gmail.com','support@c-zentrix.com','T20190120148774','Call landing problem','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 16:00:09','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','roshan@gmail.com','T20190120148772','Duplicate mails downloading','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:00:07','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','rs124@gmail.com','T20190120148771','Ticket attachment not opening','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 16:20:07','Pankaj Bisht'],
+                                ['Out','mafil@mafil.com','support@c-zentrix.com','T20190120148773','CRM working slow','Vikas Kapoor','Old','Semi-Critical','2019-01-20 16:00:56','2019-01-20 16:08:06','Pankaj Bisht'],
+                                ['Out','drishti@gmail.com','support@c-zentrix.com','T20190120148772','Duplicate mails downloading','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 16:08:05','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','dhanush1@gmail.com','T20190120148770','IVR not working','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:00:50','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','subuhi@gmail.com','T20190120148769','Voice Issue','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:50:50','Pankaj Bisht'],
+                                ['Out','vihan23@gmail.com','support@c-zentrix.com','T20190120148770','IVR not working','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 15:20:40','Pankaj Bisht'],
+                                ['Out','famin24@gmail.com','support@c-zentrix.com','T20190120148769','Voice Issue','Vikas Kapoor','Old','Critical','2019-01-20 16:00:56','2019-01-20 15:30:36','Pankaj Bisht'],
+                                ['Out','sanjana@gmail.com','support@c-zentrix.com','T20190120148768','Duplicate tickets creating','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:40:08','Pankaj Bisht'],
+                                ['In','support@c-zentrix.com','roshan@gmail.com','T20190120148767','UI not opening','Vikas Kapoor','New','Critical','2019-01-20 16:00:56','2019-01-20 15:12:566','Pankaj Bisht']
+                            ],
+                            actionData: ""
+                        },// table data
+                    }
                 }
             }
     },
@@ -372,7 +372,7 @@ const leadDashData = {
             componentType: "data",
             header: 'Lead Users',
             primaryHeader: 'All Lead Users',
-            primaryHeaderValus: 276,
+            primaryHeaderValues: 276,
             primaryProgressBarHeader: 'Active Lead Users',
             primaryProgressBarValue: 267,
             primaryProgressBarValueRate: 90,
@@ -385,86 +385,86 @@ const leadDashData = {
             secondaryProgressBarValueRate: 10,
             secondaryLinearColorPrimary: 'color15',
             secondaryLinearBarColorPrimary: 'color16',
-            dialogData: {
-            dialogHeader: 'Lead User Details',
-            tableData:{
-                tableHeading: "",
-                columnData:[
-                    {
-                        width: 100,
-                        flexGrow: 0.2,
-                        label: 'Status',
-                        dataKey: 'status',
-                    },
-                    {
-                        width: 100,
-                        label: 'User Name',
-                        dataKey: 'user_name',
-                        numeric: false,
-                    },
-                    {
-                        width: 200,
-                        label: 'Department',
-                        dataKey: 'department_name',
-                        numeric: false,
-                    },
-                    {
-                        width: 170,
-                        label: 'First Name',
-                        dataKey: 'first_name',
-                        numeric: false,
-                    },
-                    {
-                        width: 170,
-                        label: 'Last Name',
-                        dataKey: 'last_name',
-                        numeric: true,
-                    },
-                    {
-                        width: 200,
-                        label: 'Mobile Number',
-                        dataKey: 'mobile_no',
-                        numeric: false,
-                    },
-                    {
-                        width: 200,
-                        label: 'Email',
-                        dataKey: 'email',
-                        numeric: false,
-                    },
-                    {
-                        width: 170,
-                        label: 'Role Name',
-                        dataKey: 'role_name',
-                        numeric: true,
-                    }
-                ],
-                data:[
-                    ['ACTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
-                    ['ACTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
-                    ['ACTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
-                    ['ACTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
-                    ['ACTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
-                    ['ACTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
-                    ['ACTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
-                    ['ACTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
-                    ['ACTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
-                    ['ACTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
-                    ['ACTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
-                    ['ACTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
-                    ['ACTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
-                ],
-                MenuData:{
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
                     options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
+                        'Print',
+                        'Details'
                     ]
-                } 
-            },// table data
+                },
+                dialogData: {
+                    dialogHeader: 'Lead User Details',
+                    tableData:{
+                        tableHeading: "",
+                        columnData:[
+                            {
+                                width: 100,
+                                flexGrow: 0.2,
+                                label: 'Status',
+                                dataKey: 'status',
+                            },
+                            {
+                                width: 100,
+                                label: 'User Name',
+                                dataKey: 'user_name',
+                                numeric: false,
+                            },
+                            {
+                                width: 200,
+                                label: 'Department',
+                                dataKey: 'department_name',
+                                numeric: false,
+                            },
+                            {
+                                width: 170,
+                                label: 'First Name',
+                                dataKey: 'first_name',
+                                numeric: false,
+                            },
+                            {
+                                width: 170,
+                                label: 'Last Name',
+                                dataKey: 'last_name',
+                                numeric: true,
+                            },
+                            {
+                                width: 200,
+                                label: 'Mobile Number',
+                                dataKey: 'mobile_no',
+                                numeric: false,
+                            },
+                            {
+                                width: 200,
+                                label: 'Email',
+                                dataKey: 'email',
+                                numeric: false,
+                            },
+                            {
+                                width: 170,
+                                label: 'Role Name',
+                                dataKey: 'role_name',
+                                numeric: true,
+                            }
+                        ],
+                        data:[
+                            ['ACTIVE','2001','Operational-Chennai','Malavika','Anand','9830092001','2001@magusdialog.in','Agent'],
+                            ['ACTIVE','2002','Operational-Chennai','Vangeparapu','udhakar','98392002','202@agusdialogin','Agent'],
+                            ['ACTIVE','2003','Operational-Chennai','Wasim','Akhram','9830092003','2003@magusdialog.in','Agent'],
+                            ['ACTIVE','2004','Operational-Chennai','Shaik','Shahul','9830092004','2004@magusdialog.in','Agent'],
+                            ['ACTIVE','2005','Operational-Chennai','Manoj','John','9830092005','2005@magusdialog.in','Agent'],
+                            ['ACTIVE','2006','Operational-Chennai','Yusuf','Shariff S','9830092006','2006@magusdialog.in','Agent'],
+                            ['ACTIVE','2007','Operational-Chennai','Thamodhar','V','9830092007','2007@magusdialog.in','Agent'],
+                            ['ACTIVE','2008','Operational-Chennai','Lohithraj','Prasad','9830092008','2008@magusdialog.in','Agent'],
+                            ['ACTIVE','2009','Operational-Chennai','Sathish','kumar','9830092009','2009@magusdialog.in','Agent'],
+                            ['ACTIVE','2010','Operational-Chennai','Amit','Deb','9830092010','2010@magusdialog.in','Agent'],
+                            ['ACTIVE','2011','Operational-Chennai','K','Syed','Asif Ahmed','9830092011','2011@magusdialog.in','Agent'],
+                            ['ACTIVE','2012','Operational-Chennai','Aravind','M','9830092012','2012@magusdialog.in','Agent'],
+                            ['ACTIVE','2013','Operational-Chennai','Magaluru','Sai','rahul','9830092013','2013@magusdialog.in','Agent'],
+                        ],
+                        actionData: "" 
+                    },// table data
+                }
             }
         }
     },
@@ -506,16 +506,19 @@ const leadDashData = {
                 {name: '10PM', Leads: 500, Converted: 288},
                 {name: '11PM', Leads: 480, Converted: 440},
             ],
-            MenuData:{
-                options: [
-                    'Today',
-                    'Yesterday',
-                    'Last 7 days',
-                    'Last 30 days',
-                    'This Month',
-                    'Last Month',
-                ]
-            }
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
+            } 
         }
     },
     "leadForecastData":{
@@ -534,22 +537,26 @@ const leadDashData = {
                 {name: '6 PM', leads: 3800},
                 {name: '7 PM', leads: 4300}
             ],
-            MenuData:{
-                options: [
-                'Today',
-                'Yesterday',
-                'Last 7 days',
-                'Last 30 days',
-                'This Month',
-                'Last Month',
-                ]
-            }
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
+            } 
         }
     },
     "stateWiseLeads":{
         id: "stateWiseLeads",
         componentData:{
             componentType: "pieChart",
+            // dataKey: "stateWiseLeads",
             header: "State Wise Leads",
             colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300',"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
             data: 
@@ -563,15 +570,18 @@ const leadDashData = {
                     value: 567
                 }
             ],
-            MenuData:{
-                options: [
-                    'Today',
-                    'Yesterday',
-                    'Last 7 days',
-                    'Last 30 days',
-                    'This Month',
-                    'Last Month',
-                ]
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
             }  
         }
     },
@@ -579,6 +589,7 @@ const leadDashData = {
         id: "statusWiseTickets",
         componentData:{
             componentType: "verticalBarChart",
+            dataKey: "statusWiseLeads",
             header: "Status Wise Leads",
             colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300'],
             data: [
@@ -588,15 +599,18 @@ const leadDashData = {
                 {name: 'Reopen', value: 1480},
                 {name: 'Resolved', value: 1520}
             ],
-            MenuData:{
-                options: [
-                    'Today',
-                    'Yesterday',
-                    'Last 7 days',
-                    'Last 30 days',
-                    'This Month',
-                    'Last Month',
-                ]
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
             }  
         }
     },
@@ -604,6 +618,7 @@ const leadDashData = {
             id: "dispositionWiseLeads",
             componentData:{
                 componentType: "pieChart",
+                // dataKey: "dispositionWiseLeads",
                 header: "Dispositon Wise Leads",
                 colors: ['#0712B3','#006600','#7C8AEE','#cc0066','#993300',"#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
                 data: 
@@ -629,17 +644,19 @@ const leadDashData = {
                         value: 466
                     }
                 ],
-                MenuData:{
-                    options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
-                    ]
-                }  
-            
+                actionHeader: 'More',
+                actionData: {
+                    menuData:{
+                        options: [
+                            'Today',
+                            'Yesterday',
+                            'Last 7 days',
+                            'Last 30 days',
+                            'This Month',
+                            'Last Month',
+                        ]
+                    } 
+                }   
             }
     },
     // "loginData":{
@@ -680,7 +697,7 @@ const leadDashData = {
     //                 ['Jaipreet','L5','Jan 14,2019 08:17:11','2008'],
     //                 ['Sabohi Zaidi','L2','Jan 14,2019 11:30:11','2004']
     //             ],
-    //             MenuData:{
+    //             menuData:{
     //                 options: [
     //                     'Today',
     //                     'Yesterday',
@@ -733,16 +750,19 @@ const leadDashData = {
                 ['L20190120148765','Nidhi Ranjan','GST','360000'],
                 ['L20190120148754','Noumya Kumari','Infozen','250000']
             ],
-            MenuData:{
-                options: [
-                    'Today',
-                    'Yesterday',
-                    'Last 7 days',
-                    'Last 30 days',
-                    'This Month',
-                    'Last Month',
-                ]
-            }  
+            actionHeader: 'More',
+            actionData: {
+                menuData:{
+                    options: [
+                        'Today',
+                        'Yesterday',
+                        'Last 7 days',
+                        'Last 30 days',
+                        'This Month',
+                        'Last Month',
+                    ]
+                } 
+            } 
         }
     },
     "topProductData":{
@@ -775,16 +795,19 @@ const leadDashData = {
                     ['Dialer','Narmada Khurana','1800000'],
                     ['IVR','Sabohi Zaidi','1300000']
                 ],
-                MenuData:{
-                    options: [
-                        'Today',
-                        'Yesterday',
-                        'Last 7 days',
-                        'Last 30 days',
-                        'This Month',
-                        'Last Month',
-                    ]
-                }  
+                actionHeader: 'More',
+                actionData: {
+                    menuData:{
+                        options: [
+                            'Today',
+                            'Yesterday',
+                            'Last 7 days',
+                            'Last 30 days',
+                            'This Month',
+                            'Last Month',
+                        ]
+                    } 
+                } 
             }
     },
     "recentActivitiesTicket":{
@@ -792,6 +815,7 @@ const leadDashData = {
         componentData:{
             componentType: "list",
             header: "Recent Activities",
+            actionHeader: '',
             listItemsData:[
                 {
                     step: "Activity 1",
@@ -813,6 +837,7 @@ const leadDashData = {
             componentData:{
                 componentType: "list",
                 header: "Recent Notofications",
+                actionHeader: '',
                 listItemsData:[
                     {
                         step: "Notification 1",
@@ -834,6 +859,7 @@ const leadDashData = {
             componentData:{
                 componentType: "list",
                 header: "To-do List",
+                actionHeader: '',
                 listItemsData:[
                     {
                         step: "Task 1",
