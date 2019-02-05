@@ -380,7 +380,7 @@ const leadDashData = {
             primaryLinearBarColorPrimary: 'color8',
             secondaryHeader: 'All Loggedin Lead Users',
             secondaryHeaderValues: 250,
-            secondaryProgressBarHeader: 'Locked Lead Users',
+            secondaryProgressBarHeader: 'Blocked Lead Users',
             secondaryProgressBarValue: 27,
             secondaryProgressBarValueRate: 10,
             secondaryLinearColorPrimary: 'color15',

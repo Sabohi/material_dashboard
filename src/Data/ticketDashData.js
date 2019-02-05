@@ -1104,7 +1104,7 @@ const ticketDashData = {
                         actionData: "" 
                     },// table data
                 },
-                secondaryProgressBarHeader: 'Locked Ticket Users',
+                secondaryProgressBarHeader: 'Blocked Ticket Users',
                 secondaryProgressBarValue: 27,
                 secondaryProgressBarValueRate: 10,
                 secondaryLinearColorPrimary: 'color15',
