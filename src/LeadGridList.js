@@ -27,9 +27,9 @@ import RenderLayout from './Render/RenderLayout';
 const LeadGridList = props => {
     return(
         <Grid container style={{marginTop:"7px"}}> 
-            <Grid container spacing={24} justify="space-between">
+            <Grid container spacing={2} justify="space-between">
             <Grid item xs={12} sm={12} md={12} lg={12}>
-                <Grid container spacing={24}>
+                <Grid container spacing={2}>
                     <RenderLayout
                     key = {props.leadStats.id}
                     columns = "4"
@@ -65,7 +65,7 @@ const LeadGridList = props => {
                 </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Grid container spacing={24}>
+            <Grid container spacing={2}>
                 <RenderLayout
                 key = {props.topLeads.id}
                 columns = "3"
@@ -75,7 +75,7 @@ const LeadGridList = props => {
                 {...props.topLeads.componentData}
                 />
                 <Grid item xs={12} sm={12} md={4} lg={4}>
-                <Grid container spacing={24}>
+                <Grid container spacing={2}>
                     <RenderLayout
                     key = {props.leads.id}
                     columns = "1"
@@ -105,7 +105,7 @@ const LeadGridList = props => {
             </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Grid container spacing={24}> 
+            <Grid container spacing={2}> 
                 <RenderLayout
                     key = {props.stateWiseLeads.id}
                     columns = "3"
@@ -133,7 +133,7 @@ const LeadGridList = props => {
                 </Grid>
             </Grid>
             {/* <Grid item xs={12} sm={12} md={12} lg={12}>
-                <Grid container spacing={24}> 
+                <Grid container spacing={2}> 
                     <RenderLayout
                         key = {props.recentActivitiesTicket.id}
                         columns = "3"

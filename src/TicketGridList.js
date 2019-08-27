@@ -28,9 +28,9 @@ import RenderLayout from './Render/RenderLayout';
 const TicketGridList = (props,index) => {
   return(      
     <Grid container style={{marginTop:"7px"}}> 
-      <Grid container spacing={24} justify="space-between">
+      <Grid container spacing={2} justify="space-between">
         <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={24}>
+          <Grid container spacing={2}>
             <RenderLayout
             key = {props.ticketStats.id}
             columns = "4"
@@ -66,7 +66,7 @@ const TicketGridList = (props,index) => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={24}>
+          <Grid container spacing={2}>
             <RenderLayout
               key = {props.issuesData.id}
               columns = "3"
@@ -76,7 +76,7 @@ const TicketGridList = (props,index) => {
               {...props.issuesData.componentData}
             />
             <Grid item xs={12} sm={12} md={4} lg={4}>
-              <Grid container spacing={24}>
+              <Grid container spacing={2}>
                 <RenderLayout
                   key = {props.tickets.id}
                   columns = "1"
@@ -106,7 +106,7 @@ const TicketGridList = (props,index) => {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={24}> 
+          <Grid container spacing={2}> 
               <RenderLayout
                 key = {props.priorityWiseTickets.id}
                 columns = "3"
@@ -134,7 +134,7 @@ const TicketGridList = (props,index) => {
             </Grid>
           </Grid>
         {/* <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={24}> 
+          <Grid container spacing={2}> 
               <RenderLayout
                 key = {props.recentActivitiesTicket.id}
                 columns = "3"
