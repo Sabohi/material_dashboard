@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+// import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -15,69 +15,52 @@ import ScrollUpButton from "react-scroll-up-button";
 import ticketDashData from './Data/ticketDashData';
 import leadDashData from './Data/leadDashData';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    // backgroundColor: theme.palette.background.paper,  //Check why it is giving error 
-    // backgroundColor: "green", 
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  tabs: {
-    color: 'white',
-    marginBottom: '-15px',
-  },
-  tabRoot: {
-    fontWeight:'800 !important',
-  },
-  tabContent: {
-    padding: '10px',
-    marginTop: '70px',
-  },
-  tabsIndicator: {
-    backgroundColor: '#f5f5f5 !important',
-  },
-  tabsRoot: {
-    borderBottom: '1px solid #e8e8e8',
-  },
-}));
+import styles from './Css/styles.module.css';
 
-function Dashboard() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  function handleChange(event, newValue) {
-    setValue(newValue);
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  return (
-    <div className={classes.root}>
-      <ScrollUpButton
-        EasingType="easeInOutCubic"
-        AnimationDuration={70}
-      />
-      <PageProgress color={'red'} height={68} />
-      <AppBar position="fixed" >
-          <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.grow} >
-              ADMIN DASHBOARD
-            </Typography>
-            <Typography variant="h6">
-            <Tabs  classes={{indicator: classes.tabsIndicator}} value={value} className={classes.tabs} onChange={handleChange}>
-            <Tab className={classes.tabRoot} disableRipple label="Ticket Dashboard" />
-            <Tab className={classes.tabRoot} disableRipple label="Lead Dashboard" />
-            </Tabs>
-            </Typography>
-          </Toolbar>         
-      </AppBar>
-        <div className={classes.tabContent}>
-          {value === 0 && <TicketDashboard {...ticketDashData}/>}
-          {value === 1 && <LeadDashboard {...leadDashData}/>}
-        </div>
-  
-    </div>
-  );
+  handleChange(event, newValue) {
+    this.setState({
+      value: newValue
+    });
+  }
+  render() {
+    console.log('=========');
+    console.log(styles.root);
+    return (
+      <div className={styles.root}>
+        <ScrollUpButton
+          EasingType="easeInOutCubic"
+          AnimationDuration={70}
+        />
+        <PageProgress color={'red'} height={68} />
+        <AppBar position="fixed" >
+            <Toolbar>
+              <Typography variant="h6" color="inherit" className={styles.grow} >
+                ADMIN DASHBOARD
+              </Typography>
+              <Typography variant="h6">
+              <Tabs  classes={{indicator: styles.tabsIndicator}} value={this.state.value} className={styles.tabs} onChange={this.handleChange}>
+              <Tab className={styles.tabRoot} disableRipple label="Ticket Dashboard" />
+              <Tab className={styles.tabRoot} disableRipple label="Lead Dashboard" />
+              </Tabs>
+              </Typography>
+            </Toolbar>         
+        </AppBar>
+          <div className={styles.tabContent}>
+            {this.state.value === 0 && <TicketDashboard {...ticketDashData}/>}
+            {this.state.value === 1 && <LeadDashboard {...leadDashData}/>}
+          </div>
+      </div>
+    );
+  }
 }
 
 export default Dashboard;
