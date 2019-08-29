@@ -45,19 +45,14 @@ const  styles = {
   },
 };
 
-
 class Dashboard extends React.Component {
-
-  //Subscription Channel URL
-  serverURL = "http://172.16.3.45/CZCRM/dashboard_subscriber/subscribe_dashboard_events.php";  //should work with 46 as well
-  sseSource = null;
-
   constructor(props) {
     super(props);
     this.state = {
       value: 0,
-      ticketDashData: ticketDashData,
-      leadDashData: leadDashData,
+      // ticketDashData: ticketDashData,
+      // leadDashData: leadDashData,
+      isLoaded: false,
     };
   }
 
@@ -71,79 +66,31 @@ class Dashboard extends React.Component {
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    if (window.EventSource) {
-      //Initiating
-      try {
-        this.sseSource = new EventSource(this.serverURL);
-        console.log ("Initiating SSE.");
-      }catch (e) {
-        console.error ("Unable to initiate SSE.");
-      }
-      //Open
-      this.sseSource.addEventListener ("open", function (e) {
-        console.log ("Opening SSE.");
-      });
-      //Message
-      this.sseSource.addEventListener ("message", (e) => {
-        console.log ("Message received from SSE.");
-        console.log ("Data: ", e.data);
-        this.handleSSE(e.data,"success"); 
-      });
-      //Error
-      this.sseSource.addEventListener ("error", (e) => {
-        console.warn ("Some error occured in SSE.");
-      });
-    }
-    else {
-      console.error ("SSE is not supported!");
-    }
+    setInterval(this.fetchDashboardData,1000);
   }
 
-  // SSE Dashboard : Handler
-  handleSSE = (msg,variant) =>{
-    if(msg !== "false")
-    { 
-      const packet = JSON.parse(msg);
-      console.log(packet);
-      var session_client_id = '809';
-      console.log(packet.client_id);
-      var client_id = (packet.client_id !== undefined)?packet.client_id:'';
-
-      if(session_client_id === client_id){
-        let ticketDashDataCopy = {...this.state.ticketDashData};
-        ticketDashDataCopy.ticketStats.componentData.primaryHeaderValues = packet.value;
-        this.setState({
-          ticketDashData: ticketDashDataCopy
-        });
-      }
-      // if(this.state.tokenArray.some(e => e === packet.token))
-      // {
-      //   this.props.enqueueSnackbar(packet.statusMsg, { 
-      //     persist: false,
-      //     variant: variant,
-      //   });
-      //   let notiStackCopy = [...this.state.notiStack];
-      //   notiStackCopy.push(packet);
-
-      //   this.setState({
-      //     notiBadge : this.state.notiBadge + 1,
-      //     modelsInfo: packet,
-      //     isLoading : false,
-      //     notiStack : notiStackCopy
-      //   });
-        
-      // }
-      // else if (this.props.location.pathname === packet.moduleInfo.module)
-      // {
-      //   console.log("====Module location===",this.props.location);
-      //   this.props.enqueueSnackbar(packet.statusMsg, { 
-      //     persist: false,
-      //     variant: variant,
-      //   });
-      //   this.setState({modelsInfo: packet});
-      // }
-      
-    }
+  fetchDashboardData = () => {
+    console.log("=======[Dashboard.js] fetchDashboardData  =====");
+    // fetch("https://restcountries.eu/rest/v2/all")
+    //   .then(res => res.json())
+    //   .then(
+    //     (result) => {
+    //       console.log(result)
+    //       this.setState({
+    //         isLoaded: true,
+    //         // items: result.items
+    //       });
+    //     },
+    //     // Note: it's important to handle errors here
+    //     // instead of a catch() block so that we don't swallow
+    //     // exceptions from actual bugs in components.
+    //     (error) => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         error
+    //       });
+    //     }
+    //   )
   }
 
   handleChange = (event, newValue) => {
@@ -175,8 +122,8 @@ class Dashboard extends React.Component {
             </Toolbar>         
         </AppBar>
           <div className={classes.tabContent}>
-            {this.state.value === 0 && <TicketDashboard {...this.state.ticketDashData}/>}
-            {this.state.value === 1 && <LeadDashboard {...this.state.leadDashData}/>}
+            {this.state.value === 0 && <TicketDashboard {...ticketDashData}/>}
+            {this.state.value === 1 && <LeadDashboard {...leadDashData}/>}
           </div>
       </div>
     );

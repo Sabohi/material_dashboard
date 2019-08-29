@@ -5,7 +5,7 @@ const ticketDashData = {
             componentType: "data",
             header: 'Tickets',
             primaryHeader: 'Total Tickets Created',
-            primaryHeaderValues: 6099,
+            primaryHeaderValues: '...',
             primaryHeaderValuesData:{
                 dialogHeader: 'Ticket Details',
                 tableData:{
@@ -111,12 +111,12 @@ const ticketDashData = {
                     },// table data
             },
             primaryProgressBarHeader: 'Closed',
-            primaryProgressBarValue: 3045,
-            primaryProgressBarValueRate: 78,
+            primaryProgressBarValue: '...',
+            primaryProgressBarValueRate: '...',
             primaryLinearColorPrimary: 'color1',
             primaryLinearBarColorPrimary: 'color2',
             secondaryHeader: 'Total Tickets Escalated',
-            secondaryHeaderValues: 2999,
+            secondaryHeaderValues: '...',
             secondaryHeaderValuesData:{
                 dialogHeader: 'Ticket Details',
                 tableData:{
@@ -222,8 +222,8 @@ const ticketDashData = {
                 },// table data
             },
             secondaryProgressBarHeader: 'Escalation Rate',
-            secondaryProgressBarValue: 2999,
-            secondaryProgressBarValueRate: 85,
+            secondaryProgressBarValue: '...',
+            secondaryProgressBarValueRate: '...',
             secondaryLinearColorPrimary: 'color9',
             secondaryLinearBarColorPrimary: 'color10',
             actionHeader: 'More',
@@ -343,7 +343,7 @@ const ticketDashData = {
                 componentType: "data",
                 header: 'Tasks',
                 primaryHeader: 'Total Tasks Created',
-                primaryHeaderValues: 2005,
+                primaryHeaderValues: '...',
                 primaryHeaderValuesData: {
                     dialogHeader: 'Escalation Details',
                     tableData:{
@@ -438,14 +438,15 @@ const ticketDashData = {
                     },// table data
                 },
                 primaryProgressBarHeader: 'Closed',
-                primaryProgressBarValue: 999,
-                primaryProgressBarValueRate: 54,
+                primaryProgressBarValue: '...',
+                primaryProgressBarValueRate: '...',
                 primaryLinearColorPrimary: 'color3',
                 primaryLinearBarColorPrimary: 'color4',
                 secondaryHeader: 'Total Tasks Overdue',
-                secondaryHeaderValues: 4009,
+                secondaryHeaderValues: '...',
                 secondaryProgressBarHeader: 'Overdue Rate',
-                secondaryProgressBarValue: 4009,
+                secondaryProgressBarValue: '...',
+                secondaryProgressBarValueRate: '...',
                 secondaryProgressBarValueData: {
                     dialogHeader: 'Escalation Details',
                     tableData:{
@@ -539,7 +540,6 @@ const ticketDashData = {
                         actionData: "" 
                     },// table data
                 },
-                secondaryProgressBarValueRate: 48,
                 secondaryLinearColorPrimary: 'color11',
                 secondaryLinearBarColorPrimary: 'color12',
                 actionHeader: 'More',
@@ -652,7 +652,7 @@ const ticketDashData = {
                 componentType: "data",
                 header: 'Ticket Mails',
                 primaryHeader: 'Total Ticket Mails Received',
-                primaryHeaderValues: 5010,
+                primaryHeaderValues: '...',
                 primaryHeaderValuesData: {
                     dialogHeader: 'Ticket Mail Details',
                     tableData:{
@@ -744,12 +744,12 @@ const ticketDashData = {
                     },// table data
                 },
                 primaryProgressBarHeader: 'Ticket Mails Replied',
-                primaryProgressBarValue: 2593,
-                primaryProgressBarValueRate: 69,
+                primaryProgressBarValue: '...',
+                primaryProgressBarValueRate: '...',
                 primaryLinearColorPrimary: 'color5',
                 primaryLinearBarColorPrimary: 'color6',
                 secondaryHeader: 'Total Fresh Ticket Mails Received',
-                secondaryHeaderValues: 1099,
+                secondaryHeaderValues: '...',
                 secondaryHeaderValuesData: {
                     dialogHeader: 'Ticket Mail Details',
                     tableData:{
@@ -841,8 +841,8 @@ const ticketDashData = {
                     },// table data
                 },
                 secondaryProgressBarHeader: 'Fresh Ticket Mails Replied',
-                secondaryProgressBarValue: 987,
-                secondaryProgressBarValueRate: 66,
+                secondaryProgressBarValue: '...',
+                secondaryProgressBarValueRate: '...',
                 secondaryLinearColorPrimary: 'color13',
                 secondaryLinearBarColorPrimary: 'color14',
                 actionHeader: 'More',
@@ -952,7 +952,7 @@ const ticketDashData = {
                 componentType: "data",
                 header: 'Ticket Users',
                 primaryHeader: 'All Ticket Users',
-                primaryHeaderValues: 276,
+                primaryHeaderValues: '...',
                 primaryHeaderValuesData: {
                     dialogHeader: 'Ticket User Details',
                     tableData:{
@@ -1026,12 +1026,12 @@ const ticketDashData = {
                     },// table data
                 },
                 primaryProgressBarHeader: 'Active Ticket Users',
-                primaryProgressBarValue: 267,
-                primaryProgressBarValueRate: 90,
+                primaryProgressBarValue: '...',
+                primaryProgressBarValueRate: '...',
                 primaryLinearColorPrimary: 'color7',
                 primaryLinearBarColorPrimary: 'color8',
                 secondaryHeader: 'All Loggedin Ticket Users',
-                secondaryHeaderValues: 250,
+                secondaryHeaderValues: '...',
                 secondaryHeaderValuesData: {
                     dialogHeader: 'Ticket User Details',
                     tableData:{
@@ -1105,8 +1105,8 @@ const ticketDashData = {
                     },// table data
                 },
                 secondaryProgressBarHeader: 'Locked Ticket Users',
-                secondaryProgressBarValue: 27,
-                secondaryProgressBarValueRate: 10,
+                secondaryProgressBarValue: '...',
+                secondaryProgressBarValueRate: '...',
                 secondaryLinearColorPrimary: 'color15',
                 secondaryLinearBarColorPrimary: 'color16',
                 actionHeader: 'More',

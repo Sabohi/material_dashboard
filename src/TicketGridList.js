@@ -24,146 +24,151 @@ import CustomizedMenu from './Actions/Menu';
 
 //Rendering
 import RenderLayout from './Render/RenderLayout';
-
-const TicketGridList = (props,index) => {
-  return(      
-    <Grid container style={{marginTop:"7px"}}> 
-      <Grid container spacing={2} justify="space-between">
-        <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={2}>
-            <RenderLayout
-            key = {props.ticketStats.id}
-            columns = "4"
-            headerBackground= "color2"
-            icon={<ConfirmationNumberIcon fontSize="large"/>}
-            action={<CustomizedMenu {...props.ticketStats.componentData.actionData.menuData}/>}
-            {...props.ticketStats.componentData}
-            />
-            <RenderLayout
-              key = {props.taskStats.id}
+class TicketGridList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = props;
+  }
+  render(){
+    return(      
+      <Grid container style={{marginTop:"7px"}}> 
+        <Grid container spacing={2} justify="space-between">
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={2}>
+              <RenderLayout
+              key = {this.state.ticketStats.id}
               columns = "4"
-              headerBackground= "color4"
-              icon={<TimerOutlinedIcon fontSize="large"/>}
-              action={<FullScreenDialog {...props.taskStats.componentData.actionData.dialogData}/>}
-              {...props.taskStats.componentData}
-            />
-            <RenderLayout
-                key = {props.mailStats.id}
-                columns = "4"
-                headerBackground= "color6"
-                icon={<MailOutlinedIcon fontSize="large"/>}
-                action={<FullScreenDialog {...props.mailStats.componentData.actionData.dialogData}/>}
-                {...props.mailStats.componentData}
+              headerBackground= "color2"
+              icon={<ConfirmationNumberIcon fontSize="large"/>}
+              action={<CustomizedMenu {...this.state.ticketStats.componentData.actionData.menuData}/>}
+              {...this.state.ticketStats.componentData}
               />
               <RenderLayout
-                key = {props.userStats.id}
+                key = {this.state.taskStats.id}
                 columns = "4"
-                headerBackground= "color8"
-                icon={<PeopleOutlinedIcon fontSize="large"/>}
-                action={<FullScreenDialog {...props.userStats.componentData.actionData.dialogData}/>}
-                {...props.userStats.componentData}
+                headerBackground= "color4"
+                icon={<TimerOutlinedIcon fontSize="large"/>}
+                action={<FullScreenDialog {...this.state.taskStats.componentData.actionData.dialogData}/>}
+                {...this.state.taskStats.componentData}
               />
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={2}>
-            <RenderLayout
-              key = {props.issuesData.id}
-              columns = "3"
-              headerBackground= "color8"
-              icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
-              action=""
-              {...props.issuesData.componentData}
-            />
-            <Grid item xs={12} sm={12} md={4} lg={4}>
-              <Grid container spacing={2}>
-                <RenderLayout
-                  key = {props.tickets.id}
-                  columns = "1"
+              <RenderLayout
+                  key = {this.state.mailStats.id}
+                  columns = "4"
                   headerBackground= "color6"
-                  icon={<TimelineOutlinedIcon fontSize="large"/>}
-                  action={<CustomizedMenu {...props.tickets.componentData.actionData.menuData}/>}
-                  {...props.tickets.componentData}
+                  icon={<MailOutlinedIcon fontSize="large"/>}
+                  action={<FullScreenDialog {...this.state.mailStats.componentData.actionData.dialogData}/>}
+                  {...this.state.mailStats.componentData}
                 />
                 <RenderLayout
-                  key = {props.ticketForecastData.id}
-                  columns = "1"
-                  headerBackground= "color4"
-                  icon={<BarChartOutlinedIcon fontSize="large"/>}
-                  action=""
-                  {...props.ticketForecastData.componentData}
+                  key = {this.state.userStats.id}
+                  columns = "4"
+                  headerBackground= "color8"
+                  icon={<PeopleOutlinedIcon fontSize="large"/>}
+                  action={<FullScreenDialog {...this.state.userStats.componentData.actionData.dialogData}/>}
+                  {...this.state.userStats.componentData}
+                />
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={2}>
+              <RenderLayout
+                key = {this.state.issuesData.id}
+                columns = "3"
+                headerBackground= "color8"
+                icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
+                action=""
+                {...this.state.issuesData.componentData}
+              />
+              <Grid item xs={12} sm={12} md={4} lg={4}>
+                <Grid container spacing={2}>
+                  <RenderLayout
+                    key = {this.state.tickets.id}
+                    columns = "1"
+                    headerBackground= "color6"
+                    icon={<TimelineOutlinedIcon fontSize="large"/>}
+                    action={<CustomizedMenu {...this.state.tickets.componentData.actionData.menuData}/>}
+                    {...this.state.tickets.componentData}
+                  />
+                  <RenderLayout
+                    key = {this.state.ticketForecastData.id}
+                    columns = "1"
+                    headerBackground= "color4"
+                    icon={<BarChartOutlinedIcon fontSize="large"/>}
+                    action=""
+                    {...this.state.ticketForecastData.componentData}
+                  />
+                </Grid>
+              </Grid>
+              <RenderLayout
+                key = {this.state.issueClosersData.id}
+                columns = "3"
+                headerBackground= "color2"
+                icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
+                action=""
+                {...this.state.issueClosersData.componentData}
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={2}> 
+                <RenderLayout
+                  key = {this.state.priorityWiseTickets.id}
+                  columns = "3"
+                  headerBackground= "color2"
+                  icon={<DonutSmallOutlinedIcon fontSize="large"/>}
+                  action={<CustomizedMenu {...this.state.priorityWiseTickets.componentData.actionData.menuData}/>}
+                  {...this.state.priorityWiseTickets.componentData}
+                />
+                <RenderLayout
+                  key = {this.state.statusWiseTickets.id}
+                  columns = "3"
+                  headerBackground= "color8"
+                  icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
+                  action={<CustomizedMenu {...this.state.statusWiseTickets.componentData.actionData.menuData}/>}
+                  {...this.state.statusWiseTickets.componentData}
+                />
+                <RenderLayout
+                  key = {this.state.tickeTypeWiseTickets.id}
+                  columns = "3"
+                  headerBackground= "color6"
+                  icon={<AllOutOutlinedIcon fontSize="large"/>}
+                  action={<CustomizedMenu {...this.state.tickeTypeWiseTickets.componentData.actionData.menuData}/>}
+                  {...this.state.tickeTypeWiseTickets.componentData}
                 />
               </Grid>
             </Grid>
-            <RenderLayout
-              key = {props.issueClosersData.id}
-              columns = "3"
-              headerBackground= "color2"
-              icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
-              action=""
-              {...props.issueClosersData.componentData}
-            />
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={2}> 
-              <RenderLayout
-                key = {props.priorityWiseTickets.id}
-                columns = "3"
-                headerBackground= "color2"
-                icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.priorityWiseTickets.componentData.actionData.menuData}/>}
-                {...props.priorityWiseTickets.componentData}
-              />
-              <RenderLayout
-                key = {props.statusWiseTickets.id}
-                columns = "3"
-                headerBackground= "color8"
-                icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.statusWiseTickets.componentData.actionData.menuData}/>}
-                {...props.statusWiseTickets.componentData}
-              />
-              <RenderLayout
-                key = {props.tickeTypeWiseTickets.id}
-                columns = "3"
-                headerBackground= "color6"
-                icon={<AllOutOutlinedIcon fontSize="large"/>}
-                action={<CustomizedMenu {...props.tickeTypeWiseTickets.componentData.actionData.menuData}/>}
-                {...props.tickeTypeWiseTickets.componentData}
-              />
-            </Grid>
-          </Grid>
-        {/* <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Grid container spacing={2}> 
-              <RenderLayout
-                key = {props.recentActivitiesTicket.id}
-                columns = "3"
-                headerBackground= "secondaryClass3"
-                icon={<FormatShapesOutlinedIcon fontSize="large"/>}
-                action=""
-                {...props.recentActivitiesTicket.componentData}
-              />
-              <RenderLayout
-                key = {props.recentNotifications.id}
-                columns = "3"
-                headerBackground= "secondaryClass2"
-                icon={<NotificationsOutlinedIcon fontSize="large"/>}
-                action=""
-                {...props.recentNotifications.componentData}
-              />
-              <RenderLayout
-                key = {props.toDo.id}
-                columns = "3"
-                headerBackground= "secondaryClass1"
-                icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}
-                action=""
-                {...props.toDo.componentData}
-              />
-            </Grid>
-          </Grid> */}
-      </Grid> 
-    </Grid>
-  );
-};
+          {/* <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid container spacing={2}> 
+                <RenderLayout
+                  key = {this.state.recentActivitiesTicket.id}
+                  columns = "3"
+                  headerBackground= "secondaryClass3"
+                  icon={<FormatShapesOutlinedIcon fontSize="large"/>}
+                  action=""
+                  {...this.state.recentActivitiesTicket.componentData}
+                />
+                <RenderLayout
+                  key = {this.state.recentNotifications.id}
+                  columns = "3"
+                  headerBackground= "secondaryClass2"
+                  icon={<NotificationsOutlinedIcon fontSize="large"/>}
+                  action=""
+                  {...this.state.recentNotifications.componentData}
+                />
+                <RenderLayout
+                  key = {this.state.toDo.id}
+                  columns = "3"
+                  headerBackground= "secondaryClass1"
+                  icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}
+                  action=""
+                  {...this.state.toDo.componentData}
+                />
+              </Grid>
+            </Grid> */}
+        </Grid> 
+      </Grid>
+    );
+  }
+}
 
 export default TicketGridList;

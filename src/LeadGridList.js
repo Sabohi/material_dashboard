@@ -24,145 +24,151 @@ import CustomizedMenu from './Actions/Menu';
 //Rendering
 import RenderLayout from './Render/RenderLayout';
 
-const LeadGridList = props => {
-    return(
-        <Grid container style={{marginTop:"7px"}}> 
-            <Grid container spacing={2} justify="space-between">
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-                <Grid container spacing={2}>
-                    <RenderLayout
-                    key = {props.leadStats.id}
-                    columns = "4"
-                    headerBackground= "color6"
-                    icon={<ConfirmationNumberIcon fontSize="large"/>}
-                    action={<FullScreenDialog {...props.leadStats.componentData.actionData.dialogData}/>}
-                    {...props.leadStats.componentData}
-                    />
-                    <RenderLayout
-                    key = {props.taskStats.id}
-                    columns = "4"
-                    headerBackground= "color4"
-                    icon={<TimerOutlinedIcon fontSize="large"/>}
-                    action={<FullScreenDialog {...props.taskStats.componentData.actionData.dialogData}/>}
-                    {...props.taskStats.componentData}
-                    />
-                    <RenderLayout
-                        key = {props.mailStats.id}
+class LeadGridList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = props;
+    }
+    render(){
+        return(
+            <Grid container style={{marginTop:"7px"}}> 
+                <Grid container spacing={2} justify="space-between">
+                <Grid item xs={12} sm={12} md={12} lg={12}>
+                    <Grid container spacing={2}>
+                        <RenderLayout
+                        key = {this.state.leadStats.id}
                         columns = "4"
                         headerBackground= "color6"
-                        icon={<MailOutlinedIcon fontSize="large"/>}
-                        action={<FullScreenDialog {...props.mailStats.componentData.actionData.dialogData}/>}
-                        {...props.mailStats.componentData}
-                    />
-                    <RenderLayout
-                        key = {props.userStats.id}
+                        icon={<ConfirmationNumberIcon fontSize="large"/>}
+                        action={<FullScreenDialog {...this.state.leadStats.componentData.actionData.dialogData}/>}
+                        {...this.state.leadStats.componentData}
+                        />
+                        <RenderLayout
+                        key = {this.state.taskStats.id}
                         columns = "4"
-                        headerBackground= "color8"
-                        icon={<PeopleOutlinedIcon fontSize="large"/>}
-                        action={<FullScreenDialog {...props.userStats.componentData.actionData.dialogData}/>}
-                        {...props.userStats.componentData}
-                    />
+                        headerBackground= "color4"
+                        icon={<TimerOutlinedIcon fontSize="large"/>}
+                        action={<FullScreenDialog {...this.state.taskStats.componentData.actionData.dialogData}/>}
+                        {...this.state.taskStats.componentData}
+                        />
+                        <RenderLayout
+                            key = {this.state.mailStats.id}
+                            columns = "4"
+                            headerBackground= "color6"
+                            icon={<MailOutlinedIcon fontSize="large"/>}
+                            action={<FullScreenDialog {...this.state.mailStats.componentData.actionData.dialogData}/>}
+                            {...this.state.mailStats.componentData}
+                        />
+                        <RenderLayout
+                            key = {this.state.userStats.id}
+                            columns = "4"
+                            headerBackground= "color8"
+                            icon={<PeopleOutlinedIcon fontSize="large"/>}
+                            action={<FullScreenDialog {...this.state.userStats.componentData.actionData.dialogData}/>}
+                            {...this.state.userStats.componentData}
+                        />
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Grid container spacing={2}>
-                <RenderLayout
-                key = {props.topLeads.id}
-                columns = "3"
-                headerBackground= "color8"
-                icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
-                action=""
-                {...props.topLeads.componentData}
-                />
-                <Grid item xs={12} sm={12} md={4} lg={4}>
+                <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={2}>
                     <RenderLayout
-                    key = {props.leads.id}
-                    columns = "1"
-                    headerBackground= "color6"
-                    icon={<TimelineOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.leads.componentData.actionData.menuData}/>}
-                    {...props.leads.componentData}
-                    />
-                    <RenderLayout
-                    key = {props.leadForecastData.id}
-                    columns = "1"
-                    headerBackground= "color4"
-                    icon={<BarChartOutlinedIcon fontSize="large"/>}
-                    action=""
-                    {...props.leadForecastData.componentData}
-                    />
-                </Grid>
-                </Grid>
-                <RenderLayout
-                key = {props.topProductData.id}
-                columns = "3"
-                headerBackground= "color2"
-                icon={<ShoppingCartIcon fontSize="large"/>}
-                action=""
-                {...props.topProductData.componentData}
-                />
-            </Grid>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Grid container spacing={2}> 
-                <RenderLayout
-                    key = {props.stateWiseLeads.id}
-                    columns = "3"
-                    headerBackground= "color2"
-                    icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.stateWiseLeads.componentData.actionData.menuData}/>}
-                    {...props.stateWiseLeads.componentData}
-                />
-                <RenderLayout
-                    key = {props.statusWiseLeads.id}
+                    key = {this.state.topLeads.id}
                     columns = "3"
                     headerBackground= "color8"
-                    icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.statusWiseLeads.componentData.actionData.menuData}/>}
-                    {...props.statusWiseLeads.componentData}
-                />
-                <RenderLayout
-                    key = {props.dispositionWiseLeads.id}
+                    icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
+                    action=""
+                    {...this.state.topLeads.componentData}
+                    />
+                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                    <Grid container spacing={2}>
+                        <RenderLayout
+                        key = {this.state.leads.id}
+                        columns = "1"
+                        headerBackground= "color6"
+                        icon={<TimelineOutlinedIcon fontSize="large"/>}
+                        action={<CustomizedMenu {...this.state.leads.componentData.actionData.menuData}/>}
+                        {...this.state.leads.componentData}
+                        />
+                        <RenderLayout
+                        key = {this.state.leadForecastData.id}
+                        columns = "1"
+                        headerBackground= "color4"
+                        icon={<BarChartOutlinedIcon fontSize="large"/>}
+                        action=""
+                        {...this.state.leadForecastData.componentData}
+                        />
+                    </Grid>
+                    </Grid>
+                    <RenderLayout
+                    key = {this.state.topProductData.id}
                     columns = "3"
-                    headerBackground= "color6"
-                    icon={<AllOutOutlinedIcon fontSize="large"/>}
-                    action={<CustomizedMenu {...props.dispositionWiseLeads.componentData.actionData.menuData}/>}
-                    {...props.dispositionWiseLeads.componentData}
-                />
+                    headerBackground= "color2"
+                    icon={<ShoppingCartIcon fontSize="large"/>}
+                    action=""
+                    {...this.state.topProductData.componentData}
+                    />
                 </Grid>
-            </Grid>
-            {/* <Grid item xs={12} sm={12} md={12} lg={12}>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={2}> 
                     <RenderLayout
-                        key = {props.recentActivitiesTicket.id}
+                        key = {this.state.stateWiseLeads.id}
                         columns = "3"
-                        headerBackground= "secondaryClass3"
-                        icon={<FormatShapesOutlinedIcon fontSize="large"/>}
-                        action=""
-                        {...props.recentActivitiesTicket.componentData}
+                        headerBackground= "color2"
+                        icon={<DonutSmallOutlinedIcon fontSize="large"/>}
+                        action={<CustomizedMenu {...this.state.stateWiseLeads.componentData.actionData.menuData}/>}
+                        {...this.state.stateWiseLeads.componentData}
                     />
                     <RenderLayout
-                        key = {props.recentNotifications.id}
+                        key = {this.state.statusWiseLeads.id}
                         columns = "3"
-                        headerBackground= "secondaryClass2"
-                        icon={<NotificationsOutlinedIcon fontSize="large"/>}
-                        action=""
-                        {...props.recentNotifications.componentData}
+                        headerBackground= "color8"
+                        icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
+                        action={<CustomizedMenu {...this.state.statusWiseLeads.componentData.actionData.menuData}/>}
+                        {...this.state.statusWiseLeads.componentData}
                     />
                     <RenderLayout
-                        key = {props.toDo.id}
+                        key = {this.state.dispositionWiseLeads.id}
                         columns = "3"
-                        headerBackground= "secondaryClass1"
-                        icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}
-                        action=""
-                        {...props.toDo.componentData}
+                        headerBackground= "color6"
+                        icon={<AllOutOutlinedIcon fontSize="large"/>}
+                        action={<CustomizedMenu {...this.state.dispositionWiseLeads.componentData.actionData.menuData}/>}
+                        {...this.state.dispositionWiseLeads.componentData}
                     />
+                    </Grid>
                 </Grid>
-            </Grid> */}
-        </Grid>
-        </Grid>
-    );
+                {/* <Grid item xs={12} sm={12} md={12} lg={12}>
+                    <Grid container spacing={2}> 
+                        <RenderLayout
+                            key = {this.state.recentActivitiesTicket.id}
+                            columns = "3"
+                            headerBackground= "secondaryClass3"
+                            icon={<FormatShapesOutlinedIcon fontSize="large"/>}
+                            action=""
+                            {...this.state.recentActivitiesTicket.componentData}
+                        />
+                        <RenderLayout
+                            key = {this.state.recentNotifications.id}
+                            columns = "3"
+                            headerBackground= "secondaryClass2"
+                            icon={<NotificationsOutlinedIcon fontSize="large"/>}
+                            action=""
+                            {...this.state.recentNotifications.componentData}
+                        />
+                        <RenderLayout
+                            key = {this.state.toDo.id}
+                            columns = "3"
+                            headerBackground= "secondaryClass1"
+                            icon={<PlaylistAddCheckOutlinedIcon fontSize="large"/>}
+                            action=""
+                            {...this.state.toDo.componentData}
+                        />
+                    </Grid>
+                </Grid> */}
+                </Grid>
+            </Grid>
+        );
+    }
 }
 
 export default LeadGridList;
