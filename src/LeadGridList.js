@@ -41,7 +41,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color6"
                         icon={<ConfirmationNumberIcon fontSize="large"/>}
                         action={<FullScreenDialog {...this.state.leadStats.componentData.actionData.dialogData}/>}
-                        {...this.state.leadStats.componentData}
+                        {...this.state.leadStats.componentData} {...this.state.leadStatsData.componentData}
                         />
                         <RenderLayout
                         key = {this.state.taskStats.id}
@@ -49,7 +49,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color4"
                         icon={<TimerOutlinedIcon fontSize="large"/>}
                         action={<FullScreenDialog {...this.state.taskStats.componentData.actionData.dialogData}/>}
-                        {...this.state.taskStats.componentData}
+                        {...this.state.taskStats.componentData} {...this.state.taskStatsData.componentData}
                         />
                         <RenderLayout
                             key = {this.state.mailStats.id}
@@ -57,7 +57,7 @@ class LeadGridList extends React.Component {
                             headerBackground= "color6"
                             icon={<MailOutlinedIcon fontSize="large"/>}
                             action={<FullScreenDialog {...this.state.mailStats.componentData.actionData.dialogData}/>}
-                            {...this.state.mailStats.componentData}
+                            {...this.state.mailStats.componentData} {...this.state.mailStatsData.componentData}
                         />
                         <RenderLayout
                             key = {this.state.userStats.id}
@@ -65,7 +65,7 @@ class LeadGridList extends React.Component {
                             headerBackground= "color8"
                             icon={<PeopleOutlinedIcon fontSize="large"/>}
                             action={<FullScreenDialog {...this.state.userStats.componentData.actionData.dialogData}/>}
-                            {...this.state.userStats.componentData}
+                            {...this.state.userStats.componentData} {...this.state.userStatsData.componentData}
                         />
                     </Grid>
                 </Grid>
@@ -77,7 +77,7 @@ class LeadGridList extends React.Component {
                     headerBackground= "color8"
                     icon={<AttachMoneyOutlinedIcon fontSize="large"/>}
                     action=""
-                    {...this.state.topLeads.componentData}
+                    {...this.state.topLeads.componentData}  {...this.state.topLeadsData.componentData}
                     />
                     <Grid item xs={12} sm={12} md={4} lg={4}>
                     <Grid container spacing={2}>
@@ -87,7 +87,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color6"
                         icon={<TimelineOutlinedIcon fontSize="large"/>}
                         action={<CustomizedMenu {...this.state.leads.componentData.actionData.menuData}/>}
-                        {...this.state.leads.componentData}
+                        {...this.state.leads.componentData} {...this.state.leadsData.componentData}
                         />
                         <RenderLayout
                         key = {this.state.leadForecastData.id}
@@ -95,7 +95,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color4"
                         icon={<BarChartOutlinedIcon fontSize="large"/>}
                         action=""
-                        {...this.state.leadForecastData.componentData}
+                        {...this.state.leadForecast.componentData} {...this.state.leadForecastData.componentData}
                         />
                     </Grid>
                     </Grid>
@@ -105,7 +105,7 @@ class LeadGridList extends React.Component {
                     headerBackground= "color2"
                     icon={<ShoppingCartIcon fontSize="large"/>}
                     action=""
-                    {...this.state.topProductData.componentData}
+                    {...this.state.topProduct.componentData} {...this.state.topProductData.componentData}
                     />
                 </Grid>
                 </Grid>
@@ -117,7 +117,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color2"
                         icon={<DonutSmallOutlinedIcon fontSize="large"/>}
                         action={<CustomizedMenu {...this.state.stateWiseLeads.componentData.actionData.menuData}/>}
-                        {...this.state.stateWiseLeads.componentData}
+                        {...this.state.stateWiseLeads.componentData} {...this.state.stateWiseLeadsData.componentData}
                     />
                     <RenderLayout
                         key = {this.state.statusWiseLeads.id}
@@ -125,7 +125,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color8"
                         icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
                         action={<CustomizedMenu {...this.state.statusWiseLeads.componentData.actionData.menuData}/>}
-                        {...this.state.statusWiseLeads.componentData}
+                        {...this.state.statusWiseLeads.componentData} {...this.state.statusWiseLeadsData.componentData}
                     />
                     <RenderLayout
                         key = {this.state.dispositionWiseLeads.id}
@@ -133,7 +133,7 @@ class LeadGridList extends React.Component {
                         headerBackground= "color6"
                         icon={<AllOutOutlinedIcon fontSize="large"/>}
                         action={<CustomizedMenu {...this.state.dispositionWiseLeads.componentData.actionData.menuData}/>}
-                        {...this.state.dispositionWiseLeads.componentData}
+                        {...this.state.dispositionWiseLeads.componentData} {...this.state.dispositionWiseLeadsData.componentData}
                     />
                     </Grid>
                 </Grid>

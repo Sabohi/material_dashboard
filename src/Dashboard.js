@@ -379,7 +379,7 @@ const ticketDashboardData = {
       ]
     }
   },
-  "ticketForecastData1":{
+  "ticketForecastData":{
     componentData:{
       data: [
         {name: '1 PM', tickets: 4000},

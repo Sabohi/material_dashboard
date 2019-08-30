@@ -41,7 +41,7 @@ class TicketGridList extends React.Component {
               headerBackground= "color2"
               icon={<ConfirmationNumberIcon fontSize="large"/>}
               action={<CustomizedMenu {...this.state.ticketStats.componentData.actionData.menuData}/>}
-              {...this.state.ticketStats.componentData}
+              {...this.state.ticketStats.componentData} {...this.state.ticketStatsData.componentData}
               />
               <RenderLayout
                 key = {this.state.taskStats.id}
@@ -49,7 +49,7 @@ class TicketGridList extends React.Component {
                 headerBackground= "color4"
                 icon={<TimerOutlinedIcon fontSize="large"/>}
                 action={<FullScreenDialog {...this.state.taskStats.componentData.actionData.dialogData}/>}
-                {...this.state.taskStats.componentData}
+                {...this.state.taskStats.componentData} {...this.state.taskStatsData.componentData}
               />
               <RenderLayout
                   key = {this.state.mailStats.id}
@@ -57,7 +57,7 @@ class TicketGridList extends React.Component {
                   headerBackground= "color6"
                   icon={<MailOutlinedIcon fontSize="large"/>}
                   action={<FullScreenDialog {...this.state.mailStats.componentData.actionData.dialogData}/>}
-                  {...this.state.mailStats.componentData}
+                  {...this.state.mailStats.componentData} {...this.state.mailStatsData.componentData}
                 />
                 <RenderLayout
                   key = {this.state.userStats.id}
@@ -65,7 +65,7 @@ class TicketGridList extends React.Component {
                   headerBackground= "color8"
                   icon={<PeopleOutlinedIcon fontSize="large"/>}
                   action={<FullScreenDialog {...this.state.userStats.componentData.actionData.dialogData}/>}
-                  {...this.state.userStats.componentData}
+                  {...this.state.userStats.componentData} {...this.state.userStatsData.componentData}
                 />
             </Grid>
           </Grid>
@@ -77,7 +77,7 @@ class TicketGridList extends React.Component {
                 headerBackground= "color8"
                 icon={<SentimentDissatisfiedOutlinedIcon fontSize="large"/>}
                 action=""
-                {...this.state.issuesData.componentData}
+                {...this.state.issues.componentData} {...this.state.issuesData.componentData}
               />
               <Grid item xs={12} sm={12} md={4} lg={4}>
                 <Grid container spacing={2}>
@@ -87,7 +87,7 @@ class TicketGridList extends React.Component {
                     headerBackground= "color6"
                     icon={<TimelineOutlinedIcon fontSize="large"/>}
                     action={<CustomizedMenu {...this.state.tickets.componentData.actionData.menuData}/>}
-                    {...this.state.tickets.componentData}
+                    {...this.state.tickets.componentData} {...this.state.ticketsData.componentData}
                   />
                   <RenderLayout
                     key = {this.state.ticketForecastData.id}
@@ -95,7 +95,7 @@ class TicketGridList extends React.Component {
                     headerBackground= "color4"
                     icon={<BarChartOutlinedIcon fontSize="large"/>}
                     action=""
-                    {...this.state.ticketForecastData.componentData}
+                    {...this.state.ticketForecast.componentData} {...this.state.ticketForecastData.componentData}
                   />
                 </Grid>
               </Grid>
@@ -105,7 +105,7 @@ class TicketGridList extends React.Component {
                 headerBackground= "color2"
                 icon={<SentimentSatisfiedOutlinedIcon fontSize="large"/>}
                 action=""
-                {...this.state.issueClosersData.componentData}
+                {...this.state.issueClosers.componentData} {...this.state.issueClosersData.componentData}
               />
             </Grid>
           </Grid>
@@ -117,7 +117,7 @@ class TicketGridList extends React.Component {
                   headerBackground= "color2"
                   icon={<DonutSmallOutlinedIcon fontSize="large"/>}
                   action={<CustomizedMenu {...this.state.priorityWiseTickets.componentData.actionData.menuData}/>}
-                  {...this.state.priorityWiseTickets.componentData}
+                  {...this.state.priorityWiseTickets.componentData} {...this.state.priorityWiseTicketsData.componentData}
                 />
                 <RenderLayout
                   key = {this.state.statusWiseTickets.id}
@@ -125,7 +125,7 @@ class TicketGridList extends React.Component {
                   headerBackground= "color8"
                   icon={<ViewHeadlineOutlinedIcon fontSize="large"/>}
                   action={<CustomizedMenu {...this.state.statusWiseTickets.componentData.actionData.menuData}/>}
-                  {...this.state.statusWiseTickets.componentData}
+                  {...this.state.statusWiseTickets.componentData} {...this.state.statusWiseTicketsData.componentData}
                 />
                 <RenderLayout
                   key = {this.state.tickeTypeWiseTickets.id}
@@ -133,7 +133,7 @@ class TicketGridList extends React.Component {
                   headerBackground= "color6"
                   icon={<AllOutOutlinedIcon fontSize="large"/>}
                   action={<CustomizedMenu {...this.state.tickeTypeWiseTickets.componentData.actionData.menuData}/>}
-                  {...this.state.tickeTypeWiseTickets.componentData}
+                  {...this.state.tickeTypeWiseTickets.componentData} {...this.state.tickeTypeWiseTicketsData.componentData}
                 />
               </Grid>
             </Grid>
