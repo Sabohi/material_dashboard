@@ -894,7 +894,7 @@ class Dashboard extends React.Component {
 
   fetchDashboardData = () => {
     console.log("=======[Dashboard.js] fetchDashboardData  =====");
-    fetch("http://172.16.3.46:3000/dashboard/totalTickets")
+    fetch("http://172.16.3.46:3001/dashboard/totalTickets")
     .then(res => res.json())
     .then(
       (result) => {
