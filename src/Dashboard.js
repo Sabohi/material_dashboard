@@ -17,6 +17,9 @@ import leadDashData from './Data/leadDashData';
 
 import { withStyles } from '@material-ui/styles';
 
+//For caling apis
+import {usersData} from './Functions/CallToApi';
+
 const  styles = {
   root: {
     flexGrow: 1,
@@ -663,12 +666,12 @@ const leadDashboardData = {
   },
   "userStatsData":{
     componentData:{
-      primaryHeaderValues: 276,
-      primaryProgressBarValue: 267,
-      primaryProgressBarValueRate: 90,
-      secondaryHeaderValues: 250,
-      secondaryProgressBarValue: 27,
-      secondaryProgressBarValueRate: 10,
+      primaryHeaderValues: '...',
+      primaryProgressBarValue: '...',
+      primaryProgressBarValueRate: '...',
+      secondaryHeaderValues: '...',
+      secondaryProgressBarValue: '...',
+      secondaryProgressBarValueRate: '...',
       actionData: {
         dialogData: {
           tableData:{
@@ -879,89 +882,23 @@ class Dashboard extends React.Component {
     };
   }
 
+  fetchDashboardData = () => {
+    console.log("=======[Dashboard.js] fetchDashboardData  =====");
+    usersData('ticket',this);
+    usersData('lead',this);
+  }
+
   componentWillMount() 
   { 
       console.log("Dashboard -> componentWillMount()"); 
-      // console.log(this.state.ticketDashData.ticketStats.componentData.primaryHeaderValues);
-
+      this.fetchDashboardData()
   } 
   //Notification SSE : Connection Intialize 
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(this.fetchDashboardData,1000);
+    setInterval(this.fetchDashboardData,6000);
   }
-
-  fetchDashboardData = () => {
-    console.log("=======[Dashboard.js] fetchDashboardData  =====");
-    // fetch("http://172.16.3.46:3003/dashboard/totalTickets")
-    // fetch("http://172.16.3.46:3003/dashboard/totalTickets")
-    // .then(res => res.json())
-    // .then(
-    //   (result) => {
-    //     console.log('====')
-    //     console.log(result)
-    //     // this.setState({
-    //     //   isLoaded: true,
-    //     //   // items: result.items
-    //     // });
-    //   },
-    //   // Note: it's important to handle errors here
-    //   // instead of a catch() block so that we don't swallow
-    //   // exceptions from actual bugs in components.
-    //   (error) => {
-    //     // this.setState({
-    //     //   isLoaded: true,
-    //     //   error
-    //     // });
-    //   }
-    // )
-
-
-    fetch('http://172.16.3.46:3003/dashboard/usersInfo', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        key: '1477037397668528128',
-        reqType: 'getUsersInfo',   
-        infoRequired: 'totalLockedLeadUsers',   
-        //totalTicketUsers/totalLeadUsers/totalActiveTicketUsers/totalActiveLeadUsers/totalLoggedinTicketUsers/totalLoggedinLeadUsers/totalLockedTicketUsers/totalLockedLeadUsers
-      })
-    }).then((res) => {
-      console.log('====1=====');
-      console.log(res)
-      // console.log('====2=====');
-      // console.log(res.json().usersInfo)
-      // console.log('====3=====');
-      // console.log(res.result)
-      // res => res.json()
-    }
-    )
-    .then(
-      (result) => {
-        console.log('====')
-        console.log(result)
-        // this.setState({
-        //   isLoaded: true,
-        //   // items: result.items
-        // });
-      },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      (error) => {
-        // this.setState({
-        //   isLoaded: true,
-        //   error
-        // });
-      }
-    )
-  }
-  
-
   handleChange = (event, newValue) => {
     this.setState({
       value: newValue
