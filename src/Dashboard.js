@@ -17,6 +17,9 @@ import leadDashData from './Data/leadDashData';
 
 import { withStyles } from '@material-ui/styles';
 
+//For caling apis
+import {usersData, ticketLeadData} from './Functions/CallToApi';
+
 const  styles = {
   root: {
     flexGrow: 1,
@@ -663,12 +666,12 @@ const leadDashboardData = {
   },
   "userStatsData":{
     componentData:{
-      primaryHeaderValues: 276,
-      primaryProgressBarValue: 267,
-      primaryProgressBarValueRate: 90,
-      secondaryHeaderValues: 250,
-      secondaryProgressBarValue: 27,
-      secondaryProgressBarValueRate: 10,
+      primaryHeaderValues: '...',
+      primaryProgressBarValue: '...',
+      primaryProgressBarValueRate: '...',
+      secondaryHeaderValues: '...',
+      secondaryProgressBarValue: '...',
+      secondaryProgressBarValueRate: '...',
       actionData: {
         dialogData: {
           tableData:{
@@ -879,44 +882,27 @@ class Dashboard extends React.Component {
     };
   }
 
+  fetchDashboardData = (timePeriod) => {
+    console.log("=======[Dashboard.js] fetchDashboardData  =====");
+    console.log("=======timePeriod====="+timePeriod);
+   
+    ticketLeadData('ticket',timePeriod,this);
+    ticketLeadData('lead',timePeriod,this);
+    usersData('ticket',this);
+    usersData('lead',this);
+  }
+
   componentWillMount() 
   { 
       console.log("Dashboard -> componentWillMount()"); 
-      // console.log(this.state.ticketDashData.ticketStats.componentData.primaryHeaderValues);
-
+      this.fetchDashboardData('today');
   } 
   //Notification SSE : Connection Intialize 
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(this.fetchDashboardData,1000);
+    setInterval(()=>this.fetchDashboardData('today'),1000);
   }
-
-  fetchDashboardData = () => {
-    console.log("=======[Dashboard.js] fetchDashboardData  =====");
-    fetch("http://172.16.3.46:3001/dashboard/totalTickets")
-    .then(res => res.json())
-    .then(
-      (result) => {
-        console.log('====')
-        console.log(result)
-        // this.setState({
-        //   isLoaded: true,
-        //   // items: result.items
-        // });
-      },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      (error) => {
-        // this.setState({
-        //   isLoaded: true,
-        //   error
-        // });
-      }
-    )
-  }
-
   handleChange = (event, newValue) => {
     this.setState({
       value: newValue
