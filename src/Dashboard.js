@@ -18,7 +18,7 @@ import leadDashData from './Data/leadDashData';
 import { withStyles } from '@material-ui/styles';
 
 //For caling apis
-import {usersData} from './Functions/CallToApi';
+import {usersData, ticketLeadData} from './Functions/CallToApi';
 
 const  styles = {
   root: {
@@ -882,8 +882,12 @@ class Dashboard extends React.Component {
     };
   }
 
-  fetchDashboardData = () => {
+  fetchDashboardData = (timePeriod) => {
     console.log("=======[Dashboard.js] fetchDashboardData  =====");
+    console.log("=======timePeriod====="+timePeriod);
+   
+    ticketLeadData('ticket',timePeriod,this);
+    ticketLeadData('lead',timePeriod,this);
     usersData('ticket',this);
     usersData('lead',this);
   }
@@ -891,13 +895,13 @@ class Dashboard extends React.Component {
   componentWillMount() 
   { 
       console.log("Dashboard -> componentWillMount()"); 
-      this.fetchDashboardData()
+      this.fetchDashboardData('today');
   } 
   //Notification SSE : Connection Intialize 
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(this.fetchDashboardData,6000);
+    setInterval(()=>this.fetchDashboardData('today'),1000);
   }
   handleChange = (event, newValue) => {
     this.setState({
