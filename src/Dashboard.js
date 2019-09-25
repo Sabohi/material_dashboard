@@ -18,7 +18,7 @@ import leadDashData from './Data/leadDashData';
 import { withStyles } from '@material-ui/styles';
 
 //For caling apis
-import {usersData, ticketLeadData} from './Functions/CallToApi';
+import {ticketLeadData, taskData, mailData, usersData} from './Functions/CallToApi';
 
 const  styles = {
   root: {

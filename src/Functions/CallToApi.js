@@ -1,5 +1,5 @@
 //API
-import {SERVER_IP, PROTOCOL, PORT, API_URL_USER, API_URL_TICKET_LEAD} from './../Configs/apiConf';
+import {SERVER_IP, PROTOCOL, PORT, API_URL_USER, API_URL_TICKET_LEAD, API_URL_TASK, API_URL_MAIL} from './../Configs/apiConf';
 import fetchCall from './FetchCaller';
 
 export const ticketLeadData = (type,timePeriod,COMPONENT) => {
