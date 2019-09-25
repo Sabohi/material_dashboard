@@ -6,6 +6,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
+    "@material-ui/lab": "latest",
     "axios": "latest",
     "jss": "latest",
     "prop-types": "latest",
@@ -18,6 +19,7 @@
     "react-virtualized": "latest",
     "recharts": "latest"
   },
+  "homepage": "/CZCRM/subuhi/material_dashboard/build/",
   "scripts": {
     "start": "PORT=3005 react-scripts start",
     "build": "react-scripts build",

@@ -10,6 +10,7 @@ class TicketDashboard extends React.Component {
   }// constructor close here
 
   render() {
+    
     return (
       <TicketGridList {...this.props} />
     );

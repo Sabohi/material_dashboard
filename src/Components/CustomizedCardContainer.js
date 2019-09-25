@@ -28,7 +28,7 @@ class CustomizedCardContainer extends React.Component {
             <Tooltip title={this.props.header} TransitionComponent={Zoom} interactive>
               <Avatar 
               aria-label="Recipe" 
-              style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"12px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
+              style={{position:"absolute",marginTop:"-50px",borderRadius:"3px",padding:"30px",marginRight:"15px", boxShadow:"0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)"}} 
               className={classes[this.props.headerBackground]}
               >
               {this.props.icon}

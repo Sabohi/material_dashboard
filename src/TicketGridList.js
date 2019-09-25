@@ -30,6 +30,7 @@ class TicketGridList extends React.Component {
     this.state = props;
   }
   render(){
+    
     return(      
       <Grid container style={{marginTop:"7px"}}> 
         <Grid container spacing={2} justify="space-between">
@@ -69,7 +70,7 @@ class TicketGridList extends React.Component {
                 />
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12}>
+         {/* <Grid item xs={12} sm={12} md={12} lg={12}>
             <Grid container spacing={2}>
               <RenderLayout
                 key = {this.state.issuesData.id}
@@ -108,7 +109,8 @@ class TicketGridList extends React.Component {
                 {...this.state.issueClosers.componentData} {...this.state.issueClosersData.componentData}
               />
             </Grid>
-          </Grid>
+          </Grid>*/}
+
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Grid container spacing={2}> 
                 <RenderLayout
@@ -116,7 +118,7 @@ class TicketGridList extends React.Component {
                   columns = "3"
                   headerBackground= "color2"
                   icon={<DonutSmallOutlinedIcon fontSize="large"/>}
-                  action={<CustomizedMenu {...this.state.priorityWiseTickets.componentData.actionData.menuData}/>}
+                  action={<CustomizedMenu onMenuClick={this.props.menuclick} {...this.state.priorityWiseTickets.componentData.actionData.menuData}/>}
                   {...this.state.priorityWiseTickets.componentData} {...this.state.priorityWiseTicketsData.componentData}
                 />
                 <RenderLayout

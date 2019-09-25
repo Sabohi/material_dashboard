@@ -68,6 +68,8 @@ function CustomizedMenu(props) {
         setOpenDialog(true);
       break;
       default:
+        props.onMenuClick(index);
+      break;
     }
   };
 

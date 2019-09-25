@@ -39,9 +39,6 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
 
     switch(type){
       case 'ticket':
-        infoRequired = 'ticketStatsData';
-        dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
-
         let totalTicketsCreated = ((resultData.totalTicketsCreated !== null) && (resultData.totalTicketsCreated !== undefined))?resultData.totalTicketsCreated:'';
         let totalTicketsClosed = ((resultData.totalTicketsClosed !== null) && (resultData.totalTicketsClosed !== undefined))?resultData.totalTicketsClosed:'';
         let totalTicketsClosedPercent = ((resultData.totalTicketsClosedPercent !== null) && (resultData.totalTicketsClosedPercent !== undefined))?resultData.totalTicketsClosedPercent:'';
@@ -71,19 +68,16 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
         dashboardDataCopy.leadStatsData.componentData.secondaryProgressBarValueRate = totalLeadsEscalatedPercent;
       break;
     }
-
-    // console.log(resultData);
-
       
-    // if(type == 'ticket'){
-    //   COMPONENT.setState({
-    //     ticketDashboardData : dashboardDataCopy
-    //   });
-    // }else if(type == 'lead'){
-    //   COMPONENT.setState({
-    //     leadDashboardData : dashboardDataCopy
-    //   });
-    // }
+    if(type == 'ticket'){
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }else if(type == 'lead'){
+      COMPONENT.setState({
+        leadDashboardData : dashboardDataCopy
+      });
+    }
   },
   (error) => {
       // COMPONENT.setState({
@@ -92,19 +86,21 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
   });
 }
 export const taskData = (type,timePeriod,COMPONENT) => {
-  let infoRequired = 'taskStatsData';
+  let infoRequired = '';
   let dashboardDataCopy = {};
   switch(type){
     case 'ticket':
+      infoRequired = 'ticketTaskStatsData';
       dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
     break;
     case 'lead':
+      infoRequired = 'leadTaskStatsData';
       dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
     break;
   }
 
-  const url_ticket_lead = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
-  console.log('url_ticket_lead url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
+  const url_task = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
+  console.log('url_task url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
   const fetchCallOptions = {
       method: "POST",
       // credentials: 'include',
@@ -113,64 +109,39 @@ export const taskData = (type,timePeriod,COMPONENT) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: '1477037397668528128',
+        key: '2227397115179433984',    //590: 2227397115179433984 , 809: 1477037397668528128
         reqType: 'getTasksInfo',   
         infoRequired: infoRequired,   
         timePeriod: timePeriod,   
       })
   };
-  fetchCall(url_ticket_lead,fetchCallOptions,"json").then((result) => {
+  fetchCall(url_task,fetchCallOptions,"json").then((result) => {
     console.log('here');
     console.log(result); 
     let resultData = JSON.parse(result);
 
-    switch(type){
-      case 'ticket':
-        infoRequired = 'ticketStatsData';
-        dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
+    let totalTasksCreated = ((resultData.totalTasksCreated !== null) && (resultData.totalTasksCreated !== undefined))?resultData.totalTasksCreated:'';
+    let totalTasksClosed = ((resultData.totalTasksClosed !== null) && (resultData.totalTasksClosed !== undefined))?resultData.totalTasksClosed:'';
+    let totalTasksClosedPercent = ((resultData.totalTasksClosedPercent !== null) && (resultData.totalTasksClosedPercent !== undefined))?resultData.totalTasksClosedPercent:'';
+    let totalTasksOverdue = ((resultData.totalTasksOverdue !== null) && (resultData.totalTasksOverdue !== undefined))?resultData.totalTasksOverdue:'';
+    let totalTasksOverduePercent = ((resultData.totalTasksOverduePercent !== null) && (resultData.totalTasksOverduePercent !== undefined))?resultData.totalTasksOverduePercent:'';
 
-        let totalTicketsCreated = ((resultData.totalTicketsCreated !== null) && (resultData.totalTicketsCreated !== undefined))?resultData.totalTicketsCreated:'';
-        let totalTicketsClosed = ((resultData.totalTicketsClosed !== null) && (resultData.totalTicketsClosed !== undefined))?resultData.totalTicketsClosed:'';
-        let totalTicketsClosedPercent = ((resultData.totalTicketsClosedPercent !== null) && (resultData.totalTicketsClosedPercent !== undefined))?resultData.totalTicketsClosedPercent:'';
-        let totalTicketsEscalated = ((resultData.totalTicketsEscalated !== null) && (resultData.totalTicketsEscalated !== undefined))?resultData.totalTicketsEscalated:'';
-        let totalTicketsEscalatedPercent = ((resultData.totalTicketsEscalatedPercent !== null) && (resultData.totalTicketsEscalatedPercent !== undefined))?resultData.totalTicketsEscalatedPercent:'';
+    dashboardDataCopy.taskStatsData.componentData.primaryHeaderValues = totalTasksCreated;
+    dashboardDataCopy.taskStatsData.componentData.primaryProgressBarValue = totalTasksClosed;
+    dashboardDataCopy.taskStatsData.componentData.primaryProgressBarValueRate = totalTasksClosedPercent;
+    dashboardDataCopy.taskStatsData.componentData.secondaryHeaderValues = totalTasksOverdue;
+    dashboardDataCopy.taskStatsData.componentData.secondaryProgressBarValue = totalTasksOverduePercent;
+    dashboardDataCopy.taskStatsData.componentData.secondaryProgressBarValueRate = totalTasksOverduePercent;
     
-        dashboardDataCopy.ticketStatsData.componentData.primaryHeaderValues = totalTicketsCreated;
-        dashboardDataCopy.ticketStatsData.componentData.primaryProgressBarValue = totalTicketsClosed;
-        dashboardDataCopy.ticketStatsData.componentData.primaryProgressBarValueRate = totalTicketsClosedPercent;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryHeaderValues = totalTicketsEscalated;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryProgressBarValue = totalTicketsEscalatedPercent;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryProgressBarValueRate = totalTicketsEscalatedPercent;
-
-      break;
-      case 'lead':
-        let totalLeadsCreated = ((resultData.totalLeadsCreated !== null) && (resultData.totalLeadsCreated !== undefined))?resultData.totalLeadsCreated:'';
-        let totalTicketsConverted = ((resultData.totalTicketsConverted !== null) && (resultData.totalTicketsConverted !== undefined))?resultData.totalTicketsConverted:'';
-        let totalLeadsConvertedPercent = ((resultData.totalLeadsConvertedPercent !== null) && (resultData.totalLeadsConvertedPercent !== undefined))?resultData.totalLeadsConvertedPercent:'';
-        let totalLeadsEscalated = ((resultData.totalLeadsEscalated !== null) && (resultData.totalLeadsEscalated !== undefined))?resultData.totalLeadsEscalated:'';
-        let totalLeadsEscalatedPercent = ((resultData.totalLeadsEscalatedPercent !== null) && (resultData.totalLeadsEscalatedPercent !== undefined))?resultData.totalLeadsEscalatedPercent:'';
-    
-        dashboardDataCopy.leadStatsData.componentData.primaryHeaderValues = totalLeadsCreated;
-        dashboardDataCopy.leadStatsData.componentData.primaryProgressBarValue = totalTicketsConverted;
-        dashboardDataCopy.leadStatsData.componentData.primaryProgressBarValueRate = totalLeadsConvertedPercent;
-        dashboardDataCopy.leadStatsData.componentData.secondaryHeaderValues = totalLeadsEscalated;
-        dashboardDataCopy.leadStatsData.componentData.secondaryProgressBarValue = totalLeadsEscalatedPercent;
-        dashboardDataCopy.leadStatsData.componentData.secondaryProgressBarValueRate = totalLeadsEscalatedPercent;
-      break;
+    if(type == 'ticket'){
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }else if(type == 'lead'){
+      COMPONENT.setState({
+        leadDashboardData : dashboardDataCopy
+      });
     }
-
-    // console.log(resultData);
-
-      
-    // if(type == 'ticket'){
-    //   COMPONENT.setState({
-    //     ticketDashboardData : dashboardDataCopy
-    //   });
-    // }else if(type == 'lead'){
-    //   COMPONENT.setState({
-    //     leadDashboardData : dashboardDataCopy
-    //   });
-    // }
   },
   (error) => {
       // COMPONENT.setState({
@@ -192,8 +163,8 @@ export const mailData = (type,timePeriod,COMPONENT) => {
     break;
   }
 
-  const url_ticket_lead = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TICKET_LEAD}`);
-  console.log('url_ticket_lead url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TICKET_LEAD}`);
+  const url_mail = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
+  console.log('url_mail url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
   const fetchCallOptions = {
       method: "POST",
       // credentials: 'include',
@@ -208,15 +179,13 @@ export const mailData = (type,timePeriod,COMPONENT) => {
         timePeriod: timePeriod,   
       })
   };
-  fetchCall(url_ticket_lead,fetchCallOptions,"json").then((result) => {
+  fetchCall(url_mail,fetchCallOptions,"json").then((result) => {
     console.log('here');
     console.log(result); 
     let resultData = JSON.parse(result);
 
     switch(type){
       case 'ticket':
-        infoRequired = 'ticketStatsData';
-        dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
 
         let totalTicketsCreated = ((resultData.totalTicketsCreated !== null) && (resultData.totalTicketsCreated !== undefined))?resultData.totalTicketsCreated:'';
         let totalTicketsClosed = ((resultData.totalTicketsClosed !== null) && (resultData.totalTicketsClosed !== undefined))?resultData.totalTicketsClosed:'';

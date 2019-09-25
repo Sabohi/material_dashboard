@@ -69,7 +69,7 @@ class LeadGridList extends React.Component {
                         />
                     </Grid>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
+                {/*<Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={2}>
                     <RenderLayout
                     key = {this.state.topLeads.id}
@@ -108,7 +108,7 @@ class LeadGridList extends React.Component {
                     {...this.state.topProduct.componentData} {...this.state.topProductData.componentData}
                     />
                 </Grid>
-                </Grid>
+                </Grid>*/}
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Grid container spacing={2}> 
                     <RenderLayout

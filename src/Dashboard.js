@@ -10,6 +10,9 @@ import TicketDashboard from './TicketDashboard';
 import LeadDashboard from './LeadDashboard';
 import PageProgress from 'react-page-progress';
 import ScrollUpButton from "react-scroll-up-button";
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+
 
 //Data
 import ticketDashData from './Data/ticketDashData';
@@ -20,11 +23,23 @@ import { withStyles } from '@material-ui/styles';
 //For caling apis
 import {ticketLeadData, taskData, mailData, usersData} from './Functions/CallToApi';
 
-const  styles = {
+const  styles = theme => ({
   root: {
     flexGrow: 1,
     // backgroundColor: theme.palette.background.paper,  //Check why it is giving error 
     // backgroundColor: "green", 
+  },
+  heading:{
+    paddingBottom: "30px",
+    paddingTop: "10px",
+    paddingLeft: "10px",
+    color: "teal"
+  },
+  toggleContainer: {
+    margin: "10px",
+    position: "fixed",
+    right: 0,
+    zIndex: 1029
   },
   grow: {
     flexGrow: 1,
@@ -37,8 +52,7 @@ const  styles = {
     fontWeight:'800 !important',
   },
   tabContent: {
-    padding: '10px',
-    marginTop: '70px',
+    padding: '10px 10px 10px 10px',
   },
   tabsIndicator: {
     backgroundColor: '#f5f5f5 !important',
@@ -46,7 +60,7 @@ const  styles = {
   tabsRoot: {
     borderBottom: '1px solid #e8e8e8',
   },
-};
+});
 
 const ticketDashboardData = {
   "ticketStatsData":{
@@ -568,11 +582,11 @@ const ticketDashboardData = {
 const leadDashboardData = {
   "leadStatsData":{
     componentData:{
-      primaryHeaderValues: 2005,
-      primaryProgressBarValue: 1010,
-      primaryProgressBarValueRate: 54,
-      secondaryHeaderValues: 6999,
-      secondaryProgressBarValue: 6023,
+      primaryHeaderValues: '...',
+      primaryProgressBarValue: '...',
+      primaryProgressBarValueRate: '...',
+      secondaryHeaderValues: '...',
+      secondaryProgressBarValue: '...',
       actionData: {
         dialogData: {
             tableData:{
@@ -601,12 +615,12 @@ const leadDashboardData = {
   },
   "taskStatsData":{
     componentData:{
-      primaryHeaderValues: 2005,
-      primaryProgressBarValue: 999,
-      primaryProgressBarValueRate: 54,
-      secondaryHeaderValues: 4009,
-      secondaryProgressBarValue: 4009,
-      secondaryProgressBarValueRate: 48,
+      primaryHeaderValues: '...',
+      primaryProgressBarValue: '...',
+      primaryProgressBarValueRate: '...',
+      secondaryHeaderValues: '...',
+      secondaryProgressBarValue: '...',
+      secondaryProgressBarValueRate: '...',
       actionData: {
         dialogData: {
           tableData:{
@@ -635,12 +649,12 @@ const leadDashboardData = {
   }, 
   "mailStatsData":{
     componentData:{
-      primaryHeaderValues: 5010,
-      primaryProgressBarValue: 3098,
-      primaryProgressBarValueRate: 69,
-      secondaryHeaderValues: 1099,
-      secondaryProgressBarValue: 987,
-      secondaryProgressBarValueRate: 66,
+      primaryHeaderValues: '...',
+      primaryProgressBarValue: '...',
+      primaryProgressBarValueRate: '...',
+      secondaryHeaderValues: '...',
+      secondaryProgressBarValue: '...',
+      secondaryProgressBarValueRate: '...',
       actionData: {
         dialogData: {
           tableData:{
@@ -875,7 +889,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 0,
+      MODE: {title: "TICKET",value: 0},
        ticketDashboardData: ticketDashboardData,
       leadDashboardData: leadDashboardData,
       isLoaded: false,
@@ -886,45 +900,65 @@ class Dashboard extends React.Component {
     console.log("=======[Dashboard.js] fetchDashboardData  =====");
     console.log("=======timePeriod====="+timePeriod);
    
-    ticketLeadData('ticket',timePeriod,this);
-    ticketLeadData('lead',timePeriod,this);
+    // ticketLeadData('ticket',timePeriod,this);
+    // ticketLeadData('lead',timePeriod,this);
     taskData('ticket',timePeriod,this);
-    taskData('lead',timePeriod,this);
-    mailData('ticket',timePeriod,this);
-    mailData('lead',timePeriod,this);
-    usersData('ticket',this);
-    usersData('lead',this);
+    // taskData('lead',timePeriod,this);
+    // mailData('ticket',timePeriod,this);
+    // mailData('lead',timePeriod,this);
+    // usersData('ticket',this);
+    // usersData('lead',this);
   }
 
   componentWillMount() 
   { 
       console.log("Dashboard -> componentWillMount()"); 
-      this.fetchDashboardData('today');
+      this.fetchDashboardData('lastweek');
   } 
   //Notification SSE : Connection Intialize 
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(()=>this.fetchDashboardData('today'),1000);
+    setInterval(()=>this.fetchDashboardData('lastweek'),1000);
   }
   handleChange = (event, newValue) => {
+    const Mode = ["TICKET","LEAD"];
     this.setState({
-      value: newValue
+      MODE: {title: Mode[newValue], value: newValue}
     });
   }
-
+  handleMenuClick = (value) =>{
+    alert('From Dashboard.js ==> '+value);
+  }
   render() {
     const {classes} = this.props;
     return (
       <div className={classes.root}>
-        <ScrollUpButton
+        {/* <ScrollUpButton
           EasingType="easeInOutCubic"
           AnimationDuration={70}
         />
-        <PageProgress color={'red'} height={68} />
-        <AppBar position="fixed" >
+        <PageProgress color={'red'} height={52} /> */}
+        <div className={classes.toggleContainer}>
+          <ToggleButtonGroup
+            value={this.state.value}
+            exclusive
+            onChange={this.handleChange}
+            aria-label="text alignment"
+            style={{border:"1px solid teal",color: "teal"}}
+          >
+            <ToggleButton value={0} aria-label="left aligned">
+              Ticket Dashboard
+            </ToggleButton>
+            <ToggleButton value={1} aria-label="centered">
+              Lead Dashboard
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
+
+        {/* <AppBar style={{position:"sticky",top: "48px", backgroundColor:"#485d67"}} >
             <Toolbar>
-              <Typography variant="h6" color="inherit" className={classes.grow} >
+              <Typography variant="body2" color="inherit" className={classes.grow} >
                 ADMIN DASHBOARD
               </Typography>
               <Typography variant="h6">
@@ -933,11 +967,14 @@ class Dashboard extends React.Component {
               <Tab className={classes.tabRoot} disableRipple label="Lead Dashboard" />
               </Tabs>
               </Typography>
-            </Toolbar>         
-        </AppBar>
+            </Toolbar>   
+        </AppBar> */}
           <div className={classes.tabContent}>
-            {this.state.value === 0 && <TicketDashboard {...ticketDashData} {...this.state.ticketDashboardData}/>}
-            {this.state.value === 1 && <LeadDashboard {...leadDashData} {...this.state.leadDashboardData}/>}
+              <Typography style={{paddingBottom: "30px", paddingTop: "10px",paddingLeft: "10px",color: "teal"}} variant="h6" color="inherit" className={classes.grow} >
+                {`${this.state.MODE.title} DASHBOARD`}
+              </Typography>
+            {this.state.MODE.value === 0 && <TicketDashboard menuclick={(value) => this.handleMenuClick(value)} {...ticketDashData} {...this.state.ticketDashboardData}/>}
+            {this.state.MODE.value === 1 && <LeadDashboard {...leadDashData} {...this.state.leadDashboardData}/>}
           </div>
       </div>
     );

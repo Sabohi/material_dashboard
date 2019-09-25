@@ -3,8 +3,8 @@ const ticketDashData = {
         id: "ticketStats",
         componentData:{
             componentType: "data",
-            header: 'Tickets',
-            primaryHeader: 'Total Tickets Created',
+            header: 'Total Tickets',
+            primaryHeader: 'Tickets Created',
             primaryHeaderValuesData:{
                 dialogHeader: 'Ticket Details',
                 tableData:{
@@ -94,7 +94,7 @@ const ticketDashData = {
             primaryProgressBarHeader: 'Closed',
             primaryLinearColorPrimary: 'color1',
             primaryLinearBarColorPrimary: 'color2',
-            secondaryHeader: 'Total Tickets Escalated',
+            secondaryHeader: 'Tickets Escalated',
             secondaryHeaderValuesData:{
                 dialogHeader: 'Ticket Details',
                 tableData:{
@@ -281,8 +281,8 @@ const ticketDashData = {
         id: "taskStats",
         componentData:{
             componentType: "data",
-            header: 'Tasks',
-            primaryHeader: 'Total Tasks Created',
+            header: 'Total Tasks',
+            primaryHeader: 'Tasks Created',
             primaryHeaderValuesData: {
                 dialogHeader: 'Escalation Details',
                 tableData:{
@@ -361,7 +361,7 @@ const ticketDashData = {
             primaryProgressBarHeader: 'Closed',
             primaryLinearColorPrimary: 'color3',
             primaryLinearBarColorPrimary: 'color4',
-            secondaryHeader: 'Total Tasks Overdue',
+            secondaryHeader: 'Tasks Overdue',
             secondaryProgressBarHeader: 'Overdue Rate',
             secondaryProgressBarValueData: {
                 dialogHeader: 'Escalation Details',
@@ -530,8 +530,8 @@ const ticketDashData = {
         id: "mailStats",
             componentData:{
                 componentType: "data",
-                header: 'Ticket Mails',
-                primaryHeader: 'Total Ticket Mails Received',
+                header: 'Total Ticket Mails',
+                primaryHeader: 'Mails Received',
                 primaryHeaderValues: '...',
                 primaryHeaderValuesData: {
                     dialogHeader: 'Ticket Mail Details',
@@ -623,12 +623,12 @@ const ticketDashData = {
                         actionData: ""
                     },// table data
                 },
-                primaryProgressBarHeader: 'Ticket Mails Replied',
+                primaryProgressBarHeader: 'Mails Replied',
                 primaryProgressBarValue: '...',
                 primaryProgressBarValueRate: '...',
                 primaryLinearColorPrimary: 'color5',
                 primaryLinearBarColorPrimary: 'color6',
-                secondaryHeader: 'Total Fresh Ticket Mails Received',
+                secondaryHeader: 'Fresh Mails Received',
                 secondaryHeaderValues: '...',
                 secondaryHeaderValuesData: {
                     dialogHeader: 'Ticket Mail Details',
@@ -720,7 +720,7 @@ const ticketDashData = {
                         actionData: "" 
                     },// table data
                 },
-                secondaryProgressBarHeader: 'Fresh Ticket Mails Replied',
+                secondaryProgressBarHeader: 'Fresh Mails Replied',
                 secondaryProgressBarValue: '...',
                 secondaryProgressBarValueRate: '...',
                 secondaryLinearColorPrimary: 'color13',
@@ -830,8 +830,8 @@ const ticketDashData = {
             id: "userStats",
             componentData:{
                 componentType: "data",
-                header: 'Ticket Users',
-                primaryHeader: 'All Ticket Users',
+                header: 'All Ticket Users',
+                primaryHeader: 'Users',
                 primaryHeaderValues: '...',
                 primaryHeaderValuesData: {
                     dialogHeader: 'Ticket User Details',
@@ -905,12 +905,12 @@ const ticketDashData = {
                         actionData: "" 
                     },// table data
                 },
-                primaryProgressBarHeader: 'Active Ticket Users',
+                primaryProgressBarHeader: 'Active Users',
                 primaryProgressBarValue: '...',
                 primaryProgressBarValueRate: '...',
                 primaryLinearColorPrimary: 'color7',
                 primaryLinearBarColorPrimary: 'color8',
-                secondaryHeader: 'All Loggedin Ticket Users',
+                secondaryHeader: 'Loggedin Users',
                 secondaryHeaderValues: '...',
                 secondaryHeaderValuesData: {
                     dialogHeader: 'Ticket User Details',
@@ -1163,6 +1163,14 @@ const ticketDashData = {
                         'Last 30 days',
                         'This Month',
                         'Last Month',
+                    ],
+                    actionNames: [
+                        'today',
+                        'yesterday',
+                        'last7days',
+                        'last30days',
+                        'thismonth',
+                        'lastmonth',
                     ]
                 } 
             }  
