@@ -888,6 +888,10 @@ class Dashboard extends React.Component {
    
     ticketLeadData('ticket',timePeriod,this);
     ticketLeadData('lead',timePeriod,this);
+    taskData('ticket',timePeriod,this);
+    taskData('lead',timePeriod,this);
+    mailData('ticket',timePeriod,this);
+    mailData('lead',timePeriod,this);
     usersData('ticket',this);
     usersData('lead',this);
   }
