@@ -154,17 +154,17 @@ export const mailData = (type,timePeriod,COMPONENT) => {
   let dashboardDataCopy = {};
   switch(type){
     case 'ticket':
-      infoRequired = 'ticketStatsData';
+      infoRequired = 'ticketTaskStatsData';
       dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
     break;
     case 'lead':
-      infoRequired = 'leadStatsData';
+      infoRequired = 'leadTaskStatsData';
       dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
     break;
   }
 
   const url_mail = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
-  console.log('url_mail url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
+  console.log('url_mail',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
   const fetchCallOptions = {
       method: "POST",
       // credentials: 'include',
@@ -173,8 +173,8 @@ export const mailData = (type,timePeriod,COMPONENT) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: '1477037397668528128',
-        reqType: 'getMailsInfo',   //Put in config
+        key: '2227397115179433984',    //590: 2227397115179433984 , 809: 1477037397668528128
+        reqType: 'getMailsInfo',   
         infoRequired: infoRequired,   
         timePeriod: timePeriod,   
       })
@@ -184,51 +184,29 @@ export const mailData = (type,timePeriod,COMPONENT) => {
     console.log(result); 
     let resultData = JSON.parse(result);
 
-    switch(type){
-      case 'ticket':
+    let totalMailsReceived = ((resultData.totalMailsReceived !== null) && (resultData.totalMailsReceived !== undefined))?resultData.totalMailsReceived:'';
+    let totalMailsReplied = ((resultData.totalMailsReplied !== null) && (resultData.totalMailsReplied !== undefined))?resultData.totalMailsReplied:'';
+    let totalMailsRepliedPercent = ((resultData.totalMailsRepliedPercent !== null) && (resultData.totalMailsRepliedPercent !== undefined))?resultData.totalMailsRepliedPercent:'';
+    let totalFreshMailsReceived = ((resultData.totalFreshMailsReceived !== null) && (resultData.totalFreshMailsReceived !== undefined))?resultData.totalFreshMailsReceived:'';
+    let totalFreshMailsReplied = ((resultData.totalFreshMailsReplied !== null) && (resultData.totalFreshMailsReplied !== undefined))?resultData.totalFreshMailsReplied:'';
+    let totalFreshMailsRepliedPercent = ((resultData.totalFreshMailsRepliedPercent !== null) && (resultData.totalFreshMailsRepliedPercent !== undefined))?resultData.totalFreshMailsRepliedPercent:'';
 
-        let totalTicketsCreated = ((resultData.totalTicketsCreated !== null) && (resultData.totalTicketsCreated !== undefined))?resultData.totalTicketsCreated:'';
-        let totalTicketsClosed = ((resultData.totalTicketsClosed !== null) && (resultData.totalTicketsClosed !== undefined))?resultData.totalTicketsClosed:'';
-        let totalTicketsClosedPercent = ((resultData.totalTicketsClosedPercent !== null) && (resultData.totalTicketsClosedPercent !== undefined))?resultData.totalTicketsClosedPercent:'';
-        let totalTicketsEscalated = ((resultData.totalTicketsEscalated !== null) && (resultData.totalTicketsEscalated !== undefined))?resultData.totalTicketsEscalated:'';
-        let totalTicketsEscalatedPercent = ((resultData.totalTicketsEscalatedPercent !== null) && (resultData.totalTicketsEscalatedPercent !== undefined))?resultData.totalTicketsEscalatedPercent:'';
+    dashboardDataCopy.mailStatsData.componentData.primaryHeaderValues = totalMailsReceived;
+    dashboardDataCopy.mailStatsData.componentData.primaryProgressBarValue = totalMailsReplied;
+    dashboardDataCopy.mailStatsData.componentData.primaryProgressBarValueRate = totalMailsRepliedPercent;
+    dashboardDataCopy.mailStatsData.componentData.secondaryHeaderValues = totalFreshMailsReceived;
+    dashboardDataCopy.mailStatsData.componentData.secondaryProgressBarValue = totalFreshMailsReplied;
+    dashboardDataCopy.mailStatsData.componentData.secondaryProgressBarValueRate = totalFreshMailsRepliedPercent;
     
-        dashboardDataCopy.ticketStatsData.componentData.primaryHeaderValues = totalTicketsCreated;
-        dashboardDataCopy.ticketStatsData.componentData.primaryProgressBarValue = totalTicketsClosed;
-        dashboardDataCopy.ticketStatsData.componentData.primaryProgressBarValueRate = totalTicketsClosedPercent;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryHeaderValues = totalTicketsEscalated;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryProgressBarValue = totalTicketsEscalatedPercent;
-        dashboardDataCopy.ticketStatsData.componentData.secondaryProgressBarValueRate = totalTicketsEscalatedPercent;
-
-      break;
-      case 'lead':
-        let totalLeadsCreated = ((resultData.totalLeadsCreated !== null) && (resultData.totalLeadsCreated !== undefined))?resultData.totalLeadsCreated:'';
-        let totalTicketsConverted = ((resultData.totalTicketsConverted !== null) && (resultData.totalTicketsConverted !== undefined))?resultData.totalTicketsConverted:'';
-        let totalLeadsConvertedPercent = ((resultData.totalLeadsConvertedPercent !== null) && (resultData.totalLeadsConvertedPercent !== undefined))?resultData.totalLeadsConvertedPercent:'';
-        let totalLeadsEscalated = ((resultData.totalLeadsEscalated !== null) && (resultData.totalLeadsEscalated !== undefined))?resultData.totalLeadsEscalated:'';
-        let totalLeadsEscalatedPercent = ((resultData.totalLeadsEscalatedPercent !== null) && (resultData.totalLeadsEscalatedPercent !== undefined))?resultData.totalLeadsEscalatedPercent:'';
-    
-        dashboardDataCopy.leadStatsData.componentData.primaryHeaderValues = totalLeadsCreated;
-        dashboardDataCopy.leadStatsData.componentData.primaryProgressBarValue = totalTicketsConverted;
-        dashboardDataCopy.leadStatsData.componentData.primaryProgressBarValueRate = totalLeadsConvertedPercent;
-        dashboardDataCopy.leadStatsData.componentData.secondaryHeaderValues = totalLeadsEscalated;
-        dashboardDataCopy.leadStatsData.componentData.secondaryProgressBarValue = totalLeadsEscalatedPercent;
-        dashboardDataCopy.leadStatsData.componentData.secondaryProgressBarValueRate = totalLeadsEscalatedPercent;
-      break;
+    if(type == 'ticket'){
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }else if(type == 'lead'){
+      COMPONENT.setState({
+        leadDashboardData : dashboardDataCopy
+      });
     }
-
-    // console.log(resultData);
-
-      
-    // if(type == 'ticket'){
-    //   COMPONENT.setState({
-    //     ticketDashboardData : dashboardDataCopy
-    //   });
-    // }else if(type == 'lead'){
-    //   COMPONENT.setState({
-    //     leadDashboardData : dashboardDataCopy
-    //   });
-    // }
   },
   (error) => {
       // COMPONENT.setState({
