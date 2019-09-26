@@ -20,7 +20,7 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
   console.log('url_ticket_lead url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TICKET_LEAD}`);
   const fetchCallOptions = {
       method: "POST",
-      // credentials: 'include',
+      credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -103,13 +103,13 @@ export const taskData = (type,timePeriod,COMPONENT) => {
   console.log('url_task url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
   const fetchCallOptions = {
       method: "POST",
-      // credentials: 'include',
+      credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: '2227397115179433984',    //590: 2227397115179433984 , 809: 1477037397668528128
+        key: '1477037397668528128',    //590: 2227397115179433984 , 809: 1477037397668528128
         reqType: 'getTasksInfo',   
         infoRequired: infoRequired,   
         timePeriod: timePeriod,   
@@ -167,13 +167,13 @@ export const mailData = (type,timePeriod,COMPONENT) => {
   console.log('url_mail',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
   const fetchCallOptions = {
       method: "POST",
-      // credentials: 'include',
+      credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: '2227397115179433984',    //590: 2227397115179433984 , 809: 1477037397668528128
+        key: '1477037397668528128',    //590: 2227397115179433984 , 809: 1477037397668528128
         reqType: 'getMailsInfo',   
         infoRequired: infoRequired,   
         timePeriod: timePeriod,   
@@ -233,7 +233,7 @@ export const usersData = (type,COMPONENT) => {
     console.log('total_ticket_users url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_USER}`);
     const fetchCallOptions = {
         method: "POST",
-        // credentials: 'include',
+        credentials: 'include',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',

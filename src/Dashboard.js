@@ -904,8 +904,8 @@ class Dashboard extends React.Component {
     ticketLeadData('lead',timePeriod,this);
     taskData('ticket',timePeriod,this);
     taskData('lead',timePeriod,this);
-    // mailData('ticket',timePeriod,this);
-    // mailData('lead',timePeriod,this);
+    mailData('ticket',timePeriod,this);
+    mailData('lead',timePeriod,this);
     usersData('ticket',this);
     usersData('lead',this);
   }
@@ -913,13 +913,13 @@ class Dashboard extends React.Component {
   componentWillMount() 
   { 
       console.log("Dashboard -> componentWillMount()"); 
-      this.fetchDashboardData('lastweek');
+      this.fetchDashboardData('today');
   } 
   //Notification SSE : Connection Intialize 
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(()=>this.fetchDashboardData('lastweek'),1000);
+    setInterval(()=>this.fetchDashboardData('today'),1000);
   }
   handleChange = (event, newValue) => {
     const Mode = ["TICKET","LEAD"];
