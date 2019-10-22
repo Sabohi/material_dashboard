@@ -61,6 +61,7 @@ class CustomizedPieChart extends React.Component{
         this.setState({activeIndex: index});
     }
 	render () {
+        console.log("Shivam DATA ==> ",this.props);
         const {data, colors, dataKey} = this.props;
         return (
             <Typography  variant="caption" gutterBottom align="center">

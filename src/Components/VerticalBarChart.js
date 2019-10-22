@@ -4,6 +4,7 @@ import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell} from 'rechart
 // const VerticalBarchart = React.createClass({ See why error in this
 class VerticalBarChart extends React.Component{
     render () {
+      // console.log("Shivam DATA ==> ",this.props.colors);
   	return (
       <BarChart 
       layout="vertical" 

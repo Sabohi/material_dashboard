@@ -919,7 +919,7 @@ class Dashboard extends React.Component {
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    setInterval(()=>this.fetchDashboardData('today'),1000);
+    // setInterval(()=>this.fetchDashboardData('today'),1000);
   }
   handleChange = (event, newValue) => {
     const Mode = ["TICKET","LEAD"];
