@@ -910,10 +910,10 @@ class Dashboard extends React.Component {
     usersData('lead',this);
     priorityData('ticket',this);
     statusData('ticket',this);
-    // typeData('ticket',this);
+    typeData('ticket',this);
     // stateData('lead',this);
     statusData('lead',this);
-    // dispositionData('lead',this);
+    dispositionData('lead',this);
   }
 
   componentWillMount() 

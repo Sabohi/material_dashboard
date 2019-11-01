@@ -283,7 +283,6 @@ export const usersData = (type,COMPONENT) => {
 }
 
 export const priorityData = (type,COMPONENT) => {
-
   let infoRequired = '';
   let dashboardDataCopy = {};
   switch(type){
@@ -353,7 +352,7 @@ export const statusData = (type,COMPONENT) => {
       infoRequired = 'ticketStatusInfo';
       dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
     break;
-    case '':
+    case 'lead':
       infoRequired = 'leadStatusInfo';
       dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
     break;
@@ -379,13 +378,12 @@ export const statusData = (type,COMPONENT) => {
     console.log(result); 
 
     let resultData = JSON.parse(result);
-
-    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
-    console.log('%c PREVIOUS priority data','font-weight:800;color:orange;',dashboardDataCopy.priorityWiseTicketsData.componentData.data); 
+    console.log('DATA ====> ',dashboardDataCopy);
+    // let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
+    let data = resultData.data;
 
     console.log('%c RECEIVED priority data','font-weight:800;color:orange;',data); 
 
- 
     if(type == 'ticket'){
       dashboardDataCopy.statusWiseTicketsData.componentData.data = data;
 
@@ -413,7 +411,7 @@ export const typeData = (type,COMPONENT) => {
   switch(type){
     case 'ticket':
       infoRequired = 'ticketTypeInfo';
-      dashboardDataCopy = {...COMPONENT.state.tickeTypeWiseTicketsData};
+      dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
     break;
   }
 
@@ -435,13 +433,15 @@ export const typeData = (type,COMPONENT) => {
   };
   fetchCall(url_type,fetchCallOptions,"json").then((result) => {
     console.log(result); 
- 
+
     let resultData = JSON.parse(result);
 
-    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
+    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
+
+    console.log('%c RECEIVED ticket type data','font-weight:800;color:orange;',data); 
  
-    dashboardDataCopy.componentData.data = resultData;
-      
+    dashboardDataCopy.tickeTypeWiseTicketsData.componentData.data = data;
+
     if(type == 'ticket'){
       COMPONENT.setState({
         ticketDashboardData : dashboardDataCopy
@@ -461,7 +461,7 @@ export const stateData = (type,COMPONENT) => {
   switch(type){
     case 'lead':
       infoRequired = 'leadStateInfo';
-      dashboardDataCopy = {...COMPONENT.state.stateWiseLeadsData};
+      dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
     break;
   }
 
@@ -486,11 +486,11 @@ export const stateData = (type,COMPONENT) => {
 
     let resultData = JSON.parse(result);
 
-    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
- 
-    dashboardDataCopy.componentData.data = resultData;
+    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
 
     if(type == 'lead'){
+      dashboardDataCopy.stateWiseLeadsData.componentData.data = data;
+      
       COMPONENT.setState({
         stateWiseLeadsData : dashboardDataCopy
       });
@@ -509,7 +509,7 @@ export const dispositionData = (type,COMPONENT) => {
   switch(type){
     case 'lead':
       infoRequired = 'leadDispositionInfo';
-      dashboardDataCopy = {...COMPONENT.state.dispositionWiseLeadsData};
+      dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
     break;
   }
 
@@ -533,12 +533,12 @@ export const dispositionData = (type,COMPONENT) => {
     console.log(result); 
 
     let resultData = JSON.parse(result);
-
-    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
  
-    dashboardDataCopy.componentData.data = resultData;
-      
+    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
+
     if(type == 'lead'){
+      dashboardDataCopy.dispositionWiseLeadsData.componentData.data = data;
+
       COMPONENT.setState({
         leadDashboardData : dashboardDataCopy
       });
