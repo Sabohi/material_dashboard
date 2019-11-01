@@ -1,15 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 // import { makeStyles } from '@material-ui/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+// import AppBar from '@material-ui/core/AppBar';
+// import Tabs from '@material-ui/core/Tabs';
+// import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
+// import Toolbar from '@material-ui/core/Toolbar';
 import TicketDashboard from './TicketDashboard';
 import LeadDashboard from './LeadDashboard';
-import PageProgress from 'react-page-progress';
-import ScrollUpButton from "react-scroll-up-button";
+// import PageProgress from 'react-page-progress';
+// import ScrollUpButton from "react-scroll-up-button";
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
@@ -21,7 +21,7 @@ import leadDashData from './Data/leadDashData';
 import { withStyles } from '@material-ui/styles';
 
 //For caling apis
-import {ticketLeadData, taskData, mailData, usersData} from './Functions/CallToApi';
+import {ticketLeadData, taskData, mailData, usersData, priorityData, statusData, typeData, stateData, dispositionData} from './Functions/CallToApi';
 
 const  styles = theme => ({
   root: {
@@ -908,6 +908,12 @@ class Dashboard extends React.Component {
     mailData('lead',timePeriod,this);
     usersData('ticket',this);
     usersData('lead',this);
+    priorityData('ticket',this);
+    statusData('ticket',this);
+    // typeData('ticket',this);
+    // stateData('lead',this);
+    statusData('lead',this);
+    // dispositionData('lead',this);
   }
 
   componentWillMount() 

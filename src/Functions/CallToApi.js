@@ -1,6 +1,7 @@
 //API
-import {SERVER_IP, PROTOCOL, PORT, API_URL_USER, API_URL_TICKET_LEAD, API_URL_TASK, API_URL_MAIL} from './../Configs/apiConf';
+import {SERVER_IP, PROTOCOL, PORT, API_URL_USER, API_URL_TICKET_LEAD, API_URL_TASK, API_URL_MAIL, API_URL_PRIORITY, API_URL_STATUS, API_URL_TYPE, API_URL_STATE, API_URL_DISPOSITION} from './../Configs/apiConf';
 import fetchCall from './FetchCaller';
+import { array } from 'prop-types';
 
 export const ticketLeadData = (type,timePeriod,COMPONENT) => {
   let infoRequired = '';
@@ -20,7 +21,7 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
   console.log('url_ticket_lead url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TICKET_LEAD}`);
   const fetchCallOptions = {
       method: "POST",
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -103,7 +104,7 @@ export const taskData = (type,timePeriod,COMPONENT) => {
   console.log('url_task url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TASK}`);
   const fetchCallOptions = {
       method: "POST",
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -167,7 +168,7 @@ export const mailData = (type,timePeriod,COMPONENT) => {
   console.log('url_mail',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_MAIL}`);
   const fetchCallOptions = {
       method: "POST",
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -233,7 +234,7 @@ export const usersData = (type,COMPONENT) => {
     console.log('total_ticket_users url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_USER}`);
     const fetchCallOptions = {
         method: "POST",
-        credentials: 'include',
+        // credentials: 'include',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -281,5 +282,271 @@ export const usersData = (type,COMPONENT) => {
     });
 }
 
+export const priorityData = (type,COMPONENT) => {
 
+  let infoRequired = '';
+  let dashboardDataCopy = {};
+  switch(type){
+    case 'ticket':
+      infoRequired = 'ticketPriorityInfo';
+      dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
+    break;
+  }
+  console.log('================SZZZZZ===================='); 
 
+  //Fetching info of ticket/lead priority
+  const url_priority = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_PRIORITY}`);
+  console.log('total_priority_wise_info url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_PRIORITY}`);
+  const fetchCallOptions = {
+      method: "POST",
+      // credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: '1477037397668528128',
+        reqType: 'getPriorityInfo',   
+        infoRequired: infoRequired,   
+      })
+  };
+  fetchCall(url_priority,fetchCallOptions,"json").then((result) => {
+    console.log('================here===================='); 
+    console.log('%c priority','font-weight:800;color:orange;',result); 
+
+    let resultData = JSON.parse(result);
+    console.log('%c priority parse','font-weight:800;color:orange;',resultData); 
+
+    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
+    console.log('%c PREVIOUS priority data','font-weight:800;color:orange;',dashboardDataCopy.priorityWiseTicketsData.componentData.data); 
+
+    console.log('%c RECEIVED priority data','font-weight:800;color:orange;',data); 
+
+    dashboardDataCopy.priorityWiseTicketsData.componentData.data = data;
+      
+    if(type == 'ticket'){
+      console.log('%c hereeeeee1','font-weight:800;color:orange;',data); 
+
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }
+    // else if(type == 'lead'){
+    //   COMPONENT.setState({
+    //     priorityWiseLeadsData : dashboardDataCopy
+    //   });
+    // }
+  },
+  (error) => {
+    console.log('================error==================='); 
+      // COMPONENT.setState({
+      //       IS_LOADING: false,
+      //     });
+  });
+}
+
+export const statusData = (type,COMPONENT) => {
+  let infoRequired = '';
+  let dashboardDataCopy = {};
+  switch(type){
+    case 'ticket':
+      infoRequired = 'ticketStatusInfo';
+      dashboardDataCopy = {...COMPONENT.state.ticketDashboardData};
+    break;
+    case '':
+      infoRequired = 'leadStatusInfo';
+      dashboardDataCopy = {...COMPONENT.state.leadDashboardData};
+    break;
+  }
+
+  //Fetching info of ticket/lead users
+  const url_status = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_STATUS}`);
+  console.log('total_status_wise_info url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_STATUS}`);
+  const fetchCallOptions = {
+      method: "POST",
+      // credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: '1477037397668528128',
+        reqType: 'getStatusInfo',   
+        infoRequired: infoRequired,   
+      })
+  };
+  fetchCall(url_status,fetchCallOptions,"json").then((result) => {
+    console.log(result); 
+
+    let resultData = JSON.parse(result);
+
+    let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
+    console.log('%c PREVIOUS priority data','font-weight:800;color:orange;',dashboardDataCopy.priorityWiseTicketsData.componentData.data); 
+
+    console.log('%c RECEIVED priority data','font-weight:800;color:orange;',data); 
+
+ 
+    if(type == 'ticket'){
+      dashboardDataCopy.statusWiseTicketsData.componentData.data = data;
+
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }else if(type == 'lead'){
+      dashboardDataCopy.statusWiseLeadsData.componentData.data = data;
+
+      COMPONENT.setState({
+        leadDashboardData : dashboardDataCopy
+      });
+    }
+  },
+  (error) => {
+      // COMPONENT.setState({
+      //       IS_LOADING: false,
+      //     });
+  });
+}
+
+export const typeData = (type,COMPONENT) => {
+  let infoRequired = '';
+  let dashboardDataCopy = {};
+  switch(type){
+    case 'ticket':
+      infoRequired = 'ticketTypeInfo';
+      dashboardDataCopy = {...COMPONENT.state.tickeTypeWiseTicketsData};
+    break;
+  }
+
+  //Fetching info of ticket/lead users
+  const url_type = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TYPE}`);
+  console.log('total_ticket_type_info url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_TYPE}`);
+  const fetchCallOptions = {
+      method: "POST",
+      // credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: '1477037397668528128',
+        reqType: 'getTypeInfo',   
+        infoRequired: infoRequired,   
+      })
+  };
+  fetchCall(url_type,fetchCallOptions,"json").then((result) => {
+    console.log(result); 
+ 
+    let resultData = JSON.parse(result);
+
+    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
+ 
+    dashboardDataCopy.componentData.data = resultData;
+      
+    if(type == 'ticket'){
+      COMPONENT.setState({
+        ticketDashboardData : dashboardDataCopy
+      });
+    }
+  },
+  (error) => {
+      // COMPONENT.setState({
+      //       IS_LOADING: false,
+      //     });
+  });
+}
+
+export const stateData = (type,COMPONENT) => {
+  let infoRequired = '';
+  let dashboardDataCopy = {};
+  switch(type){
+    case 'lead':
+      infoRequired = 'leadStateInfo';
+      dashboardDataCopy = {...COMPONENT.state.stateWiseLeadsData};
+    break;
+  }
+
+  //Fetching info of ticket/lead users
+  const url_state = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_STATE}`);
+  console.log('total_lead_state_info url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_STATE}`);
+  const fetchCallOptions = {
+      method: "POST",
+      // credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: '1477037397668528128',
+        reqType: 'getStateInfo',   
+        infoRequired: infoRequired,   
+      })
+  };
+  fetchCall(url_state,fetchCallOptions,"json").then((result) => {
+    console.log(result); 
+
+    let resultData = JSON.parse(result);
+
+    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
+ 
+    dashboardDataCopy.componentData.data = resultData;
+
+    if(type == 'lead'){
+      COMPONENT.setState({
+        stateWiseLeadsData : dashboardDataCopy
+      });
+    }
+  },
+  (error) => {
+      // COMPONENT.setState({
+      //       IS_LOADING: false,
+      //     });
+  });
+}
+
+export const dispositionData = (type,COMPONENT) => {
+  let infoRequired = '';
+  let dashboardDataCopy = {};
+  switch(type){
+    case 'lead':
+      infoRequired = 'leadDispositionInfo';
+      dashboardDataCopy = {...COMPONENT.state.dispositionWiseLeadsData};
+    break;
+  }
+
+  //Fetching info of ticket/lead disposition
+  const url_disp = new URL(`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_DISPOSITION}`);
+  console.log('total_lead_disposition_info url',`${PROTOCOL}${SERVER_IP}:${PORT}${API_URL_DISPOSITION}`);
+  const fetchCallOptions = {
+      method: "POST",
+      // credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: '1477037397668528128',
+        reqType: 'getDispositionInfo',   
+        infoRequired: infoRequired,   
+      })
+  };
+  fetchCall(url_disp,fetchCallOptions,"json").then((result) => {
+    console.log(result); 
+
+    let resultData = JSON.parse(result);
+
+    let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
+ 
+    dashboardDataCopy.componentData.data = resultData;
+      
+    if(type == 'lead'){
+      COMPONENT.setState({
+        leadDashboardData : dashboardDataCopy
+      });
+    }
+  },
+  (error) => {
+      // COMPONENT.setState({
+      //       IS_LOADING: false,
+      //     });
+  });
+}
