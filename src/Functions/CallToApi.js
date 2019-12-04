@@ -34,10 +34,17 @@ export const ticketLeadData = (type,timePeriod,COMPONENT) => {
       })
   };
   fetchCall(url_ticket_lead,fetchCallOptions,"json").then((result) => {
-    console.log('here');
-    console.log(result); 
-    let resultData = JSON.parse(result);
+    // console.log('here');
+    // console.log(result); 
 
+    let resultData = {};
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
     switch(type){
       case 'ticket':
         let totalTicketsCreated = ((resultData.totalTicketsCreated !== null) && (resultData.totalTicketsCreated !== undefined))?resultData.totalTicketsCreated:'';
@@ -119,7 +126,16 @@ export const taskData = (type,timePeriod,COMPONENT) => {
   fetchCall(url_task,fetchCallOptions,"json").then((result) => {
     console.log('here');
     console.log(result); 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
 
     let totalTasksCreated = ((resultData.totalTasksCreated !== null) && (resultData.totalTasksCreated !== undefined))?resultData.totalTasksCreated:'';
     let totalTasksClosed = ((resultData.totalTasksClosed !== null) && (resultData.totalTasksClosed !== undefined))?resultData.totalTasksClosed:'';
@@ -183,7 +199,17 @@ export const mailData = (type,timePeriod,COMPONENT) => {
   fetchCall(url_mail,fetchCallOptions,"json").then((result) => {
     console.log('here');
     console.log(result); 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
 
     let totalMailsReceived = ((resultData.totalMailsReceived !== null) && (resultData.totalMailsReceived !== undefined))?resultData.totalMailsReceived:'';
     let totalMailsReplied = ((resultData.totalMailsReplied !== null) && (resultData.totalMailsReplied !== undefined))?resultData.totalMailsReplied:'';
@@ -249,7 +275,17 @@ export const usersData = (type,COMPONENT) => {
       console.log(result); 
       //{"status":"success","totalTicketUsers":"2","totalActiveTicketUsers":"0","totalLoggedinTicketUsers":"0","totalLockedTicketUsers":"2"}
 
-      let resultData = JSON.parse(result);
+      // let resultData = JSON.parse(result);
+
+      let resultData = {};
+
+      if(result) {
+        try {
+          resultData = JSON.parse(result);
+        } catch(e) {
+            console.log(e); // error in the above string (in this case, yes)!
+        }
+      }
 
       let totalUsers = ((resultData.totalUsers !== null) && (resultData.totalUsers !== undefined))?resultData.totalUsers:'';
       let totalActiveUsers = ((resultData.totalActiveUsers !== null) && (resultData.totalActiveUsers !== undefined))?resultData.totalActiveUsers:'';
@@ -313,7 +349,17 @@ export const priorityData = (type,COMPONENT) => {
     console.log('================here===================='); 
     console.log('%c priority','font-weight:800;color:orange;',result); 
 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
+    
     console.log('%c priority parse','font-weight:800;color:orange;',resultData); 
 
     let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
@@ -377,7 +423,17 @@ export const statusData = (type,COMPONENT) => {
   fetchCall(url_status,fetchCallOptions,"json").then((result) => {
     console.log(result); 
 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
+
     console.log('DATA ====> ',dashboardDataCopy);
     // let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
     let data = resultData.data;
@@ -434,7 +490,16 @@ export const typeData = (type,COMPONENT) => {
   fetchCall(url_type,fetchCallOptions,"json").then((result) => {
     console.log(result); 
 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
 
     let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
 
@@ -484,7 +549,16 @@ export const stateData = (type,COMPONENT) => {
   fetchCall(url_state,fetchCallOptions,"json").then((result) => {
     console.log(result); 
 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
 
     let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
 
@@ -532,7 +606,16 @@ export const dispositionData = (type,COMPONENT) => {
   fetchCall(url_disp,fetchCallOptions,"json").then((result) => {
     console.log(result); 
 
-    let resultData = JSON.parse(result);
+    // let resultData = JSON.parse(result);
+    let resultData = {};
+
+    if(result) {
+      try {
+        resultData = JSON.parse(result);
+      } catch(e) {
+          console.log(e); // error in the above string (in this case, yes)!
+      }
+    }
  
     let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
 
