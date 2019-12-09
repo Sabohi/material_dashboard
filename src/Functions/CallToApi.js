@@ -605,6 +605,7 @@ export const dispositionData = (type,COMPONENT) => {
   };
   fetchCall(url_disp,fetchCallOptions,"json").then((result) => {
     console.log(result); 
+    console.log('========SUBBBBBB======',result);
 
     // let resultData = JSON.parse(result);
     let resultData = {};
@@ -612,13 +613,16 @@ export const dispositionData = (type,COMPONENT) => {
     if(result) {
       try {
         resultData = JSON.parse(result);
+        console.log('=========disposition resultData======',resultData);
+
       } catch(e) {
           console.log(e); // error in the above string (in this case, yes)!
       }
     }
  
     let data = ((resultData.data !== null) && (resultData.data !== undefined))?resultData.data:array();
-
+    
+    console.log('=========disposition data======',data);
     if(type == 'lead'){
       dashboardDataCopy.dispositionWiseLeadsData.componentData.data = data;
 

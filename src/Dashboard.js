@@ -911,7 +911,7 @@ class Dashboard extends React.Component {
     priorityData('ticket',this);
     statusData('ticket',this);
     typeData('ticket',this);
-    // stateData('lead',this);
+    stateData('lead',this);
     statusData('lead',this);
     dispositionData('lead',this);
   }
@@ -925,7 +925,7 @@ class Dashboard extends React.Component {
   componentDidMount()
   {
     console.log("=======[Dashboard.js] componentDidMount  =====");
-    // setInterval(()=>this.fetchDashboardData('today'),1000);
+    setInterval(()=>this.fetchDashboardData('today'),1000);
   }
   handleChange = (event, newValue) => {
     const Mode = ["TICKET","LEAD"];
